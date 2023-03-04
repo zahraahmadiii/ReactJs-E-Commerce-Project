@@ -1,0 +1,110 @@
+.AdminHeader{
+    width: 100%;
+    height: 4rem;
+    background-color:rgb(7 68 199) ;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    direction: rtl;
+    align-items: center;
+}
+.nav{
+    display: flex;
+    gap: 2rem;
+    direction: rtl;
+    align-items: center;
+}
+.link{
+ color: white;
+ text-decoration: none;
+}
+.link:hover{
+ color: rgb(7, 14, 199);
+}
+h2{
+    color: white;
+    padding-right: 1rem;
+}
+input{
+width:25rem;
+height: 1.90rem;
+border-radius: 3px;
+border: none;
+font-size: 14px;
+color: #333;
+outline: none;
+direction: rtl;
+padding-right: 2rem;
+  
+}
+.search{
+    position: relative;
+}
+.searchIcon{
+    color: rgb(7 68 199);
+    font-size: 1.83rem;
+    background-color: #ffef5c;
+    position: absolute;
+   right: 0;
+}
+.orders{
+    width: 7rem;
+    height: 2rem;
+    border: 1px solid white;
+    text-align: center;
+    padding-top: 0.5rem;
+    border-radius: 2px;
+}
+.orders:hover{
+    background-color: #f8ff29;
+    font-weight: bold;
+}
+.orders:active{
+    background-color: #ffd829;
+    font-weight: bold;
+}
+.inventory{
+    width: 7rem;
+    height: 2rem;
+    border: 1px solid white;
+    text-align: center;
+    padding-top: 0.5rem;
+    border-radius: 2px;
+}
+.inventory:hover{
+    background-color: #f8ff29;
+    font-weight: bold;
+}
+.inventory:active{
+    background-color: #ffd829;
+    font-weight: bold;
+}
+.products{
+    width: 7rem;
+    height: 2rem;
+    border: 1px solid white;
+    text-align: center;
+    padding-top: 0.5rem;
+    border-radius: 2px;
+}
+.products:hover{
+    background-color: #f8ff29;
+    font-weight: bold;
+}
+.products:active{
+    background-color: #ffd829;
+    font-weight: bold;
+}
+.right{
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+.back{
+    color: white;
+    text-decoration: none;
+}
+.back:hover{
+    color: #f8ff29;
+
+}

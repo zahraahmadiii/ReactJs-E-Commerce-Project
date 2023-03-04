@@ -1,14 +1,18 @@
 import React from 'react'
+import styles from "./style.module.css"
 import Button from '../../Components/button'
 import { Link } from 'react-router-dom'
-import Navbar from '../../Components/Navbar'
+import Header from "../../Layouts/header"
 const ProductDetail = () => {
   return (
-    <div>
-       <Navbar/>
-         <Link to="/Mobile/ProductCategory/ProductDetail"><Button>{"افزودن به سبد خرید"}</Button></Link>
-         <h2>کالای فلان</h2>
-    </div>
+    <>
+     <Header/>
+     <div className={styles.ProductDetail}>
+       <Link to="/Products/ProductDetail"><Button>{"افزودن به سبد خرید"}</Button></Link>
+       <h2>کالای فلان</h2>
+     </div>
+    </>
+  
   )
 }
 export default ProductDetail

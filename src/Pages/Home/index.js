@@ -1,16 +1,16 @@
 import React from 'react'
 import styles from "./style.module.css"
-import Navbar from '../../Components/Navbar';
 import { Link } from 'react-router-dom';
+import Header from '../../Layouts/header';
  const Home = () => {
   return (
     <>
-     <Navbar/> 
+    <Header/>
      <div className={styles.products}>
-       <Link to="/Mobile">گوشی موبایل</Link>
-       <Link to="/Tablet">تبلت</Link>
-       <Link to="/Laptop">لپ تاپ</Link>
-       <Link to="/AirPod">ایرپاد</Link>
+       <Link to="/Products">گوشی موبایل</Link>
+       <Link to="/Products">تبلت</Link>
+       <Link to="/Products">لپ تاپ</Link>
+       <Link to="/Products">ایرپاد</Link>
      </div>
       
        <h2>Home page</h2>

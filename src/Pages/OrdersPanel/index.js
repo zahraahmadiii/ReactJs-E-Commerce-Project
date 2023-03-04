@@ -1,8 +1,14 @@
 import React from 'react'
-import { Link } from 'react-router-dom';
+import styles from "./style.module.css"
+import  AdminHeader  from '../../Layouts/AdminHeader/index.js';
  const OrdersPanel = () => {
   return (
-    <div>OrdersPanel</div>
+    <>
+    <AdminHeader/>
+     <div>OrdersPanel</div>
+
+    </>
+   
   )
 }
 export default OrdersPanel;

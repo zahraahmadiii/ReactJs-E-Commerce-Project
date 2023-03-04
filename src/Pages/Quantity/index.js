@@ -1,14 +1,15 @@
 import React from 'react'
 import styles from "./style.module.css"
 import  AdminHeader  from '../../Layouts/AdminHeader/index.js';
- const AdminPanel = () => {
+const Quantity = () => {
   return (
     <>
-       <AdminHeader/>
-    
+    <AdminHeader/>
+     <div className={styles.inventory}>
+      <h1>InventoryPrice</h1>
+     </div>
     </>
-
+   
   )
 }
-
-export default AdminPanel;
+export default Quantity;

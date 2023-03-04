@@ -1,8 +1,12 @@
 import React from 'react'
-import { Link } from 'react-router-dom';
+import  AdminHeader  from '../../Layouts/AdminHeader/index.js';
  const ProductPanel = () => {
   return (
+    <>
+    <AdminHeader/>
     <div>ProductPanel</div>
+    </>
+    
   )
 }
 export default ProductPanel;

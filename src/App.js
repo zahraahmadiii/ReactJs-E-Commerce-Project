@@ -4,7 +4,6 @@ import Routs from './Routes/index';
 function App() {
   return (
     <div>
-   
     <Routs/>
 
     </div>
