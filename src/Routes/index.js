@@ -1,7 +1,7 @@
 import React from 'react'
 import {Routes,Route} from "react-router-dom"
 import Home from '../Pages/Home'
-import AdminLogin from "../Pages/AdminLogin"
+import LoginPanel from "../Pages/LoginPanel"
 import Cart from "../Pages/Cart"
 import AdminPanel from '../Pages/AdminPanel'
 import ProductPanel from "../Pages/ProductPanel"
@@ -19,11 +19,11 @@ const Routs = () => {
     <>
     <Routes>
         <Route path='/' element={<Home/>}></Route>
-        <Route path='/AdminLogin' element={<AdminLogin/>}></Route>
-        <Route path='/AdminLogin/AdminPanel' element={<AdminPanel/>}></Route>
-        <Route path='/AdminLogin/AdminPanel/ProductPanel' element={<ProductPanel/>}></Route>
-        <Route path='/AdminLogin/AdminPanel/Quantity' element={<Quantity />}></Route>
-        <Route path='/AdminLogin/AdminPanel/OrdersPanel' element={<OrdersPanel/>}></Route>
+        <Route path='/LoginPanel' element={<LoginPanel/>}></Route>
+        <Route path='/LoginPanel/AdminPanel' element={<AdminPanel/>}></Route>
+        <Route path='/LoginPanel/AdminPanel/ProductPanel' element={<ProductPanel/>}></Route>
+        <Route path='/LoginPanel/AdminPanel/Quantity' element={<Quantity />}></Route>
+        <Route path='/LoginPanel/AdminPanel/OrdersPanel' element={<OrdersPanel/>}></Route>
         <Route path='/Cart' element={<Cart/>}></Route>
         <Route path='/Cart/CheckOut' element={<CheckOut/>}></Route>
         <Route path='/Cart/CheckOut/Payment' element={<Payment/>}></Route>

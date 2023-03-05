@@ -15,13 +15,13 @@ const AdminHeader = () => {
        
        <nav className={styles.nav}>
        <div className={styles.products}>
-       <Link to="/AdminLogin/AdminPanel/ProductPanel" className={styles.link}>کالاها</Link>
+       <Link to="/LoginPanel/AdminPanel/ProductPanel" className={styles.link}>کالاها</Link>
        </div>
         <div className={styles.inventory}>
-       <Link to="/AdminLogin/AdminPanel/Quantity" className={styles.link}>موجودی و قیمت </  Link>
+       <Link to="/LoginPanel/AdminPanel/Quantity" className={styles.link}>موجودی و قیمت </  Link>
         </div>
        <div className={styles.orders}>
-       <Link to="/AdminLogin/AdminPanel/OrdersPanel" className={styles.link}>سفارش ها</Link>
+       <Link to="/LoginPanel/AdminPanel/OrdersPanel" className={styles.link}>سفارش ها</Link>
        </div>
        
        <Link to="/" className={styles.back}>بازگشت</Link>

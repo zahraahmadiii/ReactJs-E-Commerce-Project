@@ -14,7 +14,7 @@ import {ImHome} from "react-icons/im"
       </div>
       <div className={styles.row2}>
       <FaUserAlt className={styles.Icon}/>
-      <Link to="/AdminLogin" className={styles.link}>مدیریت</Link>
+      <Link to="/LoginPanel" className={styles.link}>مدیریت</Link>
     
       </div>
       <div className={styles.row3}>
