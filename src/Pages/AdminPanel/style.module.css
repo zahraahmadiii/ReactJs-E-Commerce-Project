@@ -1,0 +1,16 @@
+.check{
+    width: 1rem;
+    border-radius: 50%;
+}
+.filter{
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+    border: 1px solid blue;
+   
+}
+.label{
+    font-family: Tahoma, sans-serif;
+}
