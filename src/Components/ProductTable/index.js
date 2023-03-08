@@ -3,7 +3,8 @@ import styles from "./style.module.css"
 import Table from 'react-bootstrap/Table';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-const ProductTable = () => {
+const ProductTable = ({item}) => {
+  console.log(item)
   return (
     
     <div className={styles.table}>
