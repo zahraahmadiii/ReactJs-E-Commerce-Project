@@ -1,0 +1,20 @@
+.table{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    direction: rtl;
+     width: 800px;
+    height: 200px;
+    margin: auto;
+    margin-top: 3rem;
+  
+}
+.row{
+    border: 1px solid blue;
+}
+.header{
+    border: 1px solid blue;
+}
+td {
+    text-align: center;
+  }

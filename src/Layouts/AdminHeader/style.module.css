@@ -23,7 +23,8 @@
 }
 h2{
     color: white;
-    padding-right: 1rem;
+    padding: 1rem;
+    font-family: sans-serif;
 }
 input{
 width:25rem;
@@ -52,7 +53,7 @@ padding-right: 2rem;
     height: 2rem;
     border: 1px solid white;
     text-align: center;
-    padding-top: 0.5rem;
+    padding-top: 0.25rem;
     border-radius: 2px;
 }
 .orders:hover{
@@ -68,7 +69,7 @@ padding-right: 2rem;
     height: 2rem;
     border: 1px solid white;
     text-align: center;
-    padding-top: 0.5rem;
+    padding-top: 0.25rem;
     border-radius: 2px;
 }
 .inventory:hover{
@@ -84,7 +85,7 @@ padding-right: 2rem;
     height: 2rem;
     border: 1px solid white;
     text-align: center;
-    padding-top: 0.5rem;
+   padding-top: 0.25rem;
     border-radius: 2px;
 }
 .products:hover{
