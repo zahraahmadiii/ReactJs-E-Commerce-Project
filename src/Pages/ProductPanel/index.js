@@ -1,5 +1,4 @@
 import React from 'react'
-import styles from "./style.module.css"
 import  AdminHeader  from '../../Layouts/AdminHeader/index.js';
 import styles from "./style.module.css"
 import Button from "../../Components/button"
