@@ -1,5 +1,6 @@
 .table{
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     direction: rtl;
@@ -7,12 +8,18 @@
     margin: auto;
   
 }
-.row{
-    border: 1px solid blue;
-}
-.header{
-    border: 1px solid blue;
-}
 td {
     text-align: center;
   }
+  .img{
+    width: 3.8rem;
+    height: 3rem;
+  }
+  .paginate{
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+   color: black;
+   text-decoration: none;
+  }
+  
