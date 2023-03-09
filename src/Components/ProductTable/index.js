@@ -2,6 +2,9 @@ import React from 'react'
 import styles from "./style.module.css"
 import Table from 'react-bootstrap/Table';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { BASE_URL } from '../../Api/Constants';
+import{BsTrash} from "react-icons/bs"
+import {FaRegEdit} from "react-icons/fa"
 
 const ProductTable = ({item}) => {
   console.log(item)
@@ -18,36 +21,15 @@ const ProductTable = ({item}) => {
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
+        {item.map((item)=> {
+          return(<tr key={item.id}>
+            <td><img src={`${BASE_URL}/files/${item.thumbnail}`}/></td>
+            <td>{item.name}</td>
+            <td>{item.category}</td>
+            <td> <BsTrash/> <FaRegEdit/></td>
+          </tr>)
+         })}
+       
       </tbody>
     </Table>
 
