@@ -2,8 +2,9 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import {fetchOrders} from "../../../src/Api/Servises/orders"
 
 
-export const getOrder = createAsyncThunk("orders/fetchList", async () => {
-    const response = await fetchOrders();
+export const getOrder = createAsyncThunk("orders/fetchList", async (action) => {
+  console.log(action)
+    const response = await fetchOrders(action.delivery);
     return response.data;
   });
  
@@ -11,7 +12,14 @@ const ordersSlice = createSlice({
   name: "orders",
   initialState:{
     data:[],
-    status:'idle'
+    status:'idle',
+    delivery:false,
+},
+reducers:{
+setDelivery:(state,action)=>{
+  console.log("dfgdfgd")
+  state.delivery=action.payload.delivery
+}
 },
   extraReducers:{
     [getOrder.pending]:(state)=>{
@@ -31,4 +39,4 @@ const ordersSlice = createSlice({
     });
 
     export default ordersSlice.reducer;
-
+export const{setDelivery}=ordersSlice.actions;
