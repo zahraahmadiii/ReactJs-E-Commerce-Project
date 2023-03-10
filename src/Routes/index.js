@@ -6,7 +6,7 @@ import Cart from "../Pages/Cart"
 import AdminPanel from '../Pages/AdminPanel'
 import ProductPanel from "../Pages/ProductPanel"
 import Quantity from '../Pages/Quantity'
-import OrdersPanel from '../Pages/OrdersPanel'
+// import OrdersPanel from '../Pages/OrdersPanel'
 import CheckOut from '../Pages/Checkout'
 import Payment from '../Pages/Payment'
 import FailPay from '../Pages/FailPay'
@@ -23,7 +23,7 @@ const Routs = () => {
         <Route path='/LoginPanel/AdminPanel' element={<AdminPanel/>}></Route>
         <Route path='/LoginPanel/AdminPanel/ProductPanel' element={<ProductPanel/>}></Route>
         <Route path='/LoginPanel/AdminPanel/Quantity' element={<Quantity />}></Route>
-        <Route path='/LoginPanel/AdminPanel/OrdersPanel' element={<OrdersPanel/>}></Route>
+        <Route path='/LoginPanel/AdminPanel' element={<AdminPanel/>}></Route>
         <Route path='/Cart' element={<Cart/>}></Route>
         <Route path='/Cart/CheckOut' element={<CheckOut/>}></Route>
         <Route path='/Cart/CheckOut/Payment' element={<Payment/>}></Route>

@@ -21,7 +21,7 @@ const AdminHeader = () => {
        <Link to="/LoginPanel/AdminPanel/Quantity" className={styles.link}>موجودی و قیمت </  Link>
         </div>
        <div className={styles.orders}>
-       <Link to="/LoginPanel/AdminPanel/OrdersPanel" className={styles.link}>سفارش ها</Link>
+       <Link to="/LoginPanel/AdminPanel" className={styles.link}>سفارش ها</Link>
        </div>
        
        <Link to="/" className={styles.back}>بازگشت</Link>

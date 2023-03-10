@@ -1,7 +1,19 @@
-import React from 'react'
 import styles from "./style.module.css"
 import  AdminHeader  from '../../Layouts/AdminHeader/index.js';
+import React, { useEffect } from 'react'
+import OrderTable from "../../Components/OrderTable/index.js";
+import {useDispatch, useSelector} from 'react-redux'
+import { getOrder } from '../../redux/Features/orders-slice.js';
  const AdminPanel = () => {
+
+  const orders = useSelector(store => store.ordersSlice);
+  console.log(orders)
+
+   const dispatch=useDispatch()
+
+   useEffect(()=>{
+    dispatch(getOrder())
+   },[dispatch])
 
   return (
     <>
@@ -14,7 +26,7 @@ import  AdminHeader  from '../../Layouts/AdminHeader/index.js';
        <label className={styles.label}> سفارش های تحویل شده</label>
        </div>
 
-
+       <OrderTable item={orders.data}/>
      
 
     

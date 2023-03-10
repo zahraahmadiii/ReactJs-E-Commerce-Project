@@ -8,7 +8,7 @@ export const getOrder = createAsyncThunk("orders/fetchList", async () => {
   });
  
 const ordersSlice = createSlice({
-  name: "order",
+  name: "orders",
   initialState:{
     data:[],
     status:'idle'
