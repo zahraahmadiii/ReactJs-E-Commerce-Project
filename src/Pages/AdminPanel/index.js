@@ -17,22 +17,24 @@ import { getOrder, setDelivery } from '../../redux/Features/orders-slice.js';
    
 
   return (
-    <>
+    <div className={styles.page}>
        <AdminHeader/>
-    
-       <div className={styles.filter}>
+    <div className={styles.main}>
+    <div className={styles.filter}>
         
-       <input  type="radio" className={styles.check} name="deliverystatus"checked={!orders.delivery} onChange={()=>dispatch(setDelivery({delivery:false}))}/>
-       <label className={styles.label}> سفارش های در انتظار ارسال </label>
-       <input  type="radio" className={styles.check} name="deliverystatus" checked={orders.delivery} onChange={()=>dispatch(setDelivery({delivery:true}))}/>
-       <label className={styles.label}> سفارش های تحویل شده</label>
-       </div>
-
-       <OrderTable item={orders.data}/>
+        <input  type="radio" className={styles.check} name="deliverystatus"checked={!orders.delivery} onChange={()=>dispatch(setDelivery({delivery:false}))}/>
+        <label className={styles.label}> سفارش های در انتظار ارسال </label>
+        <input  type="radio" className={styles.check} name="deliverystatus" checked={orders.delivery} onChange={()=>dispatch(setDelivery({delivery:true}))}/>
+        <label className={styles.label}> سفارش های تحویل شده</label>
+        </div>
+ 
+        <OrderTable item={orders.data}/>
+    </div>
+      
      
 
     
-    </>
+    </div>
 
   )
 }

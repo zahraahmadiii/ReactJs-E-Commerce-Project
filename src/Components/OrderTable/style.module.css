@@ -5,10 +5,18 @@
     justify-content: center;
     direction: rtl;
      width: 800px;
-    margin: auto;
-  
+    margin: 2rem;
+}
+.border{
+  border: 3px solid #ffef5c;
+  background-color:rgb(198, 215, 255) ;
 }
 td {
+    text-align: center;
+    
+  }
+  .th{
+    color: rgb(101, 101, 101);
     text-align: center;
   }
   .img{
@@ -19,6 +27,6 @@ td {
     list-style: none;
     display: flex;
     gap: 1rem;
-   color: black;
+   color: rgb(74, 74, 74);
    text-decoration: none;
   }

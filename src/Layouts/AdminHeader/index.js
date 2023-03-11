@@ -2,11 +2,14 @@ import React from 'react'
 import styles from "./style.module.css"
 import {CiSearch} from "react-icons/ci"
 import { Link } from 'react-router-dom';
+import {FaUserAlt} from "react-icons/fa"
 const AdminHeader = () => {
   return (
+    <>
     <div className={styles.AdminHeader}>
      <div className={styles.right}>
-       <h2>پنل مدیریت </h2>
+     <FaUserAlt className={styles.Icon}/>
+       <h4>پنل مدیریت </h4>
        <div className={styles.search}>
         <CiSearch className={styles.searchIcon}/>
       <input type="search" placeholder='جستجو...'/>
@@ -25,10 +28,12 @@ const AdminHeader = () => {
        </div>
        
        <Link to="/" className={styles.back}>بازگشت</Link>
-     
+       
     </nav> 
     
     </div>
+    <div className={styles.line}></div>
+    </>
   )
 }
 export default AdminHeader 

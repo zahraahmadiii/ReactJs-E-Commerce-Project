@@ -1,4 +1,12 @@
 
 .add{
-    margin: 2rem;
+    margin: 4rem;
+ }
+ .main{
+    display: flex;
+    justify-content: flex-end;
+     padding-top: 6rem;
+      gap: 3rem;
+    height: 88vh;
+    background-color: rgb(190, 210, 255);
  }

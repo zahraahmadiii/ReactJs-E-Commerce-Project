@@ -1,0 +1,48 @@
+/* .slider{
+    width: 30rem;
+    height: 6rem;
+}
+.img{
+    width: 480px;
+    height: 100%;
+} */
+
+/* #app {
+    height: 100%;
+  } */
+  /* html,
+  body {
+    position: relative;
+    height: 90%;
+  } */
+  
+  /* body {
+    background: #eee;
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    color: #000;
+    margin: 0;
+    padding: 0;
+  } */
+  
+  .swiper {
+    width: 15rem;
+    height: 7rem;
+  border-radius: 6px;
+  border: 5px solid #ffef5c;
+  }
+  
+  .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .swiper-slide img {
+    display: block;
+    width: 100%;
+    object-fit: cover;
+  }
+  

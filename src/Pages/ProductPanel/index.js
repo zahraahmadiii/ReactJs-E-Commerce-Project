@@ -20,13 +20,17 @@ import { getProduct } from '../../redux/Features/products-slice.js';
   return (
     <>
     <AdminHeader/>
-    <div className={styles.add}>
-    <Button btnColor={" rgb(7 68 199)"}>{"افزودن کالا"}</Button>
-    </div>
+    <div className={styles.main}>
+  
     <div>
   
         <ProductTable item={products.data}/>
     </div>
+    <div className={styles.add}>
+    <Button btnColor={" rgb(7 68 199)"}>{"افزودن کالا"}</Button>
+    </div>
+    </div>
+  
    
     </>
     

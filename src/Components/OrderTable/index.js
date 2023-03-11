@@ -28,19 +28,19 @@ import { useState } from 'react';
   return (
     
         <div className={styles.table}>
-        <Table striped size="sm" bordered>
+        <Table striped size="sm" bordered className={styles.border}>
           <thead >
-            <tr>
-            <th >نام کاربر</th>
-              <th>مجموع مبلغ</th>
-              <th >زمان ثبت سفارش</th>
+            <tr className={styles.border}>
+              <th className={styles.th}>نام کاربر</th>
+              <th className={styles.th}>مجموع مبلغ</th>
+              <th className={styles.th}>زمان ثبت سفارش</th>
               <th></th>
             </tr>
           </thead>
           <tbody>
           
           {currentItems.map((item)=> {
-          return(<tr key={item.id}>
+          return(<tr key={item.id} className={styles.border}>
             <td>{item.username } {item.lastname} </td>
             <td>{item.prices}</td>
             <td>{item.createdAt}</td>
@@ -51,7 +51,7 @@ import { useState } from 'react';
            
           </tbody>
         </Table>
-        <ReactPaginate
+        <ReactPaginate 
         breakLabel="..."
         nextLabel="next>"
         onPageChange={handlePageClick}

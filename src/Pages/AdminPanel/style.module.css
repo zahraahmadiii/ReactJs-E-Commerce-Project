@@ -1,15 +1,31 @@
 .check{
     width: 1rem;
     border-radius: 50%;
+    color: #ffef5c;
 }
 .filter{
     display: flex;
-    gap: 1rem;
+    gap: 1.5rem;
     justify-content: center;
     align-items: center;
-    margin: 2rem;
-   
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    width: 36rem;
+    align-items: center;
+    background-color:rgb(7 68 199);
+    border-radius: 12px;
+    padding: 0.7rem;
 }
 .label{
     font-family: Tahoma, sans-serif;
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    font-size:1rem ;
+}
+.main{
+    background-color: rgb(190, 210, 255);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 88vh;
 }

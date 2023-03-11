@@ -25,17 +25,17 @@ const QuantityTable = ({item}) => {
     };
   return (
     <div className={styles.table}>
-    <Table striped size="sm" bordered>
+    <Table striped size="sm" bordered className={styles.border}>
       <thead >
-        <tr>
-        <th >کالا</th>
-          <th>قیمت</th>
-          <th>موجودی</th>
+        <tr className={styles.border}>
+        <th className={styles.th}>کالا</th>
+          <th className={styles.th}>قیمت</th>
+          <th className={styles.th}>موجودی</th>
         </tr>
       </thead>
       <tbody>
       {currentItems.map((item)=> {
-          return(<tr key={item.id}>
+          return(<tr key={item.id} className={styles.border}>
             <td>{item.name}</td>
             <td>{item.price}</td>
             <td>{item.quantity}</td>

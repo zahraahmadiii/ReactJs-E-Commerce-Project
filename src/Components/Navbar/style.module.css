@@ -1,25 +1,22 @@
 .links{
     direction: rtl;
     display: flex;
-    gap: 1.20rem;
+    gap: 1.30rem;
    justify-content: center; 
- 
 }
 .link{
     text-decoration: none;
     color: rgb(255, 255, 255);
-    font-weight: 100;
+    font-weight: bold;
+    font-size:1rem ;
 }
 .link:hover{
     color: #ffef5c;
 }
-.link:active{
-    color: #ffd829;
-    font-weight: bold;
-}
+
 .Icon{
     color:white ;
-    font-size: 1.20rem;
+    font-size: 1.30rem;
 }
 .row1{
     display: flex;

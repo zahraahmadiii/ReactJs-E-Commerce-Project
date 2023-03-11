@@ -30,22 +30,22 @@ const ProductTable = ({item}) => {
   return (
     
     <div className={styles.table}>
-    <Table striped size="sm" bordered>
+    <Table striped size="sm" bordered className={styles.border}>
       <thead >
-        <tr>
-        <th >تصویر</th>
-          <th>نام کالا</th>
-          <th >دسته بندی</th>
-          <th></th>
+        <tr className={styles.border}>
+        <th className={styles.th}>تصویر</th>
+          <th className={styles.th}>نام کالا</th>
+          <th className={styles.th} >دسته بندی</th>
+          <th className={styles.th}></th>
         </tr>
       </thead>
       <tbody>
         {currentItems.map((item)=> {
-          return(<tr key={item.id}>
+          return(<tr key={item.id} className={styles.border}>
             <td><img src={`${BASE_URL}/files/${item.thumbnail}`} className={styles.img}/></td>
             <td>{item.name}</td>
             <td>{item.category}</td>
-            <td> <BsTrash/> <FaRegEdit/></td>
+            <td> <BsTrash className={styles.trash}/> <FaRegEdit className={styles.edit}/></td>
           </tr>)
          })}
        
