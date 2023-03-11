@@ -1,0 +1,63 @@
+.wraper_modal{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    background-color: rgba(66,66,66,0.7);
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+}
+.modal{
+    width: 40vw;
+    height: 70%;  
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+    direction: rtl;
+    border-radius: 8px;
+    border: 3px solid #ffef5c;
+    padding: 1rem;
+    background-color: aliceblue;
+    padding-right: 2rem;
+
+}
+.label{
+    color: rgb(7 68 199);
+    font-size: 1rem;
+    font-weight: bold;
+}
+p{
+    color: rgb(80, 80, 80);
+    font-size: 1rem;
+    font-weight: bold;
+}
+.file{
+   width: 90%; 
+   background-color: rgb(255, 255, 255);
+   padding: 3px;
+   border-radius: 5px;
+   color: gray;
+
+}
+.top{
+    display: flex;
+    justify-content: space-between;
+}
+.close{
+    font-size: 1.5rem;
+    color: rgb(7 68 199);
+}
+.select{
+    width: 90%; 
+    background-color: rgb(255, 255, 255);
+    color: rgb(7 68 199);
+    padding: 3px;
+    border-radius: 5px;
+    border: none;
+}
+.save{
+    padding-right: 2rem;
+    margin: 2rem;
+}
