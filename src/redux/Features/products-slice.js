@@ -1,17 +1,29 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import {fetchproducts} from "../../../src/Api/Servises/products"
-
+import { postProducts } from "../../../src/Api/Servises/products";
 
 export const getProduct = createAsyncThunk("products/fetchList", async () => {
     const response = await fetchproducts();
     return response.data;
   });
+
+  export const postProduct = createAsyncThunk("products/addProduct", async (newProduct) => {
+  const response = await postProducts ();
+  return response.data;
+});
  
 const productsSlice = createSlice({
   name: "products",
   initialState:{
     data:[],
-    status:'idle'
+    status:'idle',
+    addbtn :false,
+},
+reducers:{
+  addProduct:(state,action) => {
+    state.addbtn = true
+   
+  },
 },
   extraReducers:{
     [getProduct.pending]:(state)=>{
@@ -31,7 +43,7 @@ const productsSlice = createSlice({
     });
 
     export default productsSlice.reducer;
-
+    export const{addProduct}=productsSlice.actions;
 // export const fetchProducts = createAsyncThunk("products/fetchProducts", async (info) => {
 //   const {page,limit} = info
 //   const response = await axios.get(`${BASE_URL}/products?_page=${page}&_limit=${limit}`);

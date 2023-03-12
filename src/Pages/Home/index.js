@@ -2,7 +2,6 @@ import React from 'react'
 import styles from "./style.module.css"
 import { Link } from 'react-router-dom';
 import Header from '../../Layouts/header';
-import ProductModal from '../../Components/product-modal';
  const Home = () => {
   return (
     <>
@@ -10,14 +9,12 @@ import ProductModal from '../../Components/product-modal';
     <div className={styles.sliderWraper}>
 
     </div>
-     {/* <div className={styles.products}>
+     <div className={styles.products}>
        <Link to="/Products">گوشی موبایل</Link>
        <Link to="/Products">تبلت</Link>
        <Link to="/Products">لپ تاپ</Link>
        <Link to="/Products">ایرپاد</Link>
-     </div> */}
- 
-       <ProductModal/>
+     </div>
     </>
   )
 }

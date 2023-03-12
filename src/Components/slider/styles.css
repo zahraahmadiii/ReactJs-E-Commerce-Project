@@ -45,4 +45,11 @@
     width: 100%;
     object-fit: cover;
   }
-  
+  :root{
+    --swiper-theme-color: transparent;
+}
+  .size{
+    width:8rem;
+    height: 6.5rem;
+    padding-top: 0.20rem;
+  }
