@@ -19,16 +19,16 @@ import CkEditors from "../ckEditors"
     <input type="text" className={styles.file}/>
     <label className={styles.label}>دسته بندی:</label>
     <select className={styles.select} >
-  <option value="someOption">دسته بندی را انتخاب کنید</option>
-   <option value="someOption">لپ تاپ</option>
-   <option value="otherOption">تبلت</option>
-   <option value="otherOption">موبایل</option>
-   <option value="otherOption">ایرپاد</option>
+  <option >دسته بندی را انتخاب کنید</option>
+   <option value="لپ تاپ">لپ تاپ</option>
+   <option value="تبلت">تبلت</option>
+   <option value="موبایل">موبایل</option>
+   <option value="ایرپاد">ایرپاد</option>
   </select>
 
    <div >
     <label className={styles.label}>توضیحات :</label>
-    {/* <CkEditors/> */}
+    <CkEditors/>
   </div>
    
     <Button btnColor={" rgb(7 68 199)"} className={styles.save}>{"ذخیره"}</Button>
