@@ -10,7 +10,7 @@
     height: 100vh;
 }
 .modal{
-    width: 40vw;
+    width: 38vw;
     height: 70%;  
     display: flex;
     gap: 0.5rem;
@@ -20,7 +20,7 @@
     border: 3px solid #ffef5c;
     padding: 1rem;
     background-color: aliceblue;
-    padding-right: 2rem;
+    padding-right: 1.5rem;
 
 }
 .label{
@@ -34,7 +34,7 @@ p{
     font-weight: bold;
 }
 .file{
-   width: 90%; 
+   width: 95%; 
    background-color: rgb(255, 255, 255);
    padding: 3px;
    border-radius: 5px;
@@ -50,14 +50,15 @@ p{
     color: rgb(7 68 199);
 }
 .select{
-    width: 90%; 
+    width: 95%; 
     background-color: rgb(255, 255, 255);
     color: rgb(7 68 199);
     padding: 3px;
     border-radius: 5px;
     border: none;
 }
-.save{
-    padding-right: 2rem;
-    margin: 2rem;
+.savebtn{
+    display: flex;
+justify-content: center;
+padding-top: 1rem;
 }

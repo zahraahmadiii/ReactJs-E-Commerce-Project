@@ -30,8 +30,11 @@ import CkEditors from "../ckEditors"
     <label className={styles.label}>توضیحات :</label>
     <CkEditors/>
   </div>
-   
-    <Button btnColor={" rgb(7 68 199)"} className={styles.save}>{"ذخیره"}</Button>
+    <div className={styles.savebtn}>
+    <Button btnColor={" rgb(7 68 199)"}>{"ذخیره"}</Button>
+    </div>
+    
+
    </div>
    </div>
    
