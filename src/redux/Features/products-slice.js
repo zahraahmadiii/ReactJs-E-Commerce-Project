@@ -17,12 +17,12 @@ const productsSlice = createSlice({
   initialState:{
     data:[],
     status:'idle',
-    addbtn :false,
+    openModalAdd :false,
 },
 reducers:{
-  addProduct:(state,action) => {
-    state.addbtn = true
-   
+  addProduct:(state) => {
+    state.openModalAdd = true
+
   },
 },
   extraReducers:{

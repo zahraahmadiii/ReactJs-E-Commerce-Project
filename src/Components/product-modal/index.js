@@ -2,6 +2,7 @@ import React from 'react'
 import styles from "./style.module.css"
 import {IoMdCloseCircle} from "react-icons/io"
 import Button from '../button'
+import CkEditors from "../ckEditors"
  const ProductModal = () => {
   return (
    <>
@@ -27,6 +28,7 @@ import Button from '../button'
 
    <div >
     <label className={styles.label}>توضیحات :</label>
+    {/* <CkEditors/> */}
   </div>
    
     <Button btnColor={" rgb(7 68 199)"} className={styles.save}>{"ذخیره"}</Button>
