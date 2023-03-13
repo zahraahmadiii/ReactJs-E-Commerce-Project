@@ -25,18 +25,13 @@ dispatch(addProduct())
     <>
     <AdminHeader/>
     <div className={styles.main}>
-  
-    <div>
-  
-        <ProductTable item={products.data}/>
-    </div>
-    <div className={styles.add}>
-     
     <Button btnColor={" rgb(7 68 199)"} onClick={()=>handelAddProduct()}>{"افزودن کالا"}</Button>
+    <ProductTable item={products.data}/>
+    
     </div>
     {products.openModalAdd && (<ProductModal/>)}
  
-    </div>
+    
    
     </>
     

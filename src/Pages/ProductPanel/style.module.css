@@ -1,11 +1,8 @@
-.add{
-   margin: 4rem;
-}
 .main{
    display: flex;
-   justify-content: flex-end;
+   flex-direction: column;
    align-items: center;
-  gap: 3rem;
    height: 88vh;
-   background-color: rgb(190, 210, 255);
+   background-image: radial-gradient(circle, rgb(255, 255, 255), rgb(223, 223, 223), rgb(190, 210, 255));
+   padding-top: 2rem;
 }

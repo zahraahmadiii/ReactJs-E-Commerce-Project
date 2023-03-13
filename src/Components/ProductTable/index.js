@@ -30,9 +30,9 @@ const ProductTable = ({item}) => {
   return (
     
     <div className={styles.table}>
-    <Table striped size="sm" bordered className={styles.border}>
+    <Table size="sm" bordered className={styles.border}>
       <thead >
-        <tr className={styles.border}>
+        <tr className={styles.tr}>
         <th className={styles.th}>تصویر</th>
           <th className={styles.th}>نام کالا</th>
           <th className={styles.th} >دسته بندی</th>
@@ -41,11 +41,11 @@ const ProductTable = ({item}) => {
       </thead>
       <tbody>
         {currentItems.map((item)=> {
-          return(<tr key={item.id} className={styles.border}>
-            <td><img src={`${BASE_URL}/files/${item.thumbnail}`} className={styles.img}/></td>
-            <td>{item.name}</td>
-            <td>{item.category}</td>
-            <td> <BsTrash className={styles.trash}/> <FaRegEdit className={styles.edit}/></td>
+          return(<tr key={item.id} className={styles.tr}>
+            <td className={styles.td}><img src={`${BASE_URL}/files/${item.thumbnail}`} className={styles.img}/></td>
+            <td className={styles.td}>{item.name}</td>
+            <td className={styles.td}>{item.category}</td>
+            <td className={styles.td}> <BsTrash className={styles.trash}/> <FaRegEdit className={styles.edit}/></td>
           </tr>)
          })}
        
@@ -54,14 +54,23 @@ const ProductTable = ({item}) => {
     
     <ReactPaginate
         breakLabel="..."
-        nextLabel="next>"
+        nextLabel="next"
         onPageChange={handlePageClick}
         pageRangeDisplayed={5}
         pageCount={pageCount}
-        previousLabel="<previous"
+        previousLabel="prev"
         renderOnZeroPageCount={null}
-       className={styles.paginate} />
+        
+        containerClassName={styles.pagination}
+        previousLinkClassName={styles.pagination__link}
+        nextLinkClassName={styles.pagination__link}
+        disabledClassName={styles.pagination__link_disabled}
+        activeClassName={styles.pagination__link_active}
+      
+       className={styles.paginate}
+        />
     </div>
+  
    
   
   )
