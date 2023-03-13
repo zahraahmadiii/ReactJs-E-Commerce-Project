@@ -25,7 +25,7 @@ dispatch(addProduct())
     <>
     <AdminHeader/>
     <div className={styles.main}>
-    <Button btnColor={" rgb(7 68 199)"} onClick={()=>handelAddProduct()}>{"افزودن کالا"}</Button>
+    <Button btnColor={" rgb(7 68 199)"} onClick={()=>handelAddProduct()}>{"افزودن کالا"}</ Button>
     <ProductTable item={products.data}/>
     
     </div>

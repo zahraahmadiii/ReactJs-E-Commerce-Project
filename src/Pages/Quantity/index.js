@@ -21,13 +21,8 @@ const Quantity = () => {
     <>
     <AdminHeader/>
     <div className={styles.main}>
-    
-     <div >
-      <QuantityTable item={products.data}/>
-     </div>
-     <div className={styles.add}>
     <Button btnColor={" rgb(7 68 199)"}>{"ذخیره"}</Button>
-    </div>
+   <QuantityTable item={products.data}/>
     </div>
 
     </>
