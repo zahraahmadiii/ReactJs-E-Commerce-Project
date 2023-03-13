@@ -25,9 +25,9 @@ const QuantityTable = ({item}) => {
     };
   return (
     <div className={styles.table}>
-    <Table striped size="sm" bordered className={styles.border}>
+    <Table striped  bordered className={styles.border}>
       <thead >
-        <tr className={styles.border}>
+        <tr  className={styles.tr}>
         <th className={styles.th}>کالا</th>
           <th className={styles.th}>قیمت</th>
           <th className={styles.th}>موجودی</th>
@@ -35,23 +35,28 @@ const QuantityTable = ({item}) => {
       </thead>
       <tbody>
       {currentItems.map((item)=> {
-          return(<tr key={item.id} className={styles.border}>
-            <td>{item.name}</td>
-            <td>{item.price}</td>
-            <td>{item.quantity}</td>
-          </tr>)
+          return(<tr key={item.id}  className={styles.tr}>
+            <td className={styles.td}>{item.name}</td>
+            <td className={styles.td}>{item.price}</td>
+            <td className={styles.td}>{item.quantity}</td>
+          </tr >)
          })}
        
       </tbody>
     </Table>
     <ReactPaginate
         breakLabel="..."
-        nextLabel="next>"
+        nextLabel="next"
         onPageChange={handlePageClick}
         pageRangeDisplayed={5}
         pageCount={pageCount}
-        previousLabel="<previous"
+        previousLabel="prev"
         renderOnZeroPageCount={null}
+        containerClassName={styles.pagination}
+        previousLinkClassName={styles.pagination__link}
+        nextLinkClassName={styles.pagination__link}
+        disabledClassName={styles.pagination__link_disabled}
+        activeClassName={styles.pagination__link_active}
        className={styles.paginate} />
     
     </div>
