@@ -2,7 +2,6 @@ import React from 'react'
 import styles from "./style.module.css"
 import Table from 'react-bootstrap/Table';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { BASE_URL } from '../../Api/Constants';
 import ReactPaginate from 'react-paginate';
 import { useSelector} from 'react-redux'
 import { useState } from 'react';
@@ -28,9 +27,9 @@ import { useState } from 'react';
   return (
     
         <div className={styles.table}>
-        <Table striped size="sm" bordered className={styles.border}>
+        <Table striped  bordered className={styles.border}>
           <thead >
-            <tr className={styles.border}>
+            <tr className={styles.tr}>
               <th className={styles.th}>نام کاربر</th>
               <th className={styles.th}>مجموع مبلغ</th>
               <th className={styles.th}>زمان ثبت سفارش</th>
@@ -40,11 +39,11 @@ import { useState } from 'react';
           <tbody>
           
           {currentItems.map((item)=> {
-          return(<tr key={item.id} className={styles.border}>
-            <td>{item.username } {item.lastname} </td>
-            <td>{item.prices}</td>
-            <td>{item.createdAt}</td>
-            <td><a>بررسی سفارش</a> </td>
+          return(<tr key={item.id} className={styles.tr}>
+            <td className={styles.td}>{item.username } {item.lastname} </td>
+            <td className={styles.td}>{item.prices}</td>
+            <td className={styles.td}>{item.createdAt}</td>
+            <td className={styles.td}><a>بررسی سفارش</a> </td>
           </tr>)
          })}
           
@@ -53,12 +52,17 @@ import { useState } from 'react';
         </Table>
         <ReactPaginate 
         breakLabel="..."
-        nextLabel="next>"
+        nextLabel="next"
         onPageChange={handlePageClick}
         pageRangeDisplayed={5}
         pageCount={pageCount}
-        previousLabel="<previous"
+        previousLabel="prev"
         renderOnZeroPageCount={null}
+        containerClassName={styles.pagination}
+        previousLinkClassName={styles.pagination__link}
+        nextLinkClassName={styles.pagination__link}
+        disabledClassName={styles.pagination__link_disabled}
+        activeClassName={styles.pagination__link_active}
        className={styles.paginate} />
     </div>
        
