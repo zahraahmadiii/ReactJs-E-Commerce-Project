@@ -3,14 +3,23 @@ import styles from "./style.module.css"
 import {IoMdCloseCircle} from "react-icons/io"
 import Button from '../button'
 import CkEditors from "../ckEditors"
+import {useDispatch, useSelector} from 'react-redux'
+import {closeModal} from '../../redux/Features/products-slice.js';
  const ProductModal = () => {
+  // const {products} = useSelector(store => store);
+  const dispatch=useDispatch()
+
+  const handleCloseModal=()=>{
+   dispatch(closeModal())
+  }
+
   return (
    <>
    <div className={styles.wraper_modal}>
    <div className={styles.modal}>
     <div className={styles.top}>
     <p>افزودن/ویرایش کالا</p>
-    <IoMdCloseCircle className={styles.close}/>
+    <IoMdCloseCircle className={styles.close} onClick={()=>handleCloseModal()}/>
     </div>
    
     <label className={styles.label}>تصویرکالا :</label>
@@ -33,8 +42,6 @@ import CkEditors from "../ckEditors"
     <div className={styles.savebtn}>
     <Button btnColor={" rgb(7 68 199)"}>{"ذخیره"}</Button>
     </div>
-    
-
    </div>
    </div>
    

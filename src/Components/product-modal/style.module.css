@@ -59,6 +59,6 @@ p{
 }
 .savebtn{
     display: flex;
-justify-content: center;
-padding-top: 1rem;
+    justify-content: center;
+   padding-top: 1rem;
 }

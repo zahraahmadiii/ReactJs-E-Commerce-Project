@@ -24,6 +24,10 @@ reducers:{
     state.openModalAdd = true
 
   },
+  closeModal:(state) => {
+    state.openModalAdd = false
+
+  },
 },
   extraReducers:{
     [getProduct.pending]:(state)=>{
@@ -43,7 +47,7 @@ reducers:{
     });
 
     export default productsSlice.reducer;
-    export const{addProduct}=productsSlice.actions;
+    export const{addProduct,closeModal}=productsSlice.actions;
 // export const fetchProducts = createAsyncThunk("products/fetchProducts", async (info) => {
 //   const {page,limit} = info
 //   const response = await axios.get(`${BASE_URL}/products?_page=${page}&_limit=${limit}`);
