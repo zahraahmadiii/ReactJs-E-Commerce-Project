@@ -60,13 +60,11 @@ const ProductTable = ({item}) => {
         pageCount={pageCount}
         previousLabel="prev"
         renderOnZeroPageCount={null}
-        
         containerClassName={styles.pagination}
         previousLinkClassName={styles.pagination__link}
         nextLinkClassName={styles.pagination__link}
         disabledClassName={styles.pagination__link_disabled}
         activeClassName={styles.pagination__link_active}
-      
        className={styles.paginate}
         />
     </div>

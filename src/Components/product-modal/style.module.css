@@ -11,9 +11,9 @@
 }
 .modal{
     width: 38vw;
-    height: 70%;  
+    height: 75%;  
     display: flex;
-    gap: 0.5rem;
+    gap: 0.25rem;
     flex-direction: column;
     direction: rtl;
     border-radius: 8px;
@@ -61,4 +61,8 @@ p{
     display: flex;
     justify-content: center;
    padding-top: 1rem;
+}
+.para{
+    font-size: 0.6rem;
+    color: red;
 }
