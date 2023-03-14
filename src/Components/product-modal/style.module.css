@@ -11,9 +11,8 @@
 }
 .modal{
     width: 38vw;
-    height: 75%;  
+    height: 95%;  
     display: flex;
-    gap: 0.25rem;
     flex-direction: column;
     direction: rtl;
     border-radius: 8px;
@@ -60,7 +59,7 @@ p{
 .savebtn{
     display: flex;
     justify-content: center;
-   padding-top: 1rem;
+    padding-top: 0.75rem;
 }
 .para{
     font-size: 0.6rem;

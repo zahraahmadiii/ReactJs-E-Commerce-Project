@@ -13,6 +13,8 @@ import {closeModal} from '../../redux/Features/products-slice.js';
   const schema = yup.object({
     productPic:yup.mixed().required("تصویرکالا را وارد کنید"),
     productName:yup.string().required("نام کالا را وارد کنید"),
+    brand:yup.string().required("برند کالا را وارد کنید"),
+    quantity:yup.string().required("تعداد کالا را وارد کنید"),
     category:yup.string().required("دسته بندی را انتخاب کنید"),
   })
 
@@ -48,9 +50,19 @@ const submitForm=(data)=>{
     <label className={styles.label}>تصویرکالا :</label>
     <input type="file" className={styles.file} {...register("productPic")}/>
     <p className={styles.para}>{errors.productPic?.message}</p>
+
     <label className={styles.label}>نام کالا :</label>
     <input type="text" className={styles.file} {...register("productName")}/>
     <p className={styles.para}>{errors.productName?.message}</p>
+
+    <label className={styles.label}>برند کالا:</label>
+    <input type="text" className={styles.file} {...register("brand")}/>
+    <p className={styles.para}>{errors.brand?.message}</p>
+
+    <label className={styles.label}>تعداد:</label>
+    <input type="text" className={styles.file} {...register("quantity")}/>
+    <p className={styles.para}>{errors.quantity?.message}</p>
+
     <label className={styles.label}>دسته بندی:</label>
     <div>
     <select className={styles.select}  {...register("category")}>
