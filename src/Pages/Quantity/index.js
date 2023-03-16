@@ -9,7 +9,7 @@ const Quantity = () => {
 
   
   const {products} = useSelector(store => store);
-  console.log(products)
+  // console.log(products)
 
    const dispatch=useDispatch()
 

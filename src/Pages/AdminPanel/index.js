@@ -7,7 +7,7 @@ import { getOrder, setDelivery } from '../../redux/Features/orders-slice.js';
  const AdminPanel = () => {
 
   const orders = useSelector(store => store.ordersSlice);
-  console.log(orders)
+  // console.log(orders)
 
    const dispatch=useDispatch()
    useEffect(()=>{

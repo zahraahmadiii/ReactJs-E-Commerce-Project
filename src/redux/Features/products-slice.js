@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import {fetchproducts} from "../../../src/Api/Servises/products"
-import { postProducts } from "../../../src/Api/Servises/products";
+import {fetchproducts} from "../../../src/Api/Servises/getProducts"
+import { postProducts } from "../../../src/Api/Servises/postProduct";
 
 export const getProduct = createAsyncThunk("products/fetchList", async () => {
     const response = await fetchproducts();
@@ -8,8 +8,9 @@ export const getProduct = createAsyncThunk("products/fetchList", async () => {
   });
 
   export const postProduct = createAsyncThunk("products/addProduct", async (newProduct) => {
-  const response = await postProducts ();
-  return response.data;
+    console.log(newProduct)
+    const response = await postProducts();
+   return response.data;
 });
  
 const productsSlice = createSlice({
@@ -40,7 +41,18 @@ reducers:{
     [getProduct.fulfilled]:(state, action)=>{
         state.status = 'success';
         state.data = action.payload
-    }
+    },
+  //   [postProduct.pending]:(state)=>{
+  //     state.status = 'pending';
+  //   },
+  //   [postProduct.rejected]:(state)=>{
+  //     state.status = 'rejected';
+      
+  //  },
+  //  [postProduct.fulfilled]:(state, action)=>{
+  //     state.status = 'success';
+  //     state.data = action.payload
+  //  }
 }
    
   

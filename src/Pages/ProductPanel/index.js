@@ -9,7 +9,7 @@ import ProductModal from '../../Components/product-modal/index.js';
  const ProductPanel = () => {
  
   const {products} = useSelector(store => store);
-  console.log(products)
+  // console.log(products)
 
    const dispatch=useDispatch()
 
