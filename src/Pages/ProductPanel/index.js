@@ -6,6 +6,7 @@ import ProductTable from '../../Components/ProductTable/index.js';
 import {useDispatch, useSelector} from 'react-redux'
 import { addProduct, getProduct, postProduct } from '../../redux/Features/products-slice.js';
 import ProductModal from '../../Components/product-modal/index.js';
+import DeleteProductModal from '../../Components/DeleteProduct-modal/index.js';
  const ProductPanel = () => {
  
   const {products} = useSelector(store => store);
@@ -31,7 +32,7 @@ dispatch(addProduct())
     </div>
     {products.openModalAdd && (<ProductModal/>)}
  
-    
+    {products.openModalDelete && (<DeleteProductModal/>)}
    
     </>
     

@@ -19,6 +19,7 @@ const productsSlice = createSlice({
     data:[],
     status:'idle',
     openModalAdd :false,
+    openModalDelete:false,
 },
 reducers:{
   addProduct:(state) => {
@@ -27,6 +28,14 @@ reducers:{
   },
   closeModal:(state) => {
     state.openModalAdd = false
+
+  },
+ OpenDeleteModal:(state) => {
+    state.openModalDelete = true
+
+  },
+  closeDeleteModal:(state) => {
+    state.openModalDelete = false
 
   },
 },
@@ -59,7 +68,7 @@ reducers:{
     });
 
     export default productsSlice.reducer;
-    export const{addProduct,closeModal}=productsSlice.actions;
+    export const{addProduct,closeModal, OpenDeleteModal,closeDeleteModal}=productsSlice.actions;
 
 
 
