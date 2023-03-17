@@ -8,13 +8,12 @@ import {FaRegEdit} from "react-icons/fa"
 import ReactPaginate from 'react-paginate';
 import {useDispatch, useSelector} from 'react-redux'
 import { useState } from 'react';
-import DeleteProductModal from '../DeleteProduct-modal';
-import {closeDeleteModal,OpenDeleteModal} from '../../redux/Features/products-slice.js';
+import {OpenDeleteModal} from '../../redux/Features/products-slice.js';
 
 const ProductTable = ({item}) => {
   console.log(item)
   const dispatch=useDispatch()
-const handelDeleteProduct=()=>{
+  const handelDeleteProduct=()=>{
   dispatch(OpenDeleteModal())
 }
   
