@@ -10,7 +10,7 @@ const Header= () => {
     
    <header className={styles.header}>
     <div className={styles.left}>
-    <img src="/img/logo.jpg"/>
+    <img src="/img/logo.jpg" className={styles.headerimage}/>
     <div className={styles.search}>
       <CiSearch className={styles.searchIcon}/>
       <input type="search" placeholder='جستجو...'/>

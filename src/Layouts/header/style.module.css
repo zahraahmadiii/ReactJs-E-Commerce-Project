@@ -23,7 +23,7 @@ display: flex;
 align-items: center;
  
 }
-img{
+.headerimage{
     width: 13rem;
     height: 8rem;
    

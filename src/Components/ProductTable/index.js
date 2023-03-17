@@ -14,13 +14,13 @@ const ProductTable = ({item}) => {
   console.log(products)
   const [itemOffset, setItemOffset] = useState(0);
 
-  const endOffset = itemOffset + 6;
+  const endOffset = itemOffset + 5;
   console.log(`Loading items from ${itemOffset} to ${endOffset}`);
   const currentItems = products.data.slice(itemOffset, endOffset);
-  const pageCount = Math.ceil(products.data.length / 6);
+  const pageCount = Math.ceil(products.data.length / 5);
 
   const handlePageClick = (event) => {
-    const newOffset = (event.selected * 6) % products.data.length;
+    const newOffset = (event.selected * 5) % products.data.length;
     console.log(
       `User requested page number ${event.selected}, which is offset ${newOffset}`
     );
