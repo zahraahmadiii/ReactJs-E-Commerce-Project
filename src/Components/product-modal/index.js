@@ -4,13 +4,13 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from "yup";
 import {IoMdCloseCircle} from "react-icons/io"
-import { useEffect } from 'react'
 import Button from '../button'
 import CkEditors from "../ckEditors"
 import {useDispatch, useSelector} from 'react-redux'
-import {closeModal} from '../../redux/Features/products-slice.js'
-import { postProduct } from '../../redux/Features/products-slice.js';
+import {closeModal, getProduct} from '../../redux/Features/products-slice.js'
 import { postProducts, uploadImage } from '../../Api/Servises/postProduct';
+import { ToastContainer ,toast} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
  const ProductModal = () => {
 
   const {products} = useSelector(store => store);
@@ -59,40 +59,40 @@ import { postProducts, uploadImage } from '../../Api/Servises/postProduct';
    }
 
   const submitForm=async(data)=>{
-    console.log(data)
-    // let formData=new FormData()
-    // console.log(data.thumbnail)
-    // formData.append("image",data.thumbnail[0]);
-    // const thumbnail =await uploadImage(formData);
-   const thumbnail =await handleUploadImage(data.thumbnail[0]);
-    // formData.append("images",data.images[0]);
-    const image1= await handleUploadImage (data.images[0]);
-    // formData.append("images",data.images[1]);
-    const image2= await handleUploadImage(data.images[1]);
-    const newProduct={
-      name:data.name,
-      thumbnail: thumbnail,
-      images:[image1,image2],
-      brand:data.brand,
-      quantity:data.quantity,
-      price:data.price,
-      category:data.category,
-      description:data.description
+    try{
+      console.log(data)
+      const thumbnail =await handleUploadImage(data.thumbnail[0]);
+      const image1= await handleUploadImage (data.images[0]);
+      const image2= await handleUploadImage(data.images[1]);
+      const newProduct={
+        name:data.name,
+        thumbnail: thumbnail,
+        images:[image1,image2],
+        brand:data.brand,
+        quantity:data.quantity,
+        price:data.price,
+        category:data.category,
+        description:data.description
+      } 
+        postProducts(newProduct)
+        dispatch(getProduct())
+        toast.success('add product successfully');
+      // console.log(newProduct)
+     }catch(error){
+      toast.error("add product fail");
     }
-    postProducts(newProduct)
-    // console.log(newProduct)
- }
-
+    }
+    
 
   const handleCloseModal=()=>{
    dispatch(closeModal())
   }
 
-
-
   return (
    <>
+   
    <div className={styles.wraper_modal}>
+   <ToastContainer/>
    <form className={styles.modal}  onSubmit={handleSubmit(submitForm)}>
     <div className={styles.top}>
     <p>افزودن/ویرایش کالا</p>

@@ -4,7 +4,7 @@ import styles from "./style.module.css"
 import Button from "../../Components/button"
 import ProductTable from '../../Components/ProductTable/index.js';
 import {useDispatch, useSelector} from 'react-redux'
-import { addProduct, getProduct } from '../../redux/Features/products-slice.js';
+import { addProduct, getProduct, postProduct } from '../../redux/Features/products-slice.js';
 import ProductModal from '../../Components/product-modal/index.js';
  const ProductPanel = () => {
  

@@ -8,9 +8,9 @@ export const getProduct = createAsyncThunk("products/fetchList", async () => {
   });
 
   export const postProduct = createAsyncThunk("products/addProduct", async (newProduct) => {
-    console.log(newProduct)
-    const response = await postProducts();
-   return response.data;
+      // console.log(newProduct)
+      const response = await postProducts(); 
+      return response.data; 
 });
  
 const productsSlice = createSlice({
@@ -60,21 +60,9 @@ reducers:{
 
     export default productsSlice.reducer;
     export const{addProduct,closeModal}=productsSlice.actions;
-// export const fetchProducts = createAsyncThunk("products/fetchProducts", async (info) => {
-//   const {page,limit} = info
-//   const response = await axios.get(`${BASE_URL}/products?_page=${page}&_limit=${limit}`);
-//   console.log(response.data)
-//   return response.data;
-// });
-// export const fetchAllProducts = createAsyncThunk("products/fetchAllProducts", async () => {
-//   const response = await axios.get(`${BASE_URL}/products`);
-//   return response.data;
-// });
 
-// export const addTodo = createAsyncThunk("todos/addTodo", async (newTodo) => {
-//   const response = await axios.post(`${BASE_URL}/todos`, newTodo);
-//   return response.data;
-// });
+
+
 // export const deleteTodo = createAsyncThunk("todos/deleteTodo", async (id) => {
 //   const response = await axios.delete(`${BASE_URL}/todos/${id}`);
 //   return response.data;
