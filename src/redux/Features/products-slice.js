@@ -2,7 +2,7 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import {fetchproducts} from "../../../src/Api/Servises/getProducts"
 import { postProducts } from "../../../src/Api/Servises/postProduct";
 import { deleteProducts } from "../../Api/Servises/deleteProduct";
-
+import {updateProducts} from "../../Api/Servises/updateProduct"
 
 export const getProduct = createAsyncThunk("products/fetchList", async () => {
     const response = await fetchproducts();
@@ -17,10 +17,15 @@ export const getProduct = createAsyncThunk("products/fetchList", async () => {
 
 export const deleteProduct = createAsyncThunk("products/deleteproduct", async (id) => {
     console.log(id)
-  const response = await deleteProducts();
+  const response = await deleteProducts(id);
   return response.data;
 });
- 
+
+// export const updateProduct= createAsyncThunk("products/updateproduct", async (editedTodo) => {
+//   const response = await updateProducts();
+//   return response.data;
+// });
+
 const productsSlice = createSlice({
   name: "products",
   initialState:{
@@ -33,26 +38,19 @@ const productsSlice = createSlice({
 reducers:{
   addProduct:(state) => {
     state.openModalAdd = true
-
   },
   closeModal:(state) => {
     state.openModalAdd = false
-
   },
- OpenDeleteModal:(state) => {
+ OpenDeleteModal:(state,action) => {
     state.openModalDelete = true
-
+    state.productId=action.payload
   },
-  closeDeleteModal:(state) => {
+  closeDeleteModal:(state,action) => {
     state.openModalDelete = false
-
+    state.productId=action.payload
   },
-  deleteProductItem:(state,action) =>{
-    state.data.filter((item) => 
-     item.id !==action.payload
-    )
-    console.log(action.payload)
-  }
+
 },
   extraReducers:{
     [getProduct.pending]:(state)=>{
@@ -66,19 +64,7 @@ reducers:{
         state.status = 'success';
         state.data = action.payload
     },
-  //   [deleteProduct.pending]:(state)=>{
-  //     state.status = 'pending';
-  //   },
-  //   [deleteProduct.rejected]:(state)=>{
-  //     state.status = 'rejected';
-  //   },
-  //   [deleteProduct.fulfilled]:(state, action)=>{
-  //     state.status = 'success';
-  //     state.data=state.data.filter((item) => 
-  //     item.id !==action.payload
-  //  )
-  //  }
-   
+
   
   }
 });
@@ -89,38 +75,11 @@ reducers:{
 
 
 
-// export const updateTodo = createAsyncThunk("todos/updateTodo", async (editedTodo) => {
-//   const response = await axios.put(`${BASE_URL}/todos/${editedTodo.id}`,editedTodo);
-//   console.log(response.data)
-//   return response.data;
-// });
 
 
-// const productsSlice = createSlice({
-//   name: "products",
-//   initialState,
-//   reducers: {},
-//   extraReducers: (builder) => {
-//     // fetch
-//     builder.addCase(fetchProducts.pending, (state) => {
-//       return { ...state, loading: true };
-//     });
-//     builder.addCase(fetchProducts.fulfilled, (state, action) => {
-//       return { ...state, loading: false, products: action.payload };
-//     });
-//     builder.addCase(fetchProducts.rejected, (state, action) => {
-//       return { ...state, loading: false, error: action.payload };
-//     });
-//     // fetch all products
-//     builder.addCase(fetchAllProducts.pending, (state) => {
-//       return { ...state, loading: true };
-//     });
-//     builder.addCase(fetchAllProducts.fulfilled, (state, action) => {
-//       return { ...state, loading: false, totalItems: action.payload.length };
-//     });
-//     builder.addCase(fetchAllProducts.rejected, (state, action) => {
-//       return { ...state, loading: false, error: action.payload };
-//     });
+
+
+
 
 
     // add

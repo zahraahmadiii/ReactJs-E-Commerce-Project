@@ -1,21 +1,22 @@
 import styles from "./style.module.css"
 import React from 'react'
 import Button from "../button";
-import {useDispatch} from 'react-redux'
-import {closeDeleteModal,deleteProductItem} from '../../redux/Features/products-slice.js';
+import {useDispatch,useSelector} from 'react-redux'
+import {closeDeleteModal, getProduct} from '../../redux/Features/products-slice.js';
 import { deleteProducts } from "../../Api/Servises/deleteProduct";
 
 
 const DeleteProductModal=()=>{
-
+  const {products} = useSelector(store => store);
   const dispatch=useDispatch()
   const handleCloseDeleteProduct=()=>{
-    dispatch(closeDeleteModal())
+    dispatch(closeDeleteModal(0))
   }
 
   const handleDeleteProduct=()=>{
-   dispatch(deleteProducts())
-  
+   deleteProducts(products.productId)
+   dispatch(closeDeleteModal(0))
+   dispatch(getProduct())
   }
 
   return (

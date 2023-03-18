@@ -11,14 +11,14 @@ import { useState } from 'react';
 import {OpenDeleteModal,deleteProductItem} from '../../redux/Features/products-slice.js';
 
 const ProductTable = ({item}) => {
-  console.log(item)
+  // console.log(item)
   const {products} = useSelector(store => store);
-  console.log(products)
+ 
 
   const dispatch=useDispatch()
   const handelDeleteProduct=(id)=>{
     // console.log(id)
-   dispatch(OpenDeleteModal())
+   dispatch(OpenDeleteModal(id))
    dispatch(deleteProductItem(id))
 
 }
@@ -53,7 +53,8 @@ const ProductTable = ({item}) => {
       </thead>
       <tbody>
         {currentItems.map((item)=> {
-          return(<tr key={item.id} className={styles.tr}>
+          return(
+            <tr key={item.id} className={styles.tr}>
             <td className={styles.td}><img src={`${BASE_URL}/files/${item.thumbnail}`} className={styles.img}/></td>
             <td className={styles.td}>{item.name}</td>
             <td className={styles.td}>{item.category}</td>

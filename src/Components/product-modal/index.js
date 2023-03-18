@@ -14,7 +14,7 @@ import 'react-toastify/dist/ReactToastify.css';
  const ProductModal = () => {
 
   const {products} = useSelector(store => store);
-  // console.log(products)
+
   
   const schema = yup.object({
     thumbnail:yup
@@ -52,6 +52,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 
    const handleUploadImage=async(img)=>{
+    console.log(img)
     let formData=new FormData()
     formData.append("image",img);
     const res =await uploadImage(formData);
@@ -77,7 +78,7 @@ import 'react-toastify/dist/ReactToastify.css';
         postProducts(newProduct)
         dispatch(getProduct())
         toast.success('add product successfully');
-      // console.log(newProduct)
+        // console.log(newProduct)
      }catch(error){
       toast.error("add product fail");
     }
