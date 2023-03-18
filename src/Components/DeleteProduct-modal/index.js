@@ -2,13 +2,20 @@ import styles from "./style.module.css"
 import React from 'react'
 import Button from "../button";
 import {useDispatch} from 'react-redux'
-import {closeDeleteModal} from '../../redux/Features/products-slice.js';
+import {closeDeleteModal,deleteProductItem} from '../../redux/Features/products-slice.js';
+import { deleteProducts } from "../../Api/Servises/deleteProduct";
+
+
 const DeleteProductModal=()=>{
 
   const dispatch=useDispatch()
   const handleCloseDeleteProduct=()=>{
-    console.log("is click")
     dispatch(closeDeleteModal())
+  }
+
+  const handleDeleteProduct=()=>{
+   dispatch(deleteProducts())
+  
   }
 
   return (
@@ -17,7 +24,7 @@ const DeleteProductModal=()=>{
     <div className={styles.modal}>
      <p>آیا از حذف مطمئن هستید؟</p>
      <div className={styles.btns}>
-     <Button btnColor={" red"}>{"بله"}</Button>
+     <Button btnColor={" red"} onClick={()=>handleDeleteProduct()}>{"بله"}</Button>
      <Button btnColor={" rgb(7 68 199)"} onClick={()=>handleCloseDeleteProduct()} >{"خیر"}</Button>
      </div>
      

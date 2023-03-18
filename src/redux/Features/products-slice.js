@@ -1,6 +1,8 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import {fetchproducts} from "../../../src/Api/Servises/getProducts"
 import { postProducts } from "../../../src/Api/Servises/postProduct";
+import { deleteProducts } from "../../Api/Servises/deleteProduct";
+
 
 export const getProduct = createAsyncThunk("products/fetchList", async () => {
     const response = await fetchproducts();
@@ -12,6 +14,12 @@ export const getProduct = createAsyncThunk("products/fetchList", async () => {
       const response = await postProducts(); 
       return response.data; 
 });
+
+export const deleteProduct = createAsyncThunk("products/deleteproduct", async (id) => {
+    console.log(id)
+  const response = await deleteProducts();
+  return response.data;
+});
  
 const productsSlice = createSlice({
   name: "products",
@@ -20,6 +28,7 @@ const productsSlice = createSlice({
     status:'idle',
     openModalAdd :false,
     openModalDelete:false,
+    productId:0,
 },
 reducers:{
   addProduct:(state) => {
@@ -38,6 +47,12 @@ reducers:{
     state.openModalDelete = false
 
   },
+  deleteProductItem:(state,action) =>{
+    state.data.filter((item) => 
+     item.id !==action.payload
+    )
+    console.log(action.payload)
+  }
 },
   extraReducers:{
     [getProduct.pending]:(state)=>{
@@ -51,31 +66,29 @@ reducers:{
         state.status = 'success';
         state.data = action.payload
     },
-  //   [postProduct.pending]:(state)=>{
+  //   [deleteProduct.pending]:(state)=>{
   //     state.status = 'pending';
   //   },
-  //   [postProduct.rejected]:(state)=>{
+  //   [deleteProduct.rejected]:(state)=>{
   //     state.status = 'rejected';
-      
-  //  },
-  //  [postProduct.fulfilled]:(state, action)=>{
+  //   },
+  //   [deleteProduct.fulfilled]:(state, action)=>{
   //     state.status = 'success';
-  //     state.data = action.payload
+  //     state.data=state.data.filter((item) => 
+  //     item.id !==action.payload
+  //  )
   //  }
-}
    
   
-    });
+  }
+});
 
     export default productsSlice.reducer;
-    export const{addProduct,closeModal, OpenDeleteModal,closeDeleteModal}=productsSlice.actions;
+    export const{addProduct,closeModal, OpenDeleteModal,closeDeleteModal,deleteProductItem}=productsSlice.actions;
 
 
 
-// export const deleteTodo = createAsyncThunk("todos/deleteTodo", async (id) => {
-//   const response = await axios.delete(`${BASE_URL}/todos/${id}`);
-//   return response.data;
-// });
+
 // export const updateTodo = createAsyncThunk("todos/updateTodo", async (editedTodo) => {
 //   const response = await axios.put(`${BASE_URL}/todos/${editedTodo.id}`,editedTodo);
 //   console.log(response.data)
