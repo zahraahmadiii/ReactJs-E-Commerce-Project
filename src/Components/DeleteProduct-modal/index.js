@@ -4,7 +4,8 @@ import Button from "../button";
 import {useDispatch,useSelector} from 'react-redux'
 import {closeDeleteModal, getProduct} from '../../redux/Features/products-slice.js';
 import { deleteProducts } from "../../Api/Servises/deleteProduct";
-
+import {toast, ToastContainer } from "react-toastify";
+import {IoMdCloseCircle} from "react-icons/io"
 
 const DeleteProductModal=()=>{
   const {products} = useSelector(store => store);
@@ -14,21 +15,31 @@ const DeleteProductModal=()=>{
   }
 
   const handleDeleteProduct=()=>{
-   deleteProducts(products.productId)
-   dispatch(closeDeleteModal(0))
-   dispatch(getProduct())
+   
+    try{
+      deleteProducts(products.productId)
+      // dispatch(closeDeleteModal(0))
+      dispatch(getProduct())
+      toast.success('delete product successfully');
+    }catch(error){
+      toast.error(" fail delete product ");
+    }
+ 
   }
 
   return (
     <>
     <div className={styles.wraper_modal}>
+    <ToastContainer/>
     <div className={styles.modal}>
-     <p>آیا از حذف مطمئن هستید؟</p>
-     <div className={styles.btns}>
-     <Button btnColor={" red"} onClick={()=>handleDeleteProduct()}>{"بله"}</Button>
-     <Button btnColor={" rgb(7 68 199)"} onClick={()=>handleCloseDeleteProduct()} >{"خیر"}</Button>
-     </div>
-     
+    <IoMdCloseCircle className={styles.close} onClick={()=>handleCloseDeleteProduct()}/>
+    <div className={styles.para} >
+    <p>آیا از حذف مطمئن هستید؟</p>
+    <div className={styles.btns}>
+    <Button btnColor={" red"} onClick={()=>handleDeleteProduct()}>{"بله"}</Button>
+    <Button btnColor={" rgb(7 68 199)"} onClick={()=>handleCloseDeleteProduct()} >{"خیر"}</Button>
+    </div>
+    </div>
     </div>
     </div>
     
