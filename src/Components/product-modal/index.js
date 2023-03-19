@@ -11,11 +11,12 @@ import {closeEditModal, closeModal, getProduct} from '../../redux/Features/produ
 import { postProducts, uploadImage } from '../../Api/Servises/postProduct';
 import { ToastContainer ,toast} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { updateProducts } from '../../Api/Servises/updateProduct';
+
  const ProductModal = () => {
 
   const {products} = useSelector(store => store);
 
-  
   const schema = yup.object({
     thumbnail:yup
     .mixed()
@@ -50,7 +51,6 @@ import 'react-toastify/dist/ReactToastify.css';
    
    const dispatch=useDispatch()
 
-
    const handleUploadImage=async(img)=>{
     console.log(img)
     let formData=new FormData()
@@ -60,28 +60,54 @@ import 'react-toastify/dist/ReactToastify.css';
    }
 
   const submitForm=async(data)=>{
-    try{
-      console.log(data)
-      const thumbnail =await handleUploadImage(data.thumbnail[0]);
-      const image1= await handleUploadImage (data.images[0]);
-      const image2= await handleUploadImage(data.images[1]);
-      const newProduct={
-        name:data.name,
-        thumbnail: thumbnail,
-        images:[image1,image2],
-        brand:data.brand,
-        quantity:data.quantity,
-        price:data.price,
-        category:data.category,
-        description:data.description
-      } 
-        postProducts(newProduct)
-        dispatch(getProduct())
-        toast.success('add product successfully');
-        // console.log(newProduct)
-     }catch(error){
-      toast.error("add product fail");
+    if(products.openModalAdd){
+      try{
+        console.log(data)
+        const thumbnail =await handleUploadImage(data.thumbnail[0]);
+        const image1= await handleUploadImage (data.images[0]);
+        const image2= await handleUploadImage(data.images[1]);
+        const newProduct={
+          name:data.name,
+          thumbnail: thumbnail,
+          images:[image1,image2],
+          brand:data.brand,
+          quantity:data.quantity,
+          price:data.price,
+          category:data.category,
+          description:data.description
+        } 
+          postProducts(newProduct)
+          dispatch(getProduct())
+          toast.success('add product successfully');
+          // console.log(newProduct)
+       }catch(error){
+        toast.error("add product fail");
+      }
+    }else if(products.openModalEdit){
+      try{
+        const thumbnail =await handleUploadImage(data.thumbnail[0]);
+        const image1= await handleUploadImage (data.images[0]);
+        const image2= await handleUploadImage(data.images[1]);
+        const editedProduct={
+          name:data.name,
+          thumbnail: thumbnail,
+          images:[image1,image2],
+          brand:data.brand,
+          quantity:data.quantity,
+          price:data.price,
+          category:data.category,
+          description:data.description
+        } 
+          // dispatch(OpenEditModal(id))
+          updateProducts(products.productId)
+          dispatch(getProduct())
+          toast.success('update product successfully');
+          console.log(editedProduct)
+       }catch(error){
+        toast.error("update product fail");
+      }
     }
+
     }
     
 
@@ -90,21 +116,20 @@ import 'react-toastify/dist/ReactToastify.css';
    dispatch(closeEditModal())
   }
 
-  return (
+  return(
    <>
-   
    <div className={styles.wraper_modal}>
-   <ToastContainer/>
-   <form className={styles.modal}  onSubmit={handleSubmit(submitForm)}>
+    <ToastContainer/>
+   <form className={styles.modal} onSubmit={handleSubmit(submitForm)}>
     <div className={styles.top}>
-    <p>افزودن/ویرایش کالا</p>
+     <p>افزودن/ویرایش کالا</p>
     <IoMdCloseCircle className={styles.close} onClick={()=>handleCloseModal()}/>
     </div>
     <div className={styles.row}>
     <div className={styles.items} >
     <label className={styles.label}>نام کالا :</label>
     <input type="text" className={styles.file} {...register("name")}/>
-    <p className={styles.para}>{errors.name?.message}</p>
+     <p className={styles.para}>{errors.name?.message}</p>
     </div>
     <div className={styles.items}>
     <label className={styles.label}>برند کالا:</label>
@@ -113,18 +138,18 @@ import 'react-toastify/dist/ReactToastify.css';
     </div>
     </div>
     
-  <div className={styles.row}>
-  <div className={styles.items}>
+    <div className={styles.row}>
+    <div className={styles.items}>
     <label className={styles.label}>تصویرکالا :</label>
     <input type="file" className={styles.file} {...register("thumbnail")}/>
     <p className={styles.para}>{errors.thumbnail?.message}</p>
-  </div>
-  <div className={styles.items}>
-   <label className={styles.label}>لیست تصاویرکالا:</label>
+    </div>
+    <div className={styles.items}>
+    <label className={styles.label}>لیست تصاویرکالا:</label>
     <input type="file" className={styles.file} {...register("images")} multiple/>
     <p className={styles.para}>{errors.images?.message}</p>
-  </div>
-   </div>
+    </div>
+    </div>
      <div className={styles.row}>
       <div className={styles.items}>
       <label className={styles.label}>تعداد:</label>
@@ -138,12 +163,10 @@ import 'react-toastify/dist/ReactToastify.css';
       </div>
      </div>
     
- 
-  
     <div>
     <label className={styles.label}>دسته بندی:</label>
     <select className={styles.select}  {...register("category")}>
-    <option ></option>
+    <option></option>
     <option value="لپ تاپ">لپ تاپ</option>
     <option value="تبلت">تبلت</option>
     <option value="موبایل">موبایل</option>
@@ -152,16 +175,17 @@ import 'react-toastify/dist/ReactToastify.css';
    <p className={styles.para}>{errors.category?.message}</p>
     </div>
   
-    <div >
+    <div>
     <label className={styles.label}>توضیحات :</label>
     {/* <CkEditors {...register("description")}/> */}
     <textarea className={styles.textarea} {...register("description")}/>
     <p className={styles.para}>{errors.description?.message}</p>
-   </div>
+    </div>
     <div className={styles.savebtn}>
-      {products.openModalEdit?
-       <Button  btnColor={"gray"} type={"submit"}>{"ویرایش"}</Button>:
-      <Button  btnColor={" rgb(7 68 199)"} type={"submit"}>{"ذخیره"}</Button> }
+
+      {products.openModalEdit ?
+       <Button btnColor={"gray"} type={"submit"}>{"ویرایش"}</Button>:
+       <Button btnColor={" rgb(7 68 199)"} type={"submit"}>{"ذخیره"}</Button>}
    
     </div>
    </form>

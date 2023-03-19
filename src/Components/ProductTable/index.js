@@ -20,6 +20,7 @@ const ProductTable = ({item}) => {
    dispatch(OpenDeleteModal(id))
 }
 const handelEditProduct=(id)=>{
+      // console.log(id)
   dispatch(OpenEditModal(id))
 }
   

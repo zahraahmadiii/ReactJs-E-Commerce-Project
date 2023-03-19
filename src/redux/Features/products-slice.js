@@ -21,10 +21,10 @@ export const deleteProduct = createAsyncThunk("products/deleteproduct", async (i
   return response.data;
 });
 
-// export const updateProduct= createAsyncThunk("products/updateproduct", async (editedTodo) => {
-//   const response = await updateProducts();
-//   return response.data;
-// });
+export const updateProduct= createAsyncThunk("products/updateproduct", async (editedProduct) => {
+  const response = await updateProducts(editedProduct);
+  return response.data;
+});
 
 const productsSlice = createSlice({
   name: "products",
@@ -54,6 +54,7 @@ reducers:{
   OpenEditModal:(state,action) => {
     state.openModalEdit = true
     state.productId=action.payload
+    console.log(action.payload)
   },
   closeEditModal:(state,action) => {
     state.openModalEdit = false
