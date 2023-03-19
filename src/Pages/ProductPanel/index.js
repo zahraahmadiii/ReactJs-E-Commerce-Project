@@ -31,7 +31,7 @@ dispatch(addProduct())
     
     </div>
     {products.openModalAdd && (<ProductModal/>)}
- 
+    {products.openModalEdit && (<ProductModal/>)}
     {products.openModalDelete && (<DeleteProductModal/>)}
    
     </>

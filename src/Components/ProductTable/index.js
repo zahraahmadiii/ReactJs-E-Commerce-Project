@@ -8,7 +8,7 @@ import {FaRegEdit} from "react-icons/fa"
 import ReactPaginate from 'react-paginate';
 import {useDispatch, useSelector} from 'react-redux'
 import { useState } from 'react';
-import {OpenDeleteModal} from '../../redux/Features/products-slice.js';
+import {OpenDeleteModal, OpenEditModal} from '../../redux/Features/products-slice.js';
 
 const ProductTable = ({item}) => {
   const {products} = useSelector(store => store);
@@ -18,6 +18,9 @@ const ProductTable = ({item}) => {
   const handelDeleteProduct=(id)=>{
     // console.log(id)
    dispatch(OpenDeleteModal(id))
+}
+const handelEditProduct=(id)=>{
+  dispatch(OpenEditModal(id))
 }
   
 
@@ -55,7 +58,7 @@ const ProductTable = ({item}) => {
             <td className={styles.td}><img src={`${BASE_URL}/files/${item.thumbnail}`} className={styles.img}/></td>
             <td className={styles.td}>{item.name}</td>
             <td className={styles.td}>{item.category}</td>
-            <td className={styles.td}> <BsTrash className={styles.trash} onClick={()=>handelDeleteProduct(item.id)}/> <FaRegEdit className={styles.edit}/></td>
+            <td className={styles.td}> <BsTrash className={styles.trash} onClick={()=>handelDeleteProduct(item.id)}/> <FaRegEdit className={styles.edit} onClick={()=>handelEditProduct(item.id)}/></td>
           </tr>)
          })}
        

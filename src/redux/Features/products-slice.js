@@ -34,6 +34,7 @@ const productsSlice = createSlice({
     openModalAdd :false,
     openModalDelete:false,
     productId:0,
+    openModalEdit:false
 },
 reducers:{
   addProduct:(state) => {
@@ -48,6 +49,14 @@ reducers:{
   },
   closeDeleteModal:(state,action) => {
     state.openModalDelete = false
+    state.productId=action.payload
+  },
+  OpenEditModal:(state,action) => {
+    state.openModalEdit = true
+    state.productId=action.payload
+  },
+  closeEditModal:(state,action) => {
+    state.openModalEdit = false
     state.productId=action.payload
   },
 
@@ -70,7 +79,7 @@ reducers:{
 });
 
     export default productsSlice.reducer;
-    export const{addProduct,closeModal, OpenDeleteModal,closeDeleteModal,deleteProductItem}=productsSlice.actions;
+    export const{addProduct,closeModal, OpenDeleteModal,closeDeleteModal,deleteProductItem, OpenEditModal,closeEditModal}=productsSlice.actions;
 
 
 

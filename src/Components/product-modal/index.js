@@ -7,7 +7,7 @@ import {IoMdCloseCircle} from "react-icons/io"
 import Button from '../button'
 import CkEditors from "../ckEditors"
 import {useDispatch, useSelector} from 'react-redux'
-import {closeModal, getProduct} from '../../redux/Features/products-slice.js'
+import {closeEditModal, closeModal, getProduct} from '../../redux/Features/products-slice.js'
 import { postProducts, uploadImage } from '../../Api/Servises/postProduct';
 import { ToastContainer ,toast} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -87,6 +87,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
   const handleCloseModal=()=>{
    dispatch(closeModal())
+   dispatch(closeEditModal())
   }
 
   return (
@@ -158,7 +159,10 @@ import 'react-toastify/dist/ReactToastify.css';
     <p className={styles.para}>{errors.description?.message}</p>
    </div>
     <div className={styles.savebtn}>
-    <Button  btnColor={" rgb(7 68 199)"} type={"submit"}>{"ذخیره"}</Button>
+      {products.openModalEdit?
+       <Button  btnColor={"gray"} type={"submit"}>{"ویرایش"}</Button>:
+      <Button  btnColor={" rgb(7 68 199)"} type={"submit"}>{"ذخیره"}</Button> }
+   
     </div>
    </form>
    </div>
