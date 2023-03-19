@@ -89,6 +89,7 @@ import { updateProducts } from '../../Api/Servises/updateProduct';
         const image1= await handleUploadImage (data.images[0]);
         const image2= await handleUploadImage(data.images[1]);
         const editedProduct={
+          id:products.productId,
           name:data.name,
           thumbnail: thumbnail,
           images:[image1,image2],
@@ -98,17 +99,15 @@ import { updateProducts } from '../../Api/Servises/updateProduct';
           category:data.category,
           description:data.description
         } 
-          // dispatch(OpenEditModal(id))
-          updateProducts(products.productId)
+        // console.log(editedProduct)
+         updateProducts(editedProduct) 
           dispatch(getProduct())
           toast.success('update product successfully');
-          console.log(editedProduct)
-       }catch(error){
-        toast.error("update product fail");
-      }
+         }catch(error){
+          toast.error("update product fail");
+         }
     }
-
-    }
+  } 
     
 
   const handleCloseModal=()=>{
