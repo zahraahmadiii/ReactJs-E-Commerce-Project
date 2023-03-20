@@ -4,9 +4,10 @@ import React, { useEffect } from 'react'
 import styles from "./style.module.css"
 import Button from "../../Components/button"
 import {useDispatch, useSelector} from 'react-redux'
-import { getProduct } from '../../redux/Features/products-slice.js';
+import { getProduct, updateQuantity } from '../../redux/Features/products-slice.js';
 import { updatePrices } from '../../Api/Servises/updatePrice/index.js';
 import { ToastContainer ,toast} from 'react-toastify';
+import { updateQuantities } from '../../Api/Servises/updateQuantity/index.js';
 
 const Quantity = () => {
 
@@ -20,19 +21,37 @@ const Quantity = () => {
 
 ///handle edit price and quantity ///////////////////////////
    const handlePriceAndQuantity=()=>{
-   try{
-    const newPrice={
-      id:products.productId,
-      price:products.price,
-     }
-       updatePrices(newPrice)
-       dispatch(getProduct())
-       console.log(newPrice)
-       toast.success('update price successfully');
-   }
-   catch(error){
-    toast.error("update price fail");
-   }
+
+    if(products.price){
+      try{
+        const newPrice={
+          id:products.productId,
+          price:products.price,
+         }
+           updatePrices(newPrice)
+           dispatch(getProduct())
+           console.log(newPrice)
+           toast.success('update price successfully');
+       }
+       catch(error){
+        toast.error("update price fail");
+       }
+    } else if (products.quantity){
+      try{
+        const newQuantity={
+          id:products.productId,
+          quantity:products.quantity,
+         }
+         updateQuantities(newQuantity)
+         dispatch(getProduct())
+        
+           toast.success('update quantity successfully');
+       }
+       catch(error){
+        toast.error("update quantity fail");
+       }
+    }
+ 
    }
   //  ////////////////////////////////////////////////////////
    

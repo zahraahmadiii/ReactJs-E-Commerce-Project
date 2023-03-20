@@ -4,6 +4,7 @@ import { postProducts } from "../../../src/Api/Servises/postProduct";
 import { deleteProducts } from "../../Api/Servises/deleteProduct";
 import { updatePrices } from "../../Api/Servises/updatePrice";
 import {updateProducts} from "../../Api/Servises/updateProduct"
+import { updateQuantities } from "../../Api/Servises/updateQuantity";
 
 export const getProduct = createAsyncThunk("products/fetchList", async () => {
     const response = await fetchproducts();
@@ -33,6 +34,12 @@ export const updatePrice= createAsyncThunk("products/updateprice", async(newPric
   return response.data;
 });
 
+export const updateQuantity= createAsyncThunk("products/updateprice", async(newQuantity) => {
+  console.log(newQuantity)
+  const response = await updateQuantities(newQuantity);
+  return response.data;
+});
+
 const productsSlice = createSlice({
   name: "products",
   initialState:{
@@ -43,6 +50,7 @@ const productsSlice = createSlice({
     productId:0,
     openModalEdit:false,
     price:0,
+    quantity:0,
 },
 reducers:{
   addProduct:(state) => {
@@ -75,6 +83,14 @@ reducers:{
   getNewPrice:(state,action)=>{
     state.price=action.payload
     console.log(action.payload)
+  },
+  editQuantity:(state,action) =>{
+    state.productId=action.payload
+    console.log(action.payload)
+  },
+  getNewQuantity:(state,action)=>{
+    state.quantity=action.payload
+    console.log(action.payload)
   }
 },
   extraReducers:{
@@ -95,7 +111,7 @@ reducers:{
 });
 
     export default productsSlice.reducer;
-    export const{addProduct,closeModal, OpenDeleteModal,closeDeleteModal,deleteProductItem, OpenEditModal,closeEditModal,editPrice,getNewPrice}=productsSlice.actions;
+    export const{addProduct,closeModal, OpenDeleteModal,closeDeleteModal,deleteProductItem, OpenEditModal,closeEditModal,editPrice,getNewPrice,editQuantity,getNewQuantity}=productsSlice.actions;
 
 
 

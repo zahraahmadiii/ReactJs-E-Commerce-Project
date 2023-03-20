@@ -74,5 +74,6 @@ vertical-align: middle;
 }
 .Input{
   width: 5rem;
+  height: 1.5rem;
   background-color:rgb(221, 221, 221) ;
 }

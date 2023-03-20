@@ -4,7 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import ReactPaginate from 'react-paginate';
 import { useDispatch, useSelector} from 'react-redux'
 import { useState } from 'react';
-import { editPrice, getNewPrice } from "../../redux/Features/products-slice";
+import { editPrice, editQuantity, getNewPrice, getNewQuantity } from "../../redux/Features/products-slice";
 
 const QuantityTable = ({item}) => {
     // console.log(item)
@@ -23,7 +23,19 @@ const QuantityTable = ({item}) => {
     }
     const onBlurInput=()=>{
     setPrice(false)
+    setQuantity(false)
     }
+
+    const clickToChangeQuantity=(id)=>{
+      console.log(id)
+      dispatch(editQuantity(id))
+      setQuantity(true)
+    }
+    const handleChangeQuantity=(event)=>{
+    console.log(event)
+    dispatch(getNewQuantity(event))
+    }
+    
 // pagination ///////////////////////////////////////////////////////
     const {products} = useSelector(store => store);
     // console.log(products)
@@ -56,15 +68,24 @@ const QuantityTable = ({item}) => {
       {currentItems.map((item)=> {
           return(<tr key={item.id}  className={styles.tr}>
             <td className={styles.td}>{item.name}</td>
-
+{/* 
             { price ? <td className={styles.td}><input  price={item.price} onChange={(event)=>handleChangePrice(event.target.value)} onBlur={()=>onBlurInput()} className={styles.Input}/></td> :
              <td className={styles.td}><span onClick={()=>clickToChangePrice(item.id)}>{item.price}</span></td>
-            }
-           
-         
+            } */}
           
-
-            <td className={styles.td}>{item.quantity}</td>
+         
+         <td className={styles.td} key={item.id}> 
+         { price ?
+         <input  price={item.price} onChange={(event)=>handleChangePrice(event.target.value)} onBlur={()=>onBlurInput()} className={styles.Input}/> :
+            <span onClick={()=>clickToChangePrice(item.id)}>{item.price}</span>}
+         </td>
+            
+          
+            <td className={styles.td}>
+            { quantity ?
+            <input  price={item.quantity} onChange={(event)=>handleChangeQuantity(event.target.value)} onBlur={()=>onBlurInput()} className={styles.Input}/> :
+            <span onClick={()=>clickToChangeQuantity(item.id)}>{item.quantity}</span>}
+              </td>
           </tr >)
          })}
        
