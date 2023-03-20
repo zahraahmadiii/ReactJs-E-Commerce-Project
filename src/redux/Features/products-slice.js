@@ -2,6 +2,7 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import {fetchproducts} from "../../../src/Api/Servises/getProducts"
 import { postProducts } from "../../../src/Api/Servises/postProduct";
 import { deleteProducts } from "../../Api/Servises/deleteProduct";
+import { updatePrices } from "../../Api/Servises/updatePrice";
 import {updateProducts} from "../../Api/Servises/updateProduct"
 
 export const getProduct = createAsyncThunk("products/fetchList", async () => {
@@ -21,8 +22,14 @@ export const deleteProduct = createAsyncThunk("products/deleteproduct", async (i
   return response.data;
 });
 
-export const updateProduct= createAsyncThunk("products/updateproduct", async (editedProduct) => {
+export const updateProduct= createAsyncThunk("products/updateproduct", async(editedProduct) => {
   const response = await updateProducts(editedProduct);
+  return response.data;
+});
+
+export const updatePrice= createAsyncThunk("products/updateprice", async(newPrice) => {
+  console.log(newPrice)
+  const response = await updatePrices(newPrice);
   return response.data;
 });
 
@@ -34,7 +41,8 @@ const productsSlice = createSlice({
     openModalAdd :false,
     openModalDelete:false,
     productId:0,
-    openModalEdit:false
+    openModalEdit:false,
+    price:0,
 },
 reducers:{
   addProduct:(state) => {
@@ -60,7 +68,14 @@ reducers:{
     state.openModalEdit = false
     state.productId=action.payload
   },
-
+  editPrice:(state,action) =>{
+    state.productId=action.payload
+    console.log(action.payload)
+  },
+  getNewPrice:(state,action)=>{
+    state.price=action.payload
+    console.log(action.payload)
+  }
 },
   extraReducers:{
     [getProduct.pending]:(state)=>{
@@ -80,57 +95,7 @@ reducers:{
 });
 
     export default productsSlice.reducer;
-    export const{addProduct,closeModal, OpenDeleteModal,closeDeleteModal,deleteProductItem, OpenEditModal,closeEditModal}=productsSlice.actions;
+    export const{addProduct,closeModal, OpenDeleteModal,closeDeleteModal,deleteProductItem, OpenEditModal,closeEditModal,editPrice,getNewPrice}=productsSlice.actions;
 
-
-
-
-
-
-
-
-
-
-
-    // add
-    // builder.addCase(addTodo.pending, (state) => {
-    //   return { ...state, loading: true };
-    // });
-    // builder.addCase(addTodo.fulfilled, (state, action) => {
-    //   return {
-    //     ...state,
-    //     loading: false,
-    //     todos: [...state.todos, action.payload],
-    //   };
-    // });
-    // builder.addCase(addTodo.rejected,(state,action)=>{return{...state,loading:false,error: action.payload}})
-    // delete
-    // builder.addCase(deleteTodo.pending, (state,action) => {
-    //     console.log(action)
-    //     return { ...state, loading: true };
-    //   });
-    //   builder.addCase(deleteTodo.fulfilled, (state, action) => {
-    //     return {
-    //       ...state,
-    //       loading: false,
-    //       todos:  state.todos.filter(todo=>todo.id !== action.payload.id),
-    //     };
-    //   });
-    //   builder.addCase(deleteTodo.rejected,(state,action)=>{return{...state,loading:false,error: action.payload}})
-    // update
-    // builder.addCase(updateTodo.pending, (state,action) => {
-    //     console.log(action)
-    //     return { ...state, loading: true };
-    //   });
-    //   builder.addCase(updateTodo.fulfilled, (state, action) => {
-
-    //     return {
-    //       ...state,
-    //       loading: false,
-    //     //   todos:  ,
-    //     };
-
-    //   });
-    //   builder.addCase(updateTodo.rejected,(state,action)=>{return{...state,loading:false,error: action.payload}})
 
 

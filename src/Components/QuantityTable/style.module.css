@@ -72,3 +72,7 @@ vertical-align: middle;
 .pagination__link_disabled a {
   color: rgb(115, 115, 115);
 }
+.Input{
+  width: 5rem;
+  background-color:rgb(221, 221, 221) ;
+}
