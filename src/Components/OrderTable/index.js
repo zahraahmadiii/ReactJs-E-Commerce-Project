@@ -3,12 +3,15 @@ import styles from "./style.module.css"
 import Table from 'react-bootstrap/Table';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import ReactPaginate from 'react-paginate';
-import { useSelector} from 'react-redux'
+import { useDispatch, useSelector} from 'react-redux'
 import { useState } from 'react';
+import { openOrdersModal } from '../../redux/Features/orders-slice';
 
 
  const OrderTable= ({item}) => {
-  console.log(item)
+  // console.log(item)
+
+  ///pagination////////////////////////////////////////////////////////////
   const orders = useSelector(store => store.ordersSlice);
   const [itemOffset, setItemOffset] = useState(0);
 
@@ -24,6 +27,12 @@ import { useState } from 'react';
     );
     setItemOffset(newOffset);
   };
+
+    // open order modal///////////////////////////////////////////
+    const dispatch=useDispatch()
+    const handleOpenOrderModal=(id)=>{
+     dispatch(openOrdersModal()) 
+    }
   return (
     
         <div className={styles.table}>
@@ -43,7 +52,7 @@ import { useState } from 'react';
             <td className={styles.td}>{item.username } {item.lastname} </td>
             <td className={styles.td}>{item.prices}</td>
             <td className={styles.td}>{item.createdAt}</td>
-            <td className={styles.td}><a>بررسی سفارش</a> </td>
+            <td className={styles.td}><p onClick={()=>handleOpenOrderModal(item.id)} className={styles.checkOrder}>بررسی سفارش</p></td>
           </tr>)
          })}
           

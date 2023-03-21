@@ -73,3 +73,13 @@
   .pagination__link_disabled a {
     color: rgb(115, 115, 115);
   }
+  .checkOrder{
+   font-weight:bold;
+   cursor: pointer;
+   color: rgb(7 68 199);
+   font-size: 12px;
+  }
+  .checkOrder:hover{
+    color:red;
+   }
+  

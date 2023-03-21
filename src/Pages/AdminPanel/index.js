@@ -4,6 +4,7 @@ import React, { useEffect } from 'react'
 import OrderTable from "../../Components/OrderTable/index.js";
 import {useDispatch, useSelector} from 'react-redux'
 import { getOrder, setDelivery } from '../../redux/Features/orders-slice.js';
+import OrderModal from "../../Components/Order-modal"
  const AdminPanel = () => {
 
   const orders = useSelector(store => store.ordersSlice);
@@ -17,6 +18,7 @@ import { getOrder, setDelivery } from '../../redux/Features/orders-slice.js';
    
 
   return (
+    <>
     <div className={styles.page}>
        <AdminHeader/>
     <div className={styles.main}>
@@ -30,12 +32,9 @@ import { getOrder, setDelivery } from '../../redux/Features/orders-slice.js';
  
         <OrderTable item={orders.data}/>
     </div>
-      
-     
-
-    
     </div>
-
+    {orders.openModal && (<OrderModal/>)}
+    </>
   )
 }
 

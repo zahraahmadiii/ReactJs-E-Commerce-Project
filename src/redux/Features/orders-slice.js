@@ -14,11 +14,14 @@ const ordersSlice = createSlice({
     data:[],
     status:'idle',
     delivery:false,
+    openModal:false,
 },
 reducers:{
 setDelivery:(state,action)=>{
-  console.log("dfgdfgd")
   state.delivery=action.payload.delivery
+},
+openOrdersModal:(state,action)=>{
+ state.openModal=true;
 }
 },
   extraReducers:{
@@ -39,4 +42,4 @@ setDelivery:(state,action)=>{
     });
 
     export default ordersSlice.reducer;
-export const{setDelivery}=ordersSlice.actions;
+export const{setDelivery,openOrdersModal}=ordersSlice.actions;
