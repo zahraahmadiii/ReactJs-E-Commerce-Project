@@ -23,11 +23,15 @@ import OrderModal from "../../Components/Order-modal"
        <AdminHeader/>
     <div className={styles.main}>
     <div className={styles.filter}>
-        
+        <div className={styles.left}>
         <input  type="radio" className={styles.check} name="deliverystatus"checked={!orders.delivery} onChange={()=>dispatch(setDelivery({delivery:false}))}/>
         <label className={styles.label}> سفارش های در انتظار ارسال </label>
+        </div>
+        <div className={styles.right}>
         <input  type="radio" className={styles.check} name="deliverystatus" checked={orders.delivery} onChange={()=>dispatch(setDelivery({delivery:true}))}/>
         <label className={styles.label}> سفارش های تحویل شده</label>
+        </div>
+       
         </div>
  
         <OrderTable item={orders.data}/>

@@ -126,12 +126,12 @@ import { updateProducts } from '../../Api/Servises/updateProduct';
     </div>
     <div className={styles.row}>
     <div className={styles.items} >
-    <label className={styles.label}>نام کالا :</label>
+    <label className={styles.Label}>نام کالا :</label>
     <input type="text" className={styles.file} {...register("name")}/>
      <p className={styles.para}>{errors.name?.message}</p>
     </div>
     <div className={styles.items}>
-    <label className={styles.label}>برند کالا:</label>
+    <label className={styles.Label}>برند کالا:</label>
     <input type="text" className={styles.file} {...register("brand")}/>
     <p className={styles.para}>{errors.brand?.message}</p>
     </div>
@@ -139,31 +139,31 @@ import { updateProducts } from '../../Api/Servises/updateProduct';
     
     <div className={styles.row}>
     <div className={styles.items}>
-    <label className={styles.label}>تصویرکالا :</label>
+    <label className={styles.Label}>تصویرکالا :</label>
     <input type="file" className={styles.file} {...register("thumbnail")}/>
     <p className={styles.para}>{errors.thumbnail?.message}</p>
     </div>
     <div className={styles.items}>
-    <label className={styles.label}>لیست تصاویرکالا:</label>
+    <label className={styles.Label}>لیست تصاویرکالا:</label>
     <input type="file" className={styles.file} {...register("images")} multiple/>
     <p className={styles.para}>{errors.images?.message}</p>
     </div>
     </div>
      <div className={styles.row}>
       <div className={styles.items}>
-      <label className={styles.label}>تعداد:</label>
+      <label className={styles.Label}>تعداد:</label>
       <input type="text" className={styles.file} {...register("quantity")}/>
       <p className={styles.para}>{errors.quantity?.message}</p>
       </div>
       <div className={styles.items}>
-       <label className={styles.label}>قیمت:</label>
+       <label className={styles.Label}>قیمت:</label>
       <input type="text" className={styles.file} {...register("price")}/>
       <p className={styles.para}>{errors.price?.message}</p>
       </div>
      </div>
     
     <div>
-    <label className={styles.label}>دسته بندی:</label>
+    <label className={styles.Label}>دسته بندی:</label>
     <select className={styles.select}  {...register("category")}>
     <option></option>
     <option value="لپ تاپ">لپ تاپ</option>
@@ -175,7 +175,7 @@ import { updateProducts } from '../../Api/Servises/updateProduct';
     </div>
   
     <div>
-    <label className={styles.label}>توضیحات :</label>
+    <label className={styles.Label}>توضیحات :</label>
     {/* <CkEditors {...register("description")}/> */}
     <textarea className={styles.textarea} {...register("description")}/>
     <p className={styles.para}>{errors.description?.message}</p>

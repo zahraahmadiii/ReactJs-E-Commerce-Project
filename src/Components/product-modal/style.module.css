@@ -23,9 +23,9 @@
     padding-right: 1rem;
    overflow: scroll;
 }
-.label{
+.Label{
     color: rgb(7 68 199);
-    font-size: 1rem;
+    /* font-size: 1rem; */
     font-weight: bold;
 }
 p{
