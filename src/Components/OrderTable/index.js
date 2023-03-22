@@ -36,7 +36,7 @@ import { openOrdersModal } from '../../redux/Features/orders-slice';
   return (
     
         <div className={styles.table}>
-        <Table striped  bordered className={styles.border}>
+        <Table size="sm" striped  bordered className={styles.border}>
           <thead >
             <tr className={styles.tr}>
               <th className={styles.th}>نام کاربر</th>
