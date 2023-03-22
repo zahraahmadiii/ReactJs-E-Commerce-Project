@@ -4,15 +4,24 @@ import {IoMdCloseCircle} from "react-icons/io"
 import Table from 'react-bootstrap/Table';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Button from '../button';
-
+import { useDispatch, useSelector} from 'react-redux'
+import { closeOrdersModal } from '../../redux/Features/orders-slice';
 const OrderModal = () => {
+
+  const orders = useSelector(store => store.ordersSlice);
+  console.log(orders)
+
+  const dispatch=useDispatch()
+  const handleCloseMOdal=()=>{
+    dispatch(closeOrdersModal()) 
+  }
   return (
    <>
    <div className={styles.wrapper_orderModal}>
     <div className={styles.modal} >
       <div className={styles.top}>
         <p className={styles.para}>سفارشات مشتری</p>
-        <IoMdCloseCircle className={styles.close}/>
+        <IoMdCloseCircle className={styles.close} onClick={()=>handleCloseMOdal()}/>
        </div>
        <div className={styles.middle}>
         <div className={styles.data}>

@@ -22,7 +22,10 @@ setDelivery:(state,action)=>{
 },
 openOrdersModal:(state,action)=>{
  state.openModal=true;
-}
+},
+closeOrdersModal:(state,action)=>{
+  state.openModal=false;
+ }
 },
   extraReducers:{
     [getOrder.pending]:(state)=>{
@@ -42,4 +45,4 @@ openOrdersModal:(state,action)=>{
     });
 
     export default ordersSlice.reducer;
-export const{setDelivery,openOrdersModal}=ordersSlice.actions;
+export const{setDelivery,openOrdersModal,closeOrdersModal}=ordersSlice.actions;
