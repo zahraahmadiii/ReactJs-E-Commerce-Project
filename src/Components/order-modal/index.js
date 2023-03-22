@@ -1,6 +1,10 @@
 import React from 'react'
 import styles from "./style.module.css"
 import {IoMdCloseCircle} from "react-icons/io"
+import Table from 'react-bootstrap/Table';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Button from '../button';
+
 const OrderModal = () => {
   return (
    <>
@@ -11,17 +15,53 @@ const OrderModal = () => {
         <IoMdCloseCircle className={styles.close}/>
        </div>
        <div className={styles.middle}>
-        <label>نام مشتری :</label>
-        <p> زهرااحمدی</p>
-        <label>آدرس:</label>
-        <p>fff</p>
-        <label>تلفن:</label>
-        <p>ffff</p>
-        <label>زمان تحویل:</label>
-        <p>ffff</p>
-        <label>زمان سفارش:</label>
-        <p>fffffff</p>
+        <div className={styles.data}>
+        <label className={styles.lable}>نام مشتری :</label>
+        <p> </p>
+        </div>
+        <div className={styles.data}>
+        <label className={styles.lable}>آدرس:</label>
+        <p></p>
+        </div>
+       <div className={styles.data}>
+       <label className={styles.lable}>تلفن:</label>
+        <p></p>
        </div>
+       <div className={styles.data}>
+       <label className={styles.lable}>زمان تحویل:</label>
+        <p></p>
+       </div>
+       <div className={styles.data}>
+       <label className={styles.lable}>زمان سفارش:</label>
+        <p></p>
+       </div>
+       
+       </div>
+       <div className={styles.bottom}>
+       <Table size="sm" bordered className={styles.bordertable}>
+      <thead>
+        <tr className={styles.tr}>
+          <th className={styles.th}>کالا</th>
+          <th className={styles.th}>قیمت</th>
+          <th className={styles.th} >تعداد</th>
+        </tr>
+      </thead>
+      <tbody>
+  
+          <tr className={styles.tr}>
+          <td className={styles.td}></td>
+          <td className={styles.td}></td>
+          <td className={styles.td}></td>
+          </tr>
+        
+       
+      </tbody>
+    </Table>
+       </div>
+       <div  className={styles.bottom}>
+       <Button btnColor={" rgb(7 68 199)"}>{"تحویل شد"}</Button>
+       </div>
+    
     </div>
    </div>
    </>

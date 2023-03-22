@@ -24,8 +24,46 @@
     direction: rtl;
     border-radius: 8px;
     border: 3px solid #ffef5c;
-    padding: 0.15rem;
+    padding: 1.5rem;
     background-color: aliceblue;
     padding-right: 1rem;
    /* overflow: scroll; */
 }
+.para{
+  color: rgb(157, 157, 157);  
+}
+.top{
+    display: flex;
+    justify-content: space-between;
+}
+.data{
+    display: flex;
+    gap: 6px;
+}
+.lable{
+    color:  rgb(7 68 199);
+    font-weight: bold;
+}
+.bordertable{
+  border-radius: 3px;
+  overflow: scroll;
+  background-color: rgb(255, 255, 255);
+  border: 1px solid #c7deff;
+  box-shadow: 1px 1px 2px 2px blue,  3px 3px 3px 3px #ffef5c,2px 2px 5px 5px rgb(134, 134, 134);
+  }
+  .tr{
+    color:rgb(7 68 199); 
+  }
+  .td{
+    text-align: center;
+    vertical-align: middle;
+  }
+  .th{
+      color: rgb(101, 101, 101);
+      text-align: center;
+    }
+    .bottom{
+    padding-top: 1rem;
+    display: flex;
+   justify-content: center;
+    }
