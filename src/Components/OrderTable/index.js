@@ -16,15 +16,15 @@ import { openOrdersModal } from '../../redux/Features/orders-slice';
   const [itemOffset, setItemOffset] = useState(0);
 
   const endOffset = itemOffset + 6;
-  console.log(`Loading items from ${itemOffset} to ${endOffset}`);
+  // console.log(`Loading items from ${itemOffset} to ${endOffset}`);
   const currentItems = orders.data.slice(itemOffset, endOffset);
   const pageCount = Math.ceil(orders.data.length / 6);
 
   const handlePageClick = (event) => {
     const newOffset = (event.selected * 6) % orders.data.length;
-    console.log(
-      `User requested page number ${event.selected}, which is offset ${newOffset}`
-    );
+    // console.log(
+    //   `User requested page number ${event.selected}, which is offset ${newOffset}`
+    // );
     setItemOffset(newOffset);
   };
 
@@ -32,7 +32,7 @@ import { openOrdersModal } from '../../redux/Features/orders-slice';
     const dispatch=useDispatch()
     const handleOpenOrderModal=(id)=>{
       console.log(id)
-     dispatch(openOrdersModal()) 
+     dispatch(openOrdersModal(id)) 
     }
   return (
     
@@ -49,11 +49,14 @@ import { openOrdersModal } from '../../redux/Features/orders-slice';
           <tbody>
           
           {currentItems.map((item)=> {
-          return(<tr key={item.id} className={styles.tr}>
+          return(
+            <tr key={item.id} className={styles.tr}>
             <td className={styles.td}>{item.username } {item.lastname} </td>
             <td className={styles.td}>{item.prices}</td>
             <td className={styles.td}>{item.createdAt}</td>
-            <td className={styles.td}><p onClick={()=>handleOpenOrderModal(item.id)} className={styles.checkOrder}>بررسی سفارش</p></td>
+            <td className={styles.td}>
+              <p onClick={()=>handleOpenOrderModal(item.id)} className={styles.checkOrder}>بررسی سفارش</p>
+            </td>
           </tr>)
          })}
           
