@@ -88,7 +88,10 @@ const OrderModal = () => {
        })}
 
        <div  className={styles.bottom}>
-       <Button btnColor={" rgb(7 68 199)"}>{"تحویل شد"}</Button>
+        {orders.delivery ?
+        <p>زمان تحویل :</p> :
+         <Button btnColor={" rgb(7 68 199)"}>{"تحویل شد"}</Button>}
+      
        </div>
     </div>
    </div>
