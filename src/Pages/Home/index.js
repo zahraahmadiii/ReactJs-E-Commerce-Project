@@ -8,7 +8,7 @@ import ControlledCarousel from '../../Components/Carousel';
   return (
     <>
       <Header/>
-   
+      <ControlledCarousel/>
      <div className={styles.products}>
        <Link to="/Products">گوشی موبایل</Link>
        <Link to="/Products">تبلت</Link>
@@ -16,7 +16,7 @@ import ControlledCarousel from '../../Components/Carousel';
        <Link to="/Products">ایرپاد</Link>
      </div>
 
-   <ControlledCarousel/>
+  
     </>
   )
 }
