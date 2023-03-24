@@ -4,14 +4,4 @@
     gap: 2rem;
     
 }
-.top{
-    display: flex;
-    flex-direction: column;
-    gap:4rem;
 
-}
-
-.sliderWraper{
-    display: flex;
-
-}
