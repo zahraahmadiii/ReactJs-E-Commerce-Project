@@ -3,11 +3,17 @@ import styles from "./style.module.css"
 import { Link } from 'react-router-dom';
 import Header from '../../Layouts/header';
 import ControlledCarousel from '../../Components/Carousel';
+import ProductSwiper from '../../Components/productSwiper-one'
+
 
  const Home = () => {
   return (
     <>
       <Header/>
+      <div className={styles.ProductSwiper}>
+      <ProductSwiper/>
+      </div>
+   
       <ControlledCarousel/>
      <div className={styles.products}>
        <Link to="/Products">گوشی موبایل</Link>
