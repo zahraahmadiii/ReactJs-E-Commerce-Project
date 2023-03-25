@@ -5,18 +5,22 @@ import Header from '../../Layouts/header';
 import ControlledCarousel from '../../Components/Carousel';
 import ProductSwiper from '../../Components/productSwiper-one'
 import MobileSwiper from '../../Components/productSwiper-two';
+import TabletSwiper from '../../Components/productSwiper-three';
+import AirpodSwiper from '../../Components/productSwiper-four';
 
 
  const Home = () => {
   return (
     <>
+    <div className={styles.homePage}>
       <Header/>
       <div className={styles.ProductSwiper}>
       <ProductSwiper/>
       <div className={styles.wraperProducts}>
       <MobileSwiper/>
-      <div>
-        fffffffffff
+      <div className={styles.wraperProduct}>
+        <TabletSwiper/>
+        <AirpodSwiper/>
       </div>
       </div>
      
@@ -30,7 +34,7 @@ import MobileSwiper from '../../Components/productSwiper-two';
        <Link to="/Products">ایرپاد</Link>
      </div>
 
-  
+     </div>
     </>
   )
 }
