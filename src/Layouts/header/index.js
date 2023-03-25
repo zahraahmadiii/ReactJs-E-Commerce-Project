@@ -20,7 +20,7 @@ const Header= () => {
     </div>
     
    <div className={styles.right}>
-   <Slider/>
+   {/* <Slider/> */}
     <div className={styles.links}>
      <Navbar/> 
    

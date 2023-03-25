@@ -13,7 +13,13 @@ import MobileSwiper from '../../Components/productSwiper-two';
       <Header/>
       <div className={styles.ProductSwiper}>
       <ProductSwiper/>
+      <div className={styles.wraperProducts}>
       <MobileSwiper/>
+      <div>
+        fffffffffff
+      </div>
+      </div>
+     
       </div>
    
       <ControlledCarousel/>
