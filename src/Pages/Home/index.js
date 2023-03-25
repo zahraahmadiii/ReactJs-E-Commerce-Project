@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import Header from '../../Layouts/header';
 import ControlledCarousel from '../../Components/Carousel';
 import ProductSwiper from '../../Components/productSwiper-one'
+import MobileSwiper from '../../Components/productSwiper-two';
 
 
  const Home = () => {
@@ -12,6 +13,7 @@ import ProductSwiper from '../../Components/productSwiper-one'
       <Header/>
       <div className={styles.ProductSwiper}>
       <ProductSwiper/>
+      <MobileSwiper/>
       </div>
    
       <ControlledCarousel/>

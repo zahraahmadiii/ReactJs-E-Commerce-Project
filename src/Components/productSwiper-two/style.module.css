@@ -1,0 +1,17 @@
+.mobileWraper{
+    width: 50rem;
+    height: 20rem; 
+    border:none;
+    /* position: absolute;
+    top: 13.5rem;
+    left: 4rem; */
+}
+.mobileSwiper{
+    width: 45rem;
+    height: 12rem; 
+   border: 2px solid yellow;
+}
+.mobileImg{
+    width: 4rem;
+    height: 4rem;
+}
