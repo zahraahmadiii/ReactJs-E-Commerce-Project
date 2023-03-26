@@ -28,10 +28,10 @@ import AirpodSwiper from '../../Components/productSwiper-four';
    
       <ControlledCarousel/>
      <div className={styles.products}>
-       <Link to="/Products">گوشی موبایل</Link>
-       <Link to="/Products">تبلت</Link>
-       <Link to="/Products">لپ تاپ</Link>
-       <Link to="/Products">ایرپاد</Link>
+       <Link to="/Products"  className={styles.products}>گوشی موبایل</Link>
+       <Link to="/Products"  className={styles.products}>تبلت</Link>
+       <Link to="/Products"  className={styles.products}>لپ تاپ</Link>
+       <Link to="/Products"  className={styles.products}>ایرپاد</Link>
      </div>
 
      </div>
