@@ -8,21 +8,13 @@ console.log(item)
 
   return (
     <>
-    {item.map((obj)=>{
-      return(
-        <div key={obj.id} className={styles.wrapperCard}>
-         <img src={`${BASE_URL}/files/${obj.thumbnail}`}  className={styles.cardImg}/>
-         <p className={styles.cardPara}>{obj.name}</p>
-         <p className={styles.cardPara}>{obj.price}</p>
+   
+        <div  className={styles.wrapperCard}>
+         <img src={`${BASE_URL}/files/${item.thumbnail}`}  className={styles.cardImg}/>
+         <p className={styles.cardPara}>{item.name}</p>
+         <p className={styles.cardPara}>{item.price}</p>
         </div>
-          )
-     })}
-    
-   
-   
  
-  
-    
    
     </>
   )

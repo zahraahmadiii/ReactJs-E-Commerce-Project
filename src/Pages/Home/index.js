@@ -11,6 +11,7 @@ import Card from '../../Components/Card';
 import { getProduct } from '../../redux/Features/products-slice';
 import {useDispatch, useSelector} from 'react-redux'
 import Footer from '../../Layouts/Footer';
+import { Category } from '../../Components/Category';
 
 
  const Home = () => {
@@ -41,14 +42,24 @@ import Footer from '../../Layouts/Footer';
       {/* <ControlledCarousel/> */}
   
        <Link to="/Products"  className={styles.products}>موبایل</Link>
+       <div className={styles.wraper_mobile}>
+        <Category str="موبایل"/>
+       </div>
        <Link to="/Products"  className={styles.products}>تبلت</Link>
+       <div className={styles.wraper_mobile}>
+        <Category str="تبلت"/>
+       </div>
        <Link to="/Products"  className={styles.products}>لپ تاپ</Link>
+       <div className={styles.wraper_mobile}>
+        <Category str="لپ تاپ"/>
+       </div>
        <Link to="/Products"  className={styles.products}>ایرپاد</Link>
+       <div className={styles.wraper_mobile}>
+        <Category str="ایرپاد"/>
+       </div>
     
 
-     <div className={styles.cards}>
-      <Card item={products.data}/>
-     </div>
+  
       <Footer/>
      </div>
     </>
