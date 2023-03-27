@@ -10,6 +10,7 @@ import AirpodSwiper from '../../Components/productSwiper-four';
 import Card from '../../Components/Card';
 import { getProduct } from '../../redux/Features/products-slice';
 import {useDispatch, useSelector} from 'react-redux'
+import Footer from '../../Layouts/Footer';
 
 
  const Home = () => {
@@ -48,7 +49,7 @@ import {useDispatch, useSelector} from 'react-redux'
      <div className={styles.cards}>
       <Card item={products.data}/>
      </div>
-  
+      <Footer/>
      </div>
     </>
   )
