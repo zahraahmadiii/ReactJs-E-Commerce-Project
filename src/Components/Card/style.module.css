@@ -1,5 +1,22 @@
 .wrapperCard{
-    width: 10rem;
-    height: 12rem;
-    background-color: gray;
+    width: 16rem;
+    height: 16rem;
+    background-color: rgb(255, 255, 255);
+    border: 2px solid rgb(7 68 199);
+    border-radius: 8px;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+   
+}
+.cardImg{
+    width: 78%;
+    height: 40%;
+}
+.cardPara{
+    color: rgb(65, 65, 65);
+    font-size: 0.8rem;
+    direction: rtl;
 }
