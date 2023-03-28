@@ -1,14 +1,14 @@
 .wrapperCard{
-    width: 15rem;
-    height: 16rem;
+    width: 14rem;
+    height: 15rem;
     background-color: rgb(255, 255, 255);
     border: 2px solid rgb(7 68 199);
     border-radius: 8px;
-   display: flex;
-   flex-direction: column;
-   align-items: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     gap: 1rem;
- 
+    box-shadow: 1px 1px 2px 2px blue,  3px 3px 3px 3px #ffef5c,2px 2px 3px 3px rgb(134, 134, 134);
    
 }
 .cardImg{
@@ -25,6 +25,6 @@
 }
 .wrapperData{
     background-color: aliceblue;
-    width: 14.5rem;
-    height: 9rem;
+    width: 13.5rem;
+    height: 8rem;
 }
