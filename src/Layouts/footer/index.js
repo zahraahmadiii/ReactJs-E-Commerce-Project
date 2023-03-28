@@ -41,15 +41,13 @@ const Footer = () => {
     </div>
 
     <div className={styles.rows}>
-    <h6 className={styles.h6}></h6>
-        <p></p>
-        <p></p>
-        <p></p>
+    <h6 className={styles.h6}>راهنمای خرید از بست بای</h6>
+        <p className={styles.para}> نحوه ثبت سفارش</p>
+        <p className={styles.para}>رویه ارسال سفارش</p>
+        <p className={styles.para}>شیوه های پرداخت</p>
     </div>
 
-   
     </div>
-  
     </div>
    </>
   )
