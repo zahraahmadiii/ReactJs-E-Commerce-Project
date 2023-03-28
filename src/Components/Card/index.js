@@ -8,14 +8,14 @@ console.log(item)
 
   return (
     <>
-   
         <div  className={styles.wrapperCard}>
          <img src={`${BASE_URL}/files/${item.thumbnail}`}  className={styles.cardImg}/>
-         <p className={styles.cardPara}>{item.name}</p>
-         <p className={styles.cardPara}>{item.price}</p>
+         <div  className={styles.wrapperData}>
+          <p className={styles.cardPara}>{item.name}</p>
+          <p className={styles.cardPara}>{item.price}</p>
+         </div>
+       
         </div>
- 
-   
     </>
   )
 }

@@ -39,22 +39,22 @@ import { Category } from '../../Components/Category';
      
       </div>
    
-      {/* <ControlledCarousel/> */}
+      <ControlledCarousel/>
   
        <Link to="/Products"  className={styles.products}>موبایل</Link>
-       <div className={styles.wraper_mobile}>
+       <div>
         <Category str="موبایل"/>
        </div>
        <Link to="/Products"  className={styles.products}>تبلت</Link>
-       <div className={styles.wraper_mobile}>
+       <div >
         <Category str="تبلت"/>
        </div>
        <Link to="/Products"  className={styles.products}>لپ تاپ</Link>
-       <div className={styles.wraper_mobile}>
+       <div>
         <Category str="لپ تاپ"/>
        </div>
        <Link to="/Products"  className={styles.products}>ایرپاد</Link>
-       <div className={styles.wraper_mobile}>
+       <div >
         <Category str="ایرپاد"/>
        </div>
     

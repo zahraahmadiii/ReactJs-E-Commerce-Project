@@ -1,5 +1,5 @@
 .wrapperCard{
-    width: 16rem;
+    width: 15rem;
     height: 16rem;
     background-color: rgb(255, 255, 255);
     border: 2px solid rgb(7 68 199);
@@ -8,15 +8,23 @@
    flex-direction: column;
    align-items: center;
     gap: 1rem;
-    padding: 1rem;
+ 
    
 }
 .cardImg{
     width: 78%;
     height: 40%;
+    padding: 1rem;
 }
 .cardPara{
     color: rgb(65, 65, 65);
     font-size: 0.8rem;
     direction: rtl;
+    padding-right: 1rem;
+    padding-top:0.7rem ;
+}
+.wrapperData{
+    background-color: aliceblue;
+    width: 14.5rem;
+    height: 9rem;
 }

@@ -1,6 +1,7 @@
 import React,{useState ,useEffect} from 'react'
 import {getProductsCategory} from '../../Api/Servises/getCategories'
 import Card from '../Card'
+import styles from "./style.module.css"
 
 const getProduct=async(str)=>{
 
@@ -18,7 +19,7 @@ useEffect(()=>{
   return (
    
   
-     <div >
+     <div className={styles.wraper_products}>
       {products.map((item)=> <Card key={item.id} item={item}/>)} 
      </div>
  

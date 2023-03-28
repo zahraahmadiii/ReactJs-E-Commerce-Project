@@ -1,0 +1,7 @@
+.wraper_products{
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+    padding: 2rem 4rem;
+    flex-wrap: wrap;
+}
