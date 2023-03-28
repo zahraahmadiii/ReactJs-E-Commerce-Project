@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import styles from "./style.module.css"
 import { Link, useNavigate } from 'react-router-dom';
 import Button from '../../Components/button';
@@ -19,25 +19,20 @@ const LoginPanel = () => {
     handleSubmit,
    formState:{errors} } = useForm({ resolver:yupResolver(schema),mode:"onChange" })
    
-  //  const [loginData, setLoginData] = useState({
-  //   username: '',
-  //   password: ''
-  //   });
+  
 
 const navigate=useNavigate()
 
-const submitForm = async(e)=>{
-  e.preventDefault();
-//   try {
-//     const res = await loginService(loginData);
-//     Cookies.set('token', res.accessToken);
-//     localStorage.setItem('token', res.accessToken)
-//     localStorage.setItem('refresh_token', res.refreshToken)
-//     navigate("/LoginPanel/AdminPanel")
-// } catch (err) {
-//     console.log(err)
-// }
-
+const submitForm= async(data)=>{
+  try {
+    const res = await loginService(data);
+    Cookies.set('token', res.accessToken);
+    localStorage.setItem('token', res.accessToken)
+    localStorage.setItem('refresh_token', res.refreshToken)
+    navigate("/LoginPanel/AdminPanel")
+} catch (err) {
+    console.log(err)
+}
   
 }
   
@@ -48,7 +43,7 @@ const submitForm = async(e)=>{
         <img src="/img/logo.jpg"  className={styles.logo}/>
         
          <label> نام کاربری:  </label>
-          <input type="text" name="userName" className={styles.input} {...register("userName")}/>
+          <input type="text" name="userName" className={styles.input} {...register("userName")} />
           <p className={styles.para}>{errors.userName?.message}</p>
 
          <label>   رمزعبور:  </label>
