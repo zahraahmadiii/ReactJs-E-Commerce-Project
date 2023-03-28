@@ -1,11 +1,12 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styles from "./style.module.css"
 import { Link, useNavigate } from 'react-router-dom';
 import Button from '../../Components/button';
 import { useForm } from "react-hook-form";
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from "yup";
-
+import { loginService } from '../../Api/Servises/auth';
+import Cookies from "js-cookie";
 const LoginPanel = () => {
 
   const schema = yup.object({
@@ -18,13 +19,26 @@ const LoginPanel = () => {
     handleSubmit,
    formState:{errors} } = useForm({ resolver:yupResolver(schema),mode:"onChange" })
    
-  
+  //  const [loginData, setLoginData] = useState({
+  //   username: '',
+  //   password: ''
+  //   });
 
 const navigate=useNavigate()
 
-const submitForm=(data)=>{
-  navigate("/LoginPanel/AdminPanel")
-  console.log(data)
+const submitForm = async(e)=>{
+  e.preventDefault();
+//   try {
+//     const res = await loginService(loginData);
+//     Cookies.set('token', res.accessToken);
+//     localStorage.setItem('token', res.accessToken)
+//     localStorage.setItem('refresh_token', res.refreshToken)
+//     navigate("/LoginPanel/AdminPanel")
+// } catch (err) {
+//     console.log(err)
+// }
+
+  
 }
   
   return (
@@ -34,7 +48,7 @@ const submitForm=(data)=>{
         <img src="/img/logo.jpg"  className={styles.logo}/>
         
          <label> نام کاربری:  </label>
-          <input type="text" name="userName" className={styles.input} {...register("userName")} />
+          <input type="text" name="userName" className={styles.input} {...register("userName")}/>
           <p className={styles.para}>{errors.userName?.message}</p>
 
          <label>   رمزعبور:  </label>
