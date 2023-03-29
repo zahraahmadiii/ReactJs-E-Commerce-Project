@@ -12,7 +12,7 @@ console.log(item)
   const navigate=useNavigate()
   const handleShowDetails=(id)=>{
    dispatch(showProductDetail(id)) 
-   navigate("/Products/ProductDetail")
+   navigate(`/Products/ProductDetail/${id}`)
   }
 
   return (
