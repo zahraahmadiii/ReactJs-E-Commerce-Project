@@ -5,17 +5,23 @@ import OrderTable from "../../Components/OrderTable/index.js";
 import {useDispatch, useSelector} from 'react-redux'
 import { getOrder, setDelivery } from '../../redux/Features/orders-slice.js';
 import OrderModal from "../../Components/Order-modal"
+import { Navigate } from "react-router-dom";
  const AdminPanel = () => {
 
   const orders = useSelector(store => store.ordersSlice);
-  // console.log(orders)
+ 
 
    const dispatch=useDispatch()
    useEffect(()=>{
     dispatch(getOrder({delivery:orders.delivery}))
    },[orders.delivery])
 
-   
+   useEffect(() => {
+     const token=localStorage.getItem("token")
+   if(!token){
+    Navigate("/LoginPanel")
+  }
+   },[])
 
   return (
     <>
@@ -31,9 +37,7 @@ import OrderModal from "../../Components/Order-modal"
         <input  type="radio" className={styles.check} name="deliverystatus" checked={orders.delivery} onChange={()=>dispatch(setDelivery({delivery:true}))}/>
         <label className={styles.label}> سفارش های تحویل شده</label>
         </div>
-       
         </div>
- 
         <OrderTable item={orders.data}/>
     </div>
     </div>
