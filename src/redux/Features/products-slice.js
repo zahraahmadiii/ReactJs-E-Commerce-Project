@@ -51,6 +51,7 @@ const productsSlice = createSlice({
     openModalEdit:false,
     price:0,
     quantity:0,
+    editedProduct:{},
 },
 reducers:{
   addProduct:(state) => {
@@ -69,12 +70,14 @@ reducers:{
   },
   OpenEditModal:(state,action) => {
     state.openModalEdit = true
-    state.productId=action.payload
+    // state.productId=action.payload
+    state.editedProduct=action.payload
     console.log(action.payload)
   },
   closeEditModal:(state,action) => {
     state.openModalEdit = false
-    state.productId=action.payload
+    // state.productId=action.payload
+    state.editedProduct=action.payload
   },
   editPrice:(state,action) =>{
     state.productId=action.payload

@@ -19,9 +19,9 @@ const ProductTable = ({item}) => {
     // console.log(id)
    dispatch(OpenDeleteModal(id))
 }
-const handelEditProduct=(id)=>{
+const handelEditProduct=(item)=>{
       // console.log(id)
-  dispatch(OpenEditModal(id))
+  dispatch(OpenEditModal(item))
 }
   
 
@@ -59,7 +59,7 @@ const handelEditProduct=(id)=>{
             <td className={styles.td}><img src={`${BASE_URL}/files/${item.thumbnail}`} className={styles.img}/></td>
             <td className={styles.td}>{item.name}</td>
             <td className={styles.td}>{item.category}</td>
-            <td className={styles.td}> <BsTrash className={styles.trash} onClick={()=>handelDeleteProduct(item.id)}/> <FaRegEdit className={styles.edit} onClick={()=>handelEditProduct(item.id)}/></td>
+            <td className={styles.td}> <BsTrash className={styles.trash} onClick={()=>handelDeleteProduct(item.id)}/> <FaRegEdit className={styles.edit} onClick={()=>handelEditProduct(item)}/></td>
           </tr>)
          })}
        

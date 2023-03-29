@@ -18,8 +18,8 @@ import DeleteProductModal from '../../Components/DeleteProduct-modal/index.js';
     dispatch(getProduct())
    },[dispatch])
 
-const handelAddProduct=()=>{
-dispatch(addProduct())
+ const handelAddProduct=()=>{
+  dispatch(addProduct())
 }
    
   return (
@@ -30,7 +30,7 @@ dispatch(addProduct())
     <ProductTable item={products.data}/>
     
     </div>
-    {products.openModalAdd && (<ProductModal/>)}
+    {products.openModalAdd && ( <ProductModal/>)}
     {products.openModalEdit && (<ProductModal/>)}
     {products.openModalDelete && (<DeleteProductModal/>)}
    

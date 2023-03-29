@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import styles from "./style.module.css"
 import { useForm } from "react-hook-form";
 import { yupResolver } from '@hookform/resolvers/yup';
@@ -46,6 +46,7 @@ import { updateProducts } from '../../Api/Servises/updateProduct';
 
   const {
     register,
+    reset,
     handleSubmit,
    formState:{errors} } = useForm({ resolver:yupResolver(schema),mode:"onChange" })
    
@@ -58,6 +59,11 @@ import { updateProducts } from '../../Api/Servises/updateProduct';
     const res =await uploadImage(formData);
     return res.data.filename
    }
+   useEffect(()=>{
+    if(products.openModalEdit){
+     reset(products.editedProduct)
+    }
+   },[])
 
   const submitForm=async(data)=>{
     if(products.openModalAdd){
@@ -86,10 +92,16 @@ import { updateProducts } from '../../Api/Servises/updateProduct';
     }else if(products.openModalEdit){
       try{
         const thumbnail =await handleUploadImage(data.thumbnail[0]);
-        const image1= await handleUploadImage (data.images[0]);
-        const image2= await handleUploadImage(data.images[1]);
+        let image1= await handleUploadImage (data.images[0]);
+        let image2= await handleUploadImage(data.images[1]);
+        if(!image1 ){
+          image1=products.editedProduct.images[0]
+        }
+        if(!image2 ){
+          image2=products.editedProduct.images[1]
+        }
         const editedProduct={
-          id:products.productId,
+          id:products.editedProduct.id,
           name:data.name,
           thumbnail: thumbnail,
           images:[image1,image2],
