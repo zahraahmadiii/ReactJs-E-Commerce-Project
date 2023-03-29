@@ -2,6 +2,7 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import {fetchproducts} from "../../../src/Api/Servises/getProducts"
 import { postProducts } from "../../../src/Api/Servises/postProduct";
 import { deleteProducts } from "../../Api/Servises/deleteProduct";
+import { getDetails } from "../../Api/Servises/getProductDetail";
 import { updatePrices } from "../../Api/Servises/updatePrice";
 import {updateProducts} from "../../Api/Servises/updateProduct"
 import { updateQuantities } from "../../Api/Servises/updateQuantity";
@@ -40,6 +41,12 @@ export const updateQuantity= createAsyncThunk("products/updateprice", async(newQ
   return response.data;
 });
 
+export const getProductDetail = createAsyncThunk("products/productDetail", async (id) => {
+  console.log(id)
+const response = await getDetails(id);
+return response.data;
+});
+
 const productsSlice = createSlice({
   name: "products",
   initialState:{
@@ -73,6 +80,8 @@ reducers:{
     // state.productId=action.payload
     state.editedProduct=action.payload
     console.log(action.payload)
+    state.productId=action.payload
+    // console.log(action.payload)
   },
   closeEditModal:(state,action) => {
     state.openModalEdit = false
@@ -81,19 +90,22 @@ reducers:{
   },
   editPrice:(state,action) =>{
     state.productId=action.payload
-    console.log(action.payload)
+    // console.log(action.payload)
   },
   getNewPrice:(state,action)=>{
     state.price=action.payload
-    console.log(action.payload)
+    // console.log(action.payload)
   },
   editQuantity:(state,action) =>{
     state.productId=action.payload
-    console.log(action.payload)
+    // console.log(action.payload)
   },
   getNewQuantity:(state,action)=>{
     state.quantity=action.payload
-    console.log(action.payload)
+    // console.log(action.payload)
+  },
+  showProductDetail:(state,action)=>{
+    state.productId=action.payload
   }
 },
   extraReducers:{
@@ -114,7 +126,7 @@ reducers:{
 });
 
     export default productsSlice.reducer;
-    export const{addProduct,closeModal, OpenDeleteModal,closeDeleteModal,deleteProductItem, OpenEditModal,closeEditModal,editPrice,getNewPrice,editQuantity,getNewQuantity}=productsSlice.actions;
+    export const{addProduct,closeModal, OpenDeleteModal,closeDeleteModal,deleteProductItem, OpenEditModal,closeEditModal,editPrice,getNewPrice,editQuantity,getNewQuantity,showProductDetail}=productsSlice.actions;
 
 
 

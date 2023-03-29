@@ -1,0 +1,22 @@
+.wrapper{
+  width: 26rem;
+  height: 17rem;
+  border:none;
+  position: absolute;
+  top: 11.15rem;
+  left: 4.45rem;
+}
+.wrapperSwiper{
+  width: 30rem;
+  height: 23rem;
+  background-color: rgb(7 68 199);
+}
+.laptopImgOne{
+  width: 30rem;
+ height: 24rem;
+}
+.laptopImg{
+width: 100%;
+height: 100%;
+object-fit: cover;
+}
