@@ -31,7 +31,9 @@ const Routs = () => {
         <Route path='/Cart/CheckOut/Payment/SuccessPay' element={<SuccessPay/>}></Route>
         <Route path='/Categories' element={<Categories/>}></Route>
         <Route path='/Products' element={<Products/>}></Route>
-        <Route path='/Products/ProductDetail' element={<ProductDetail/>}></Route>
+        <Route path='/Products/ProductDetail/' >
+          <Route path=':productId' element={<ProductDetail/>}></Route>
+        </Route>
       
     </Routes>
     </>
