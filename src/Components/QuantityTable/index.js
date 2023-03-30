@@ -18,9 +18,9 @@ const QuantityTable = ({item}) => {
       dispatch(editPrice(id))
       setPrice(true)
     }
-    const handleChangePrice=(event)=>{
-    console.log(event)
-    dispatch(getNewPrice(event))
+    const handleChangePrice=(event,id)=>{
+    // console.log(event)
+    dispatch(getNewPrice({price:event,id:id}))
     }
     const onBlurInput=()=>{
     setPrice(false)
@@ -28,13 +28,13 @@ const QuantityTable = ({item}) => {
     }
 
     const clickToChangeQuantity=(id)=>{
-      console.log(id)
+      // console.log(id)
       dispatch(editQuantity(id))
       setQuantity(true)
     }
-    const handleChangeQuantity=(event)=>{
-    console.log(event)
-    dispatch(getNewQuantity(event))
+    const handleChangeQuantity=(event,id)=>{
+    // console.log(event)
+    dispatch(getNewQuantity({quantity:event,id:id}))
     }
     
 // pagination ///////////////////////////////////////////////////////
@@ -72,12 +72,12 @@ const QuantityTable = ({item}) => {
 
            <td className={styles.td} key={item.id}> 
            { price && products.productId==item.id?
-           <input  price={item.price} onChange={(event)=>handleChangePrice(event.target.value)} onBlur={()=>onBlurInput()} className={styles.Input}/> :
+           <input  price={item.price} onChange={(event)=>handleChangePrice(event.target.value,item.id)} onBlur={()=>onBlurInput()} className={styles.Input}/> :
             <span onClick={()=>clickToChangePrice(item.id)}>{item.price}</span>}
            </td>
             <td className={styles.td}>
             { quantity && products.productId==item.id?
-            <input  price={item.quantity} onChange={(event)=>handleChangeQuantity(event.target.value)} onBlur={()=>onBlurInput()} className={styles.Input}/> :
+            <input  price={item.quantity} onChange={(event)=>handleChangeQuantity(event.target.value,item.id)} onBlur={()=>onBlurInput()} className={styles.Input}/> :
             <span onClick={()=>clickToChangeQuantity(item.id)}>{item.quantity}</span>}
               </td>
           </tr >)

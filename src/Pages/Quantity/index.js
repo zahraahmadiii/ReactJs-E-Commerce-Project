@@ -20,29 +20,31 @@ const Quantity = () => {
    },[dispatch])
 
 ///handle edit price and quantity ///////////////////////////
-   const handlePriceAndQuantity=()=>{
+   const handlePriceAndQuantity=async()=>{
 
     if(products.price){
+
       try{
         const newPrice={
           id:products.productId,
           price:products.price,
          }
-           updatePrices(newPrice)
+           const res= await Promise.all(products.price.map((item)=> updatePrices(item)))
            dispatch(getProduct())
-           console.log(newPrice)
+          //  console.log(newPrice)
            toast.success('update price successfully');
        }
        catch(error){
         toast.error("update price fail");
        }
-    } else if (products.quantity){
+    } 
+     if (products.quantity){
       try{
         const newQuantity={
           id:products.productId,
           quantity:products.quantity,
          }
-         updateQuantities(newQuantity)
+         const res= await Promise.all(products.quantity.map((item)=> updateQuantities(item)))
          dispatch(getProduct())
         
            toast.success('update quantity successfully');
