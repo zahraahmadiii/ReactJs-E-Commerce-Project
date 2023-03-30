@@ -29,8 +29,8 @@ const ProductDetail = () => {
            <div className={styles.wraperAllData}>
               <p className={styles.name}>{product.name}</p>
               <p className={styles.brand}>{product.brand}</p>
-              <p className={styles.price}>{product.price}</p>
               <p className={styles.desc}>{product.description}</p>
+              <p className={styles.price}>{product.price}</p>
              </div>
              <Link to="/Products/ProductDetail"><Button btnColor={" rgb(7 68 199)"}>{"افزودن به سبد خرید"}</Button></Link>
            </div>
