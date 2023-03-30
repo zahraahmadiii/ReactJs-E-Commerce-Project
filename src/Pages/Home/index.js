@@ -3,10 +3,10 @@ import styles from "./style.module.css"
 import { Link } from 'react-router-dom';
 import Header from '../../Layouts/header';
 import ControlledCarousel from '../../Components/Carousel';
-// import ProductSwiper from '../../Components/ProductSwiper'
+import ProductSwiper from '../../Components/productSwiper-one'
 import MobileSwiper from '../../Components/productSwiper-two'
 import TabletSwiper from '../../Components/productSwiper-three'
-import AirpodSwiper from '../../Components/productSwiper-one'
+import AirpodSwiper from '../../Components/productSwiper-four'
 import Category from  '../../Components/Category'
 import Footer from '../../Layouts/Footer'
  const Home = () => {
@@ -15,7 +15,7 @@ import Footer from '../../Layouts/Footer'
     <div className={styles.homePage}>
       <Header/>
       <div className={styles.ProductSwiper}>
-      {/* <ProductSwiper/> */}
+      <ProductSwiper/>
       <div className={styles.wraperProducts}>
       <MobileSwiper/>
       <div className={styles.wraperProduct}>
