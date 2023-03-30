@@ -9,7 +9,7 @@ const getProduct=async(str)=>{
     return res.data
 }
 
-export const Category = ({str}) => {
+ const Category = ({str}) => {
 
 const [products,setProducts]=useState([])
 
@@ -25,3 +25,4 @@ useEffect(()=>{
      </div>
   )
 }
+export default Category;
