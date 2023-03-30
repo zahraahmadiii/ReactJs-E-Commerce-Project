@@ -5,7 +5,7 @@ import OrderTable from "../../Components/OrderTable/index.js";
 import {useDispatch, useSelector} from 'react-redux'
 import { getOrder, setDelivery } from '../../redux/Features/orders-slice.js';
 import OrderModal from "../../Components/Order-modal"
-import { Navigate } from "react-router-dom";
+import { Navigate, useNavigate } from "react-router-dom";
  const AdminPanel = () => {
 
   const orders = useSelector(store => store.ordersSlice);
@@ -16,10 +16,12 @@ import { Navigate } from "react-router-dom";
     dispatch(getOrder({delivery:orders.delivery}))
    },[orders.delivery])
 
+   const navigate=useNavigate()
+
    useEffect(() => {
      const token=localStorage.getItem("token")
-   if(!token){
-    Navigate("/LoginPanel")
+     if(!token){
+    navigate("/LoginPanel")
   }
    },[])
 
