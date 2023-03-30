@@ -6,7 +6,6 @@ import Cart from "../Pages/Cart"
 import AdminPanel from '../Pages/AdminPanel'
 import ProductPanel from "../Pages/ProductPanel"
 import Quantity from '../Pages/Quantity'
-// import OrdersPanel from '../Pages/OrdersPanel'
 import CheckOut from '../Pages/Checkout'
 import Payment from '../Pages/Payment'
 import FailPay from '../Pages/FailPay'

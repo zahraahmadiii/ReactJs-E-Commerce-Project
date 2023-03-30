@@ -1,16 +1,18 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import styles from "./style.module.css"
 import { Link, useNavigate } from 'react-router-dom';
 import Button from '../../Components/button';
 import { useForm } from "react-hook-form";
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from "yup";
-
+import { loginService } from '../../Api/Servises/auth';
+import Cookies from "js-cookie";
+import { instance } from '../../Api/Constants';
 const LoginPanel = () => {
 
   const schema = yup.object({
-    userName:yup.string().required("نام کاربری الزامی است"),
-    passWord:yup.string().required("رمزعبور را وارد کنید"),
+    username:yup.string().required("نام کاربری الزامی است"),
+    password:yup.string().required("رمزعبور را وارد کنید"),
   })
 
   const {
@@ -18,13 +20,22 @@ const LoginPanel = () => {
     handleSubmit,
    formState:{errors} } = useForm({ resolver:yupResolver(schema),mode:"onChange" })
    
+
+ const navigate=useNavigate()
+
+  const submitForm= async(data)=>{
+   const res = await loginService(data);
+   console.log(res)
+  try {
+    const res = await loginService(data);
+    Cookies.set('token', res.accessToken);
+    localStorage.setItem('token', JSON.stringify(res.accessToken))
+    localStorage.setItem('refresh_token', res.refreshToken)
+    navigate("/LoginPanel/AdminPanel")
+} catch (err) {
+    console.log(err)
+}
   
-
-const navigate=useNavigate()
-
-const submitForm=(data)=>{
-  navigate("/LoginPanel/AdminPanel")
-  console.log(data)
 }
   
   return (
@@ -34,12 +45,12 @@ const submitForm=(data)=>{
         <img src="/img/logo.jpg"  className={styles.logo}/>
         
          <label> نام کاربری:  </label>
-          <input type="text" name="userName" className={styles.input} {...register("userName")} />
-          <p className={styles.para}>{errors.userName?.message}</p>
+          <input type="text" name="username" className={styles.input} {...register("username")} />
+          <p className={styles.para}>{errors.username?.message}</p>
 
          <label>   رمزعبور:  </label>
-          <input type="text" name="passWord" className={styles.input} {...register("passWord")}/>
-          <p className={styles.para}>{errors.passWord?.message}</p>
+          <input type="text" name="password" className={styles.input} {...register("password")}/>
+          <p className={styles.para}>{errors.password?.message}</p>
 
           <div className={styles.btn}>
           <Button btnColor={"blue"} type={"submit"}>{"ورود"}</Button>
