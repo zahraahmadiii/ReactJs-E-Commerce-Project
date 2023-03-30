@@ -49,8 +49,8 @@ const productsSlice = createSlice({
     openModalDelete:false,
     productId:0,
     openModalEdit:false,
-    price:0,
-    quantity:0,
+    price:[],
+    quantity:[],
     editedProduct:{},
 },
 reducers:{
@@ -84,7 +84,7 @@ reducers:{
     console.log(action.payload)
   },
   getNewPrice:(state,action)=>{
-    state.price=action.payload
+    state.price=[...state.price,action.payload]
     console.log(action.payload)
   },
   editQuantity:(state,action) =>{
@@ -92,7 +92,7 @@ reducers:{
     console.log(action.payload)
   },
   getNewQuantity:(state,action)=>{
-    state.quantity=action.payload
+    state.quantity=[...state.quantity,action.payload]
     console.log(action.payload)
   }
 },
