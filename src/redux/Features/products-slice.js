@@ -103,6 +103,9 @@ reducers:{
   getNewQuantity:(state,action)=>{
     state.quantity=[...state.quantity,action.payload]
     console.log(action.payload)
+  },
+  showProductDetail:(state,action)=>{
+    state.productId=action.payload
   }
 },
   extraReducers:{

@@ -1,15 +1,28 @@
-import React,{ useEffect }  from 'react'
+import React, { useEffect } from 'react'
 import styles from "./style.module.css"
 import { Link } from 'react-router-dom';
 import Header from '../../Layouts/header';
 import ControlledCarousel from '../../Components/Carousel';
 import ProductSwiper from '../../Components/productSwiper-one'
-import MobileSwiper from '../../Components/productSwiper-two'
-import TabletSwiper from '../../Components/productSwiper-three'
-import AirpodSwiper from '../../Components/productSwiper-four'
-import Category from  '../../Components/Category'
-import Footer from '../../Layouts/Footer'
+import MobileSwiper from '../../Components/productSwiper-two';
+import TabletSwiper from '../../Components/productSwiper-three';
+import AirpodSwiper from '../../Components/productSwiper-four';
+import Card from '../../Components/Card';
+import { getProduct } from '../../redux/Features/products-slice';
+import {useDispatch, useSelector} from 'react-redux'
+import Footer from '../../Layouts/Footer';
+import { Category } from '../../Components/Category';
+
+
  const Home = () => {
+  const {products} = useSelector(store => store);
+  console.log(products);
+  const dispatch=useDispatch()
+
+  useEffect(()=>{
+   dispatch(getProduct())
+  },[dispatch])
+
   return (
     <>
     <div className={styles.homePage}>
