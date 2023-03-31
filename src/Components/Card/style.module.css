@@ -14,19 +14,22 @@
     border: 2px solid rgb(7 68 199);
 }
 .cardImg{
-    width: 78%;
-    height: 40%;
+    width: 75%;
+    height: 43%;
     padding: 1rem;
 }
 .cardPara{
     color: rgb(65, 65, 65);
     font-size: 0.8rem;
     direction: rtl;
-    padding-right: 1rem;
-    padding-top:0.7rem ;
+    padding: 0.5rem;
 }
 .wrapperData{
     background-color: aliceblue;
     width: 13.5rem;
     height: 8rem;
+    display: flex;
+    flex-direction: column;
+   justify-content: space-between;
+ 
 }
