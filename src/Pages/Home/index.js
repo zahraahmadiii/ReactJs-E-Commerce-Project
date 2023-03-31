@@ -40,27 +40,30 @@ import { Category } from '../../Components/Category';
       </div>
    
       <ControlledCarousel/>
-  
+     <div className={styles.productsWrapper}>
        <Link to="/Products"  className={styles.products}>موبایل</Link>
-       <div>
-        <Category str="موبایل"/>
-       </div>
-       <Link to="/Products"  className={styles.products}>تبلت</Link>
-       <div >
+         <div className={styles.wraperCategory}>
+         <Category str="موبایل"/>
+          </div>
+          <Link to="/Products"  className={styles.products}>تبلت</Link>
+         <div className={styles.wraperCategory}>
         <Category str="تبلت"/>
+         </div>
+         <Link to="/Products"  className={styles.products}>لپ تاپ</Link>
+         <div className={styles.wraperCategory}>
+          <Category str="لپ تاپ"/>
+         </div>
+          <Link to="/Products"  className={styles.products}>ایرپاد</Link>
+       <div className={styles.wraperCategory}>
+         <Category str="ایرپاد"/>
        </div>
-       <Link to="/Products"  className={styles.products}>لپ تاپ</Link>
-       <div>
-        <Category str="لپ تاپ"/>
-       </div>
-       <Link to="/Products"  className={styles.products}>ایرپاد</Link>
-       <div >
-        <Category str="ایرپاد"/>
-       </div>
+       <Footer/>
+    </div>
+       
     
 
   
-      <Footer/>
+    
      </div>
     </>
   )

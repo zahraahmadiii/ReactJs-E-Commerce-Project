@@ -27,12 +27,10 @@
     align-items: center;
     gap: 1rem;
 }
-.cards{
-    display: flex;
-   align-items: center;
-   justify-content: center;
-    gap: 3rem;
-    padding: 4rem;
-    flex-wrap: wrap;
-   
+
+.wraperCategory{
+    margin: 2rem;
+}
+.productsWrapper{
+    background-color: aliceblue;
 }
