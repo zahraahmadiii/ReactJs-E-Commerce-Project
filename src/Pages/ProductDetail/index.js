@@ -35,9 +35,20 @@ const ProductDetail = () => {
              <Link to="/Products/ProductDetail"><Button btnColor={" rgb(7 68 199)"}>{"افزودن به سبد خرید"}</Button></Link>
            </div>
            
-             <div className={styles.wraperImage}>
-               <img src={`${BASE_URL}/files/${product.thumbnail}`}  className={styles.Image}/>
-             </div>
+
+           <div className={styles.allImages}>
+           <div className={styles.wraperthumbnail}>
+               <img src={`${BASE_URL}/files/${product.thumbnail}`}  className={styles.thumbnailImage}/>
+               </div>
+
+               <div className={styles.wraperImages}>
+               <img src={`${BASE_URL}/files/${product.images[0]}`}  className={styles.Image}/>
+               <img src={`${BASE_URL}/files/${product.images[1]}`}  className={styles.Image}/>
+               </div>
+           </div>
+            
+              
+           
  
     </div>}
     
