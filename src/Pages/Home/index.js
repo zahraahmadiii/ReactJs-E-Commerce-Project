@@ -43,19 +43,19 @@ import { Category } from '../../Components/Category';
      <div className={styles.productsWrapper}>
        <Link to="/Products"  className={styles.products}>موبایل</Link>
          <div className={styles.wraperCategory}>
-         <Category str="موبایل"/>
+         <Category category="موبایل" page="1" limit="6"/>
           </div>
           <Link to="/Products"  className={styles.products}>تبلت</Link>
          <div className={styles.wraperCategory}>
-        <Category str="تبلت"/>
+        <Category category="تبلت" page="1" limit="6"/>
          </div>
          <Link to="/Products"  className={styles.products}>لپ تاپ</Link>
          <div className={styles.wraperCategory}>
-          <Category str="لپ تاپ"/>
+          <Category category="لپ تاپ" page="1" limit="6"/>
          </div>
           <Link to="/Products"  className={styles.products}>ایرپاد</Link>
        <div className={styles.wraperCategory}>
-         <Category str="ایرپاد"/>
+         <Category category="ایرپاد" page="1" limit="6"/>
        </div>
        <Footer/>
     </div>
