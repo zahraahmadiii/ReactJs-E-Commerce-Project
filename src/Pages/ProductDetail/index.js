@@ -28,9 +28,10 @@ const ProductDetail = () => {
            <div className={styles.wraperBtn}>
            <div className={styles.wraperAllData}>
               <p className={styles.name}>{product.name}</p>
-              <p className={styles.brand}>{product.brand}</p>
+              <p className={styles.brand}>برند: {product.brand}</p>
+              <p>ویژگی ها:</p>
               <p className={styles.desc}>{product.description}</p>
-              <p className={styles.price}>{product.price}</p>
+              <p className={styles.price}>{product.price} تومان</p>
              </div>
              <div className={styles.btnNumber}>
              <Link to="/Products/ProductDetail"><Button btnColor={" rgb(7 68 199)"}>{"افزودن به سبد خرید"}</Button></Link>
@@ -41,7 +42,6 @@ const ProductDetail = () => {
               <div className={styles.minus}>-</div>
               </div>
             </div>
-           
             </div>
            
 
