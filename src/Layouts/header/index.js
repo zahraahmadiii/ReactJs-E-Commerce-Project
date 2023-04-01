@@ -2,7 +2,7 @@ import React from 'react'
 import styles from "./style.module.css"
 import {CiSearch} from "react-icons/ci"
 import Navbar from "../../Components/Navbar/index"
-import Slider from '../../Components/slider'
+
 
 const Header= () => {
   return (
@@ -20,7 +20,6 @@ const Header= () => {
     </div>
     
    <div className={styles.right}>
-   <Slider/>
     <div className={styles.links}>
      <Navbar/> 
    

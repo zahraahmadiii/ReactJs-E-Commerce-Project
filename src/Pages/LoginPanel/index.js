@@ -8,6 +8,7 @@ import * as yup from "yup";
 import { loginService } from '../../Api/Servises/auth';
 import Cookies from "js-cookie";
 import { instance } from '../../Api/Constants';
+import Slider from '../../Components/slider';
 const LoginPanel = () => {
 
   const schema = yup.object({
@@ -40,7 +41,10 @@ const LoginPanel = () => {
   
   return (
     < >
-      <div className={styles.wraper}>
+    
+      <div className={styles.loginpage}>
+        <div className={styles.wraper}>
+        <Slider/>
       <form className={styles.form} onSubmit={handleSubmit(submitForm)}>
         <img src="/img/logo.jpg"  className={styles.logo}/>
         
@@ -57,6 +61,8 @@ const LoginPanel = () => {
           <Link to="/"><Button btnColor={"gray"}>{"بازگشت"}</Button></Link>
           </div>
       </form>
+        </div>
+      
       </div>
     </>
   )
