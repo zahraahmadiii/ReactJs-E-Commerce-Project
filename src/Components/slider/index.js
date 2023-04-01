@@ -6,7 +6,7 @@ import pic4 from "../../../src/Assets/images/header5.jpg"
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-import "./styles.css";
+import styles from "./style.module.css"
 import { Autoplay, Pagination, Navigation } from "swiper";
 
 export default function Slider() {
@@ -25,11 +25,11 @@ export default function Slider() {
         }}
         navigation={true}
         modules={[Autoplay, Pagination, Navigation]}
-        
+        className={styles.loginslider}
       >
-        <SwiperSlide><img src={pic2} /></SwiperSlide>
-        <SwiperSlide><img src={pic3}/></SwiperSlide>
-        <SwiperSlide><img src={pic4}/></SwiperSlide>
+        <SwiperSlide><img src={pic2} className={styles.loginslider}/></SwiperSlide>
+        <SwiperSlide><img src={pic3} className={styles.loginslider}/></SwiperSlide>
+        <SwiperSlide><img src={pic4} className={styles.loginslider}/></SwiperSlide>
       </Swiper>
     </div>
      

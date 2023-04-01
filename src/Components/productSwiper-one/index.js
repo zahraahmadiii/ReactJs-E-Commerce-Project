@@ -28,10 +28,10 @@ export default function ProductSwiper() {
         modules={[EffectCube, Pagination]} 
       >
         <SwiperSlide>
-          <img src={pic8} className={styles.laptopImgOne}/>
+          <img src={pic9} className={styles.laptopImgOne}/>
         </SwiperSlide>
         <SwiperSlide>
-          <img src={pic9} className={styles.laptopImg} />
+          <img src={pic8} className={styles.laptopImg} />
         </SwiperSlide>
         <SwiperSlide>
           <img src={pic10} className={styles.laptopImg}/>
