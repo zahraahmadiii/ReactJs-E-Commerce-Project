@@ -32,8 +32,17 @@ const ProductDetail = () => {
               <p className={styles.desc}>{product.description}</p>
               <p className={styles.price}>{product.price}</p>
              </div>
+             <div className={styles.btnNumber}>
              <Link to="/Products/ProductDetail"><Button btnColor={" rgb(7 68 199)"}>{"افزودن به سبد خرید"}</Button></Link>
-           </div>
+
+            <div className={styles.number}>
+              <div className={styles.add}>+</div>
+              <div className={styles.num}>1</div>
+              <div className={styles.minus}>-</div>
+              </div>
+            </div>
+           
+            </div>
            
 
            <div className={styles.allImages}>

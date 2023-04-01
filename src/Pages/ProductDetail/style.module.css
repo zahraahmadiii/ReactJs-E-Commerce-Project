@@ -75,3 +75,51 @@
     align-items: center; 
     gap: 8rem;
 }
+.number{
+    width: 9rem;
+    height: 2rem;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+}
+.btnNumber{
+    display: flex;
+    gap: 4rem;
+    align-items: center;
+    justify-content: center;  
+}
+.minus{
+    background-color: red;
+    width: 3rem;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    color: aliceblue;
+    justify-content: center; 
+   font-size: 30px;
+    font-weight: bold;
+    border-top-right-radius:5px;
+    border-bottom-right-radius:5px;
+}
+.add{
+    background-color: green;
+    width: 3rem;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;  
+    color: aliceblue;
+    font-size: 27px;
+    font-weight: bold;
+    border-top-left-radius:5px;
+    border-bottom-left-radius:5px;
+}
+.num{
+    background-color: rgb(255, 255, 255);
+    width: 3rem;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;  
+}
