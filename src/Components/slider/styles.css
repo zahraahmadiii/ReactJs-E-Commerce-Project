@@ -1,22 +1,13 @@
 .swiper {
-   width: 15rem;
-   height: 7rem;
-  border-radius: 6px;
-  border: 5px solid #ffef5c;
+    width: 30rem;
+    height: 60vh;
+    border: 3px solid #ffef5c;
   }
-  .swiper-slide {
-    text-align: center;
-    font-size: 18px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 60vh;
   }
   :root{
     --swiper-theme-color: transparent;
 }
-  .size{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    padding-top: 0.20rem;
-  }
