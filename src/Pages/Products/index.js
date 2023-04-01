@@ -7,6 +7,7 @@ import {Category} from '../../Components/Category'
 import {getProductsCategory} from '../../Api/Servises/getCategories'
 import Card from '../../Components/Card';
 import { ProductsCategory } from '../../Components/productsCategory';
+import Sidbar from '../../Layouts/sidebar';
 
 
 
@@ -17,11 +18,15 @@ const Products = () => {
   return (
     <>
      <Header/>
-      
+   
      <div className={styles.ProductCategory}>
-      {/* <ProductsCategory category="موبایل" /> */}
+      <div>
+         {/* <ProductsCategory category="موبایل" /> */}
           {/* <Link to="/Products/ProductDetail">product 1</Link>
           <h2>{`کالاهای شماره${searchParams.get("id")}`}</h2> */}
+      </div>
+      <Sidbar/>
+     
     </div>
     </>
    
