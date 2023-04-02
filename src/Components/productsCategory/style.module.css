@@ -1,17 +1,13 @@
 .wraper_products{
-
     height: fit-content;
     display: flex;
     align-items: center;
     gap: 2rem;
     flex-wrap: wrap;
-    width: 70%;
-    height:20rem;
+    height: 85.5vh;
     background-color: aliceblue;
-    padding: 2rem;
+    padding: 3rem;
     overflow-y: scroll;
- 
-    
 }
 .wraper_products::-webkit-scrollbar {
     border-radius: 7px;
