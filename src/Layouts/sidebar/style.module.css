@@ -1,0 +1,31 @@
+.sidebar{
+    width: 23rem;
+    height: 85.5vh;
+    background-color: rgb(7 68 199);;
+}
+.Label{
+    color: aliceblue;
+    font-weight: bold;
+    direction: rtl;
+    padding-right: 1rem;
+}
+.select{
+    width: 95%; 
+    background-color: rgb(255, 255, 255);
+    color: rgb(7 68 199);
+    padding: 3px;
+    border-radius: 5px;
+    border: none;
+    direction: rtl;
+}
+.filter{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 2rem;
+}
+.line{
+    width: 0.20rem;
+    height: 37.2rem;
+    background-color: #080094;
+}

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import styles from "./style.module.css"
 import { useDispatch, useSelector} from 'react-redux'
 import { BASE_URL } from '../../Api/Constants';

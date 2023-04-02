@@ -28,8 +28,11 @@ const Routs = () => {
         <Route path='/Cart/CheckOut/Payment' element={<Payment/>}></Route>
         <Route path='/Cart/CheckOut/Payment/FailPay' element={<FailPay/>}></Route>
         <Route path='/Cart/CheckOut/Payment/SuccessPay' element={<SuccessPay/>}></Route>
-        <Route path='/Categories' element={<Categories/>}></Route>
-        <Route path='/Products' element={<Products/>}></Route>
+        {/* <Route path='/Categories' element={<Categories/>}></Route> */}
+        <Route path='/Products/'>
+         <Route path=':productCategory' element={<Products/>}></Route>
+        </Route>
+
         <Route path='/Products/ProductDetail/' >
           <Route path=':productId' element={<ProductDetail/>}></Route>
         </Route>

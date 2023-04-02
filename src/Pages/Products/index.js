@@ -1,17 +1,22 @@
 import React from 'react'
-import { useSearchParams } from 'react-router-dom';
 import styles from "./style.module.css"
-import { Link } from 'react-router-dom'
+import { useParams  } from 'react-router-dom'
 import Header from '../../Layouts/header';
+import { ProductsCategory } from '../../Components/productsCategory';
+import Sidbar from '../../Layouts/sidebar';
+
 const Products = () => {
-  const [searchParams] = useSearchParams();
+  const {productCategory}=useParams()
+  console.log(productCategory)
+
   return (
     <>
      <Header/>
      <div className={styles.ProductCategory}>
-       
-          <Link to="/Products/ProductDetail">product 1</Link>
-          <h2>{`کالاهای شماره${searchParams.get("id")}`}</h2>
+      <div>
+      <ProductsCategory category={productCategory}/>
+      </div>
+      <Sidbar/>
     </div>
     </>
    

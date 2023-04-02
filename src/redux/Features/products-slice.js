@@ -6,6 +6,7 @@ import { getDetails } from "../../Api/Servises/getProductDetail";
 import { updatePrices } from "../../Api/Servises/updatePrice";
 import {updateProducts} from "../../Api/Servises/updateProduct"
 import { updateQuantities } from "../../Api/Servises/updateQuantity";
+import { getCategoris } from "../../Api/Servises/getProductsCategories";
 
 export const getProduct = createAsyncThunk("products/fetchList", async () => {
     const response = await fetchproducts();
@@ -44,6 +45,11 @@ export const updateQuantity= createAsyncThunk("products/updateprice", async(newQ
 export const getProductDetail = createAsyncThunk("products/productDetail", async (id) => {
   console.log(id)
 const response = await getDetails(id);
+return response.data;
+});
+
+export const getProductCategory = createAsyncThunk("products/productCategory", async (category) => {
+const response = await getCategoris(category);
 return response.data;
 });
 
@@ -106,7 +112,7 @@ reducers:{
   },
   showProductDetail:(state,action)=>{
     state.productId=action.payload
-  }
+  },
 },
   extraReducers:{
     [getProduct.pending]:(state)=>{
