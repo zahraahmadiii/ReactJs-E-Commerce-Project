@@ -84,10 +84,11 @@ import { updateProducts } from '../../Api/Servises/updateProduct';
         } 
           postProducts(newProduct)
           dispatch(getProduct())
-          toast.success('add product successfully');
+          dispatch(closeModal())
+          toast.success('محصول با موفقیت اضافه شد');
           // console.log(newProduct)
        }catch(error){
-        toast.error("add product fail");
+        toast.error("محصول اضافه نشد");
       }
     }else if(products.openModalEdit){
       try{
@@ -114,9 +115,10 @@ import { updateProducts } from '../../Api/Servises/updateProduct';
         // console.log(editedProduct)
          updateProducts(editedProduct) 
           dispatch(getProduct())
-          toast.success('update product successfully');
+          dispatch(closeEditModal())
+          toast.success('ویرایش محصول با موفقیت انجام شد');
          }catch(error){
-          toast.error("update product fail");
+          toast.error("ویرایش محصول انجام نشد");
          }
     }
   } 
@@ -130,74 +132,73 @@ import { updateProducts } from '../../Api/Servises/updateProduct';
   return(
    <>
    <div className={styles.wraper_modal}>
-    <ToastContainer/>
-   <form className={styles.modal} onSubmit={handleSubmit(submitForm)}>
-    <div className={styles.top}>
-     <p>افزودن/ویرایش کالا</p>
-    <IoMdCloseCircle className={styles.close} onClick={()=>handleCloseModal()}/>
+    // <ToastContainer/>
+     <form className={styles.modal} onSubmit={handleSubmit(submitForm)}>
+       <div className={styles.top}>
+      <p>افزودن/ویرایش کالا</p>
+       <IoMdCloseCircle className={styles.close} onClick={()=>handleCloseModal()}/>
     </div>
-    <div className={styles.row}>
-    <div className={styles.items} >
-    <label className={styles.Label}>نام کالا :</label>
-    <input type="text" className={styles.file} {...register("name")}/>
+      <div className={styles.row}>
+      <div className={styles.items} >
+      <label className={styles.Label}>نام کالا :</label>
+      <input type="text" className={styles.file} {...register("name")}/>
      <p className={styles.para}>{errors.name?.message}</p>
     </div>
     <div className={styles.items}>
-    <label className={styles.Label}>برند کالا:</label>
-    <input type="text" className={styles.file} {...register("brand")}/>
-    <p className={styles.para}>{errors.brand?.message}</p>
-    </div>
+      <label className={styles.Label}>برند کالا:</label>
+      <input type="text" className={styles.file} {...register("brand")}/>
+      <p className={styles.para}>{errors.brand?.message}</p>
+      </div>
     </div>
     
     <div className={styles.row}>
     <div className={styles.items}>
-    <label className={styles.Label}>تصویرکالا :</label>
-    <input type="file" className={styles.file} {...register("thumbnail")}/>
-    <p className={styles.para}>{errors.thumbnail?.message}</p>
+     <label className={styles.Label}>تصویرکالا :</label>
+     <input type="file" className={styles.file} {...register("thumbnail")}/>
+     <p className={styles.para}>{errors.thumbnail?.message}</p>
     </div>
     <div className={styles.items}>
-    <label className={styles.Label}>لیست تصاویرکالا:</label>
-    <input type="file" className={styles.file} {...register("images")} multiple/>
-    <p className={styles.para}>{errors.images?.message}</p>
+     <label className={styles.Label}>لیست تصاویرکالا:</label>
+     <input type="file" className={styles.file} {...register("images")} multiple/>
+     <p className={styles.para}>{errors.images?.message}</p>
     </div>
     </div>
      <div className={styles.row}>
       <div className={styles.items}>
-      <label className={styles.Label}>تعداد:</label>
-      <input type="text" className={styles.file} {...register("quantity")}/>
-      <p className={styles.para}>{errors.quantity?.message}</p>
+       <label className={styles.Label}>تعداد:</label>
+       <input type="text" className={styles.file} {...register("quantity")}/>
+       <p className={styles.para}>{errors.quantity?.message}</p>
       </div>
       <div className={styles.items}>
        <label className={styles.Label}>قیمت:</label>
-      <input type="text" className={styles.file} {...register("price")}/>
-      <p className={styles.para}>{errors.price?.message}</p>
+       <input type="text" className={styles.file} {...register("price")}/>
+       <p className={styles.para}>{errors.price?.message}</p>
       </div>
      </div>
     
     <div>
     <label className={styles.Label}>دسته بندی:</label>
     <select className={styles.select}  {...register("category")}>
-    <option></option>
-    <option value="لپ تاپ">لپ تاپ</option>
-    <option value="تبلت">تبلت</option>
-    <option value="موبایل">موبایل</option>
-    <option value="ایرپاد">ایرپاد</option>
+     <option></option>
+     <option value="لپ تاپ">لپ تاپ</option>
+     <option value="تبلت">تبلت</option>
+     <option value="موبایل">موبایل</option>
+     <option value="ایرپاد">ایرپاد</option>
    </select>
-   <p className={styles.para}>{errors.category?.message}</p>
+     <p className={styles.para}>{errors.category?.message}</p>
     </div>
   
     <div>
     <label className={styles.Label}>توضیحات :</label>
     {/* <CkEditors {...register("description")}/> */}
-    <textarea className={styles.textarea} {...register("description")}/>
-    <p className={styles.para}>{errors.description?.message}</p>
+     <textarea className={styles.textarea} {...register("description")}/>
+     <p className={styles.para}>{errors.description?.message}</p>
     </div>
     <div className={styles.savebtn}>
 
       {products.openModalEdit ?
-       <Button btnColor={"gray"} type={"submit"}>{"ویرایش"}</Button>:
-       <Button btnColor={" rgb(7 68 199)"} type={"submit"}>{"ذخیره"}</Button>}
-   
+        <Button btnColor={"gray"} type={"submit"} >{"ویرایش"}</Button>:
+        <Button btnColor={" rgb(7 68 199)"} type={"submit"}>{"ذخیره"}</Button>}
     </div>
    </form>
    </div>

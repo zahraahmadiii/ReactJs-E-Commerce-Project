@@ -12,17 +12,15 @@ import {OpenDeleteModal, OpenEditModal} from '../../redux/Features/products-slic
 
 const ProductTable = ({item}) => {
   const {products} = useSelector(store => store);
- 
-
   const dispatch=useDispatch()
   const handelDeleteProduct=(id)=>{
     // console.log(id)
    dispatch(OpenDeleteModal(id))
 }
-const handelEditProduct=(item)=>{
+  const handelEditProduct=(item)=>{
       // console.log(id)
-  dispatch(OpenEditModal(item))
-}
+   dispatch(OpenEditModal(item))
+  }
   
 
   const [itemOffset, setItemOffset] = useState(0);
@@ -56,7 +54,7 @@ const handelEditProduct=(item)=>{
         {currentItems.map((item)=> {
           return(
             <tr key={item.id} className={styles.tr}>
-            <td className={styles.td}><img src={`${BASE_URL}/files/${item.thumbnail}`} className={styles.img}/></td>
+            <td className={styles.td}> <img src={`${BASE_URL}/files/${item.thumbnail}`} className={styles.img}/></td>
             <td className={styles.td}>{item.name}</td>
             <td className={styles.td}>{item.category}</td>
             <td className={styles.td}> <BsTrash className={styles.trash} onClick={()=>handelDeleteProduct(item.id)}/> <FaRegEdit className={styles.edit} onClick={()=>handelEditProduct(item)}/></td>
