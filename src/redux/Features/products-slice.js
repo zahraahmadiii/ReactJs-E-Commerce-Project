@@ -6,6 +6,7 @@ import { getDetails } from "../../Api/Servises/getProductDetail";
 import { updatePrices } from "../../Api/Servises/updatePrice";
 import {updateProducts} from "../../Api/Servises/updateProduct"
 import { updateQuantities } from "../../Api/Servises/updateQuantity";
+import { getCategoris } from "../../Api/Servises/getProductsCategories";
 
 export const getProduct = createAsyncThunk("products/fetchList", async () => {
     const response = await fetchproducts();
@@ -47,6 +48,12 @@ const response = await getDetails(id);
 return response.data;
 });
 
+// export const getProductCategory = createAsyncThunk("products/productCategory", async (category) => {
+//   console.log(category)
+// const response = await getCategoris(category);
+// return response.data;
+// });
+
 const productsSlice = createSlice({
   name: "products",
   initialState:{
@@ -59,6 +66,7 @@ const productsSlice = createSlice({
     price:[],
     quantity:[],
     editedProduct:{},
+    category:"",
 },
 reducers:{
   addProduct:(state) => {
@@ -106,7 +114,11 @@ reducers:{
   },
   showProductDetail:(state,action)=>{
     state.productId=action.payload
-  }
+  },
+  // showProductCategory:(state,action)=>{
+  //   state.category=action.payload
+  //   console.log(action.payload)
+  // }
 },
   extraReducers:{
     [getProduct.pending]:(state)=>{
@@ -126,7 +138,7 @@ reducers:{
 });
 
     export default productsSlice.reducer;
-    export const{addProduct,closeModal, OpenDeleteModal,closeDeleteModal,deleteProductItem, OpenEditModal,closeEditModal,editPrice,getNewPrice,editQuantity,getNewQuantity,showProductDetail}=productsSlice.actions;
+    export const{addProduct,closeModal, OpenDeleteModal,closeDeleteModal,deleteProductItem, OpenEditModal,closeEditModal,editPrice,getNewPrice,editQuantity,getNewQuantity,showProductDetail,showProductCategory}=productsSlice.actions;
 
 
 
