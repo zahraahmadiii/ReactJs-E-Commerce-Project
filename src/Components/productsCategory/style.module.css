@@ -1,4 +1,4 @@
-/* .wraper_products{
+.wraper_products{
 
     height: fit-content;
     display: flex;
@@ -12,11 +12,11 @@
     overflow-y: scroll;
  
     
-} */
-/* .wraper_products::-webkit-scrollbar {
+}
+.wraper_products::-webkit-scrollbar {
     border-radius: 7px;
     background:aliceblue; 
     border: 1.5px solid rgb(210, 210, 210); 
     scrollbar-width: thin;
     background: transparent;        
-  } */
+  }

@@ -1,27 +1,26 @@
-// import React,{useState ,useEffect} from 'react'
-// import {getProductsCategory} from '../../Api/Servises/getCategories'
-// import Card from '../Card'
-// import styles from "./style.module.css"
+import React,{useState ,useEffect} from 'react'
+import {getProductsCategory} from '../../Api/Servises/getCategories'
+import Card from '../Card'
+import styles from "./style.module.css"
 
-// const getProduct=async(category,page,limit)=>{
-//     // console.log(category)
-//     const res= await getProductsCategory(category,page,limit)
-//     return res.data
-// }
+const getCategory=async(category)=>{
+    const res= await getProductsCategory(category)
+    return res.data
+}
 
-// export const ProductsCategory = ({category,page,limit}) => {
+export const ProductsCategory = ({category}) => {
+console.log(category)
+const [allcategory,setAllCategory]=useState([])
 
-// const [products,setProducts]=useState([])
-
-// useEffect(()=>{
-//     getProduct(category,page,limit).then(res => setProducts(res))
-//    },[])
-
+useEffect(()=>{
+    getCategory(category).then(res => setAllCategory(res))
+   },[])
 
 
-//   return (
-//      <div className={styles.wraper_products}>
-//       {products.map((item)=> <Card key={item.id} item={item}/>)} 
-//      </div>
-//   )
-// }
+
+  return (
+     <div className={styles.wraper_products}>
+      {allcategory.map((item)=> <Card key={item.id} item={item}/>)} 
+     </div>
+  )
+}
