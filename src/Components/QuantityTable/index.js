@@ -3,7 +3,7 @@ import Table from 'react-bootstrap/Table';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import ReactPaginate from 'react-paginate';
 import { useDispatch, useSelector} from 'react-redux'
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { editPrice, editQuantity, getNewPrice, getNewQuantity } from "../../redux/Features/products-slice";
 
 const QuantityTable = ({item}) => {
@@ -11,7 +11,7 @@ const QuantityTable = ({item}) => {
 //handle change price and quantity in table///////////////////////////
     const [price, setPrice] = useState(false);
     const [quantity,setQuantity]= useState(false);
-    const [editMood,seteditMood]=useState();
+    // const [edit,setedit]=useState(0);
     const dispatch=useDispatch()
     const clickToChangePrice=(id)=>{
       console.log(id)
@@ -19,14 +19,15 @@ const QuantityTable = ({item}) => {
       setPrice(true)
     }
     const handleChangePrice=(event,id)=>{
-    // console.log(event)
+    console.log(event)
+    // setedit(event)
+    // event.target.innerText=edit
     dispatch(getNewPrice({price:event,id:id}))
     }
     const onBlurInput=()=>{
     setPrice(false)
     setQuantity(false)
     }
-
     const clickToChangeQuantity=(id)=>{
       // console.log(id)
       dispatch(editQuantity(id))
@@ -35,8 +36,7 @@ const QuantityTable = ({item}) => {
     const handleChangeQuantity=(event,id)=>{
     // console.log(event)
     dispatch(getNewQuantity({quantity:event,id:id}))
-    }
-    
+    } 
 // pagination ///////////////////////////////////////////////////////
     const {products} = useSelector(store => store);
     // console.log(products.productId)
@@ -67,12 +67,13 @@ const QuantityTable = ({item}) => {
       </thead>
       <tbody>
       {currentItems.map((item)=> {
-          return(<tr key={item.id}  className={styles.tr}>
+          return(
+            <tr key={item.id}  className={styles.tr}>
             <td className={styles.td}>{item.name}</td>
 
            <td className={styles.td} key={item.id}> 
            { price && products.productId==item.id?
-           <input  price={item.price} onChange={(event)=>handleChangePrice(event.target.value,item.id)} onBlur={()=>onBlurInput()} className={styles.Input}/> :
+           <input price={item.price} onChange={(event)=>handleChangePrice(event.target.value,item.id)} onBlur={()=>onBlurInput()} className={styles.Input} /> :
             <span onClick={()=>clickToChangePrice(item.id)}>{item.price}</span>}
            </td>
             <td className={styles.td}>

@@ -6,6 +6,7 @@ import {useDispatch, useSelector} from 'react-redux'
 import { getOrder, setDelivery } from '../../redux/Features/orders-slice.js';
 import OrderModal from "../../Components/Order-modal"
 import { Navigate, useNavigate } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
  const AdminPanel = () => {
 
   const orders = useSelector(store => store.ordersSlice);
@@ -27,6 +28,7 @@ import { Navigate, useNavigate } from "react-router-dom";
 
   return (
     <>
+    <ToastContainer/>
     <div className={styles.page}>
        <AdminHeader/>
     <div className={styles.main}>

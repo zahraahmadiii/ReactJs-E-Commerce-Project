@@ -23,7 +23,6 @@ const Quantity = () => {
    const handlePriceAndQuantity=async()=>{
 
     if(products.price){
-
       try{
         const newPrice={
           id:products.productId,
@@ -32,10 +31,10 @@ const Quantity = () => {
            const res= await Promise.all(products.price.map((item)=> updatePrices(item)))
            dispatch(getProduct())
           //  console.log(newPrice)
-           toast.success('update price successfully');
+          toast.success('ویرایش با موفقیت انجام شد');
        }
        catch(error){
-        toast.error("update price fail");
+        toast.error("ویرایش انجام نشد");
        }
     } 
      if (products.quantity){
@@ -46,11 +45,10 @@ const Quantity = () => {
          }
          const res= await Promise.all(products.quantity.map((item)=> updateQuantities(item)))
          dispatch(getProduct())
-        
-           toast.success('update quantity successfully');
+           toast.success('ویرایش با موفقیت انجام شد');
        }
        catch(error){
-        toast.error("update quantity fail");
+        toast.error("ویرایش انجام نشد");
        }
     }
  
