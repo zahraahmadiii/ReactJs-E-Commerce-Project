@@ -15,22 +15,21 @@ const DeleteProductModal=()=>{
   }
 
   const handleDeleteProduct=()=>{
-   
     try{
       deleteProducts(products.productId)
       // dispatch(closeDeleteModal(0))
       dispatch(getProduct())
-      toast.success('delete product successfully');
+      dispatch(closeDeleteModal(0))
+      toast.success('محصول با موفقیت حذف شد');
     }catch(error){
-      toast.error(" fail delete product ");
+      toast.error(" محصول حذف نشد ");
     }
- 
   }
 
   return (
     <>
     <div className={styles.wraper_modal}>
-    <ToastContainer/>
+    {/* <ToastContainer/> */}
     <div className={styles.modal}>
     <IoMdCloseCircle className={styles.close} onClick={()=>handleCloseDeleteProduct()}/>
     <div className={styles.para} >

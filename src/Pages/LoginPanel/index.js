@@ -8,6 +8,7 @@ import * as yup from "yup";
 import { loginService } from '../../Api/Servises/auth';
 import Cookies from "js-cookie";
 import { instance } from '../../Api/Constants';
+import { ToastContainer ,toast} from 'react-toastify';
 import Slider from '../../Components/slider';
 const LoginPanel = () => {
 
@@ -23,6 +24,14 @@ const LoginPanel = () => {
    
 
  const navigate=useNavigate()
+ useEffect(()=>{
+  if(Cookies.get('token')){
+    navigate("/LoginPanel/AdminPanel")
+  }
+  // else{
+  //   navigate("/LoginPanel")
+  // }
+ },[])
 
   const submitForm= async(data)=>{
    const res = await loginService(data);
@@ -33,21 +42,26 @@ const LoginPanel = () => {
     localStorage.setItem('token', JSON.stringify(res.accessToken))
     localStorage.setItem('refresh_token', res.refreshToken)
     navigate("/LoginPanel/AdminPanel")
-} catch (err) {
-    console.log(err)
+    toast.success('خوش آمدید')
+
+ } catch (error) {
+
+    toast.error("نام کاربری و رمزعبور صحیح نیست");
+    console.log(error)
 }
   
 }
+
+
   
   return (
     < >
-    
       <div className={styles.loginpage}>
+      {/* <ToastContainer/> */}
         <div className={styles.wraper}>
         <Slider/>
       <form className={styles.form} onSubmit={handleSubmit(submitForm)}>
         <img src="/img/logo.jpg"  className={styles.logo}/>
-        
          <label> نام کاربری:  </label>
           <input type="text" name="username" className={styles.input} {...register("username")} />
           <p className={styles.para}>{errors.username?.message}</p>
@@ -62,7 +76,6 @@ const LoginPanel = () => {
           </div>
       </form>
         </div>
-      
       </div>
     </>
   )
