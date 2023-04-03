@@ -20,8 +20,6 @@ const QuantityTable = ({item}) => {
     }
     const handleChangePrice=(event,id)=>{
     console.log(event)
-    // setedit(event)
-    // event.target.innerText=edit
     dispatch(getNewPrice({price:event,id:id}))
     }
     const onBlurInput=()=>{
