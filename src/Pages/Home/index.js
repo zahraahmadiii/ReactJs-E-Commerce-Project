@@ -2,14 +2,14 @@ import React, { useEffect } from 'react'
 import styles from "./style.module.css"
 import { Link } from 'react-router-dom';
 import Header from '../../Layouts/header';
-import ControlledCarousel from '../../Components/Carousel';
+import ControlledCarousel from "../../Components/carousel"
 import ProductSwiper from '../../Components/productSwiper-one'
 import MobileSwiper from '../../Components/productSwiper-two';
 import TabletSwiper from '../../Components/productSwiper-three';
 import AirpodSwiper from '../../Components/productSwiper-four';
 import { getProduct } from '../../redux/Features/products-slice';
 import {useDispatch, useSelector} from 'react-redux'
-import Footer from '../../Layouts/Footer';
+import Footer from "../../Layouts/footer"
 import { Category } from '../../Components/Category';
 
 

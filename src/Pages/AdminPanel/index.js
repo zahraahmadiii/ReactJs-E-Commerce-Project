@@ -4,7 +4,7 @@ import React, { useEffect } from 'react'
 import OrderTable from "../../Components/OrderTable/index.js";
 import {useDispatch, useSelector} from 'react-redux'
 import { getOrder, setDelivery } from '../../redux/Features/orders-slice.js';
-import OrderModal from "../../Components/Order-modal"
+import OrderModal from "../../Components/order-modal/index.js"
 import { Navigate, useNavigate } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
  const AdminPanel = () => {
