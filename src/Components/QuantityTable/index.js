@@ -11,7 +11,10 @@ const QuantityTable = ({item}) => {
 //handle change price and quantity in table///////////////////////////
     const [price, setPrice] = useState(false);
     const [quantity,setQuantity]= useState(false);
-    // const [edit,setedit]=useState(0);
+    const [editprice,setEditprice]=useState();
+    const [editIdprice,setEditIdprice]=useState();
+    const [editQty,setQty]=useState();
+    const [editIdQuantity,setEditIdQuantity]=useState();
     const dispatch=useDispatch()
     const clickToChangePrice=(id)=>{
       console.log(id)
@@ -22,10 +25,21 @@ const QuantityTable = ({item}) => {
     console.log(event)
     dispatch(getNewPrice({price:event,id:id}))
     }
-    const onBlurInput=()=>{
-    setPrice(false)
-    setQuantity(false)
+    const onBlurInputPrice=(event,id)=>{
+      console.log(event)
+     setEditprice(event)
+     setEditIdprice(id)
+     setPrice(false)
+    //  setQuantity(false)
     }
+    const onBlurInputQuantity=(event,id)=>{
+      console.log(event)
+     setQty(event)
+     setEditIdQuantity(id)
+    //  setPrice(false)
+     setQuantity(false)
+    }
+  
     const clickToChangeQuantity=(id)=>{
       // console.log(id)
       dispatch(editQuantity(id))
@@ -71,13 +85,13 @@ const QuantityTable = ({item}) => {
 
            <td className={styles.td} key={item.id}> 
            { price && products.productId==item.id?
-           <input price={item.price} onChange={(event)=>handleChangePrice(event.target.value,item.id)} onBlur={()=>onBlurInput()} className={styles.Input} /> :
-            <span onClick={()=>clickToChangePrice(item.id)}>{item.price}</span>}
+           <input price={item.price} onChange={(event)=>handleChangePrice(event.target.value,item.id)} onBlur={(event)=>onBlurInputPrice(event.target.value,item.id)} className={styles.Input} /> :
+            <span onClick={()=>clickToChangePrice(item.id)}>{editprice && editIdprice==item.id ? editprice :item.price}</span>}
            </td>
             <td className={styles.td}>
             { quantity && products.productId==item.id?
-            <input  price={item.quantity} onChange={(event)=>handleChangeQuantity(event.target.value,item.id)} onBlur={()=>onBlurInput()} className={styles.Input}/> :
-            <span onClick={()=>clickToChangeQuantity(item.id)}>{item.quantity}</span>}
+            <input  price={item.quantity} onChange={(event)=>handleChangeQuantity(event.target.value,item.id)} onBlur={(event)=>onBlurInputQuantity(event.target.value,item.id)} className={styles.Input}/> :
+            <span onClick={()=>clickToChangeQuantity(item.id)}>{editQty && editIdQuantity==item.id ? editQty :item.quantity}</span>}
               </td>
           </tr >)
          })}
