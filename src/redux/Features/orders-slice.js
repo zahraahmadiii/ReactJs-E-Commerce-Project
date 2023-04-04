@@ -16,13 +16,13 @@ export const getOrder = createAsyncThunk("orders/fetchList", async (action) => {
     });
 
 const ordersSlice = createSlice({
-  name: "orders",
+  name:"orders",
   initialState:{
     data:[],
     status:'idle',
     delivery:false,
     openModal:false,
-    orderId:0
+    orderId:0   
 },
 reducers:{
 setDelivery:(state,action)=>{

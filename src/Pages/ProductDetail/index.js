@@ -19,6 +19,21 @@ const ProductDetail = () => {
    useEffect(()=>{
     getData(productId).then(res => setProduct(res))
    },[productId])
+  //  ////////////////////////////////////////////////////
+  // handle add product to cart
+  const [counter, setCounter] = useState(0)
+
+  const addProduct=()=>{
+    setCounter(counter + 1)
+  }
+  const minusProduct=()=>{
+    setCounter(counter - 1)
+  }
+
+  const addToCart=(product)=>{
+   console.log(product)
+   
+  }
 
   return (
     <>
@@ -34,12 +49,12 @@ const ProductDetail = () => {
               <p className={styles.price}>{product.price} تومان</p>
              </div>
              <div className={styles.btnNumber}>
-             <Link to="/Products/ProductDetail"><Button btnColor={" rgb(7 68 199)"}>{"افزودن به سبد خرید"}</Button></Link>
+             <Button onClick={()=>addToCart(product)} btnColor={" rgb(7 68 199)"}>{"افزودن به سبد "}</Button>
 
             <div className={styles.number}>
-              <div className={styles.add}>+</div>
-              <div className={styles.num}>1</div>
-              <div className={styles.minus}>-</div>
+              <div className={styles.add} onClick={addProduct}>+</div>
+              <div className={styles.num}>{counter}</div>
+              <div className={styles.minus} onClick={minusProduct}>-</div>
               </div>
             </div>
             </div>
