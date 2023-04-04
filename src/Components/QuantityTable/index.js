@@ -19,16 +19,16 @@ const QuantityTable = ({item}) => {
     const dispatch=useDispatch()
     
     const clickToChangePrice=(id)=>{
-      console.log(id)
+      // console.log(id)
       dispatch(editPrice(id))
       setPrice(true)
     }
     const handleChangePrice=(event,id)=>{
-    console.log(event)
+    // console.log(event)
     dispatch(getNewPrice({price:event,id:id}))
     }
     const onBlurInputPrice=(event,id)=>{
-      console.log(event)
+      // console.log(event)
     //  setEditprice(event)
     //  setEditIdprice(id)
      setPrice(false)

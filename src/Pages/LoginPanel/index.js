@@ -25,7 +25,6 @@ const LoginPanel = () => {
 
  const navigate=useNavigate()
  useEffect(()=>{
-  console.log("ok")
   const token=localStorage.getItem('token')
   if(token){
     navigate("/LoginPanel/AdminPanel")
@@ -43,7 +42,7 @@ const LoginPanel = () => {
 
  } catch(error) {
     toast.error("نام کاربری و رمزعبور صحیح نیست");
-    console.log(error)
+    // console.log(error)
 }
   
 }

@@ -12,7 +12,7 @@ import CartTable from "../../Components/CartTable"
     <div className={styles.cart}>
     
        
-      {/* <CartTable/> */}
+      <CartTable/>
 
       <Link to="/Cart/CheckOut"><Button>{"نهایی کردن سبد خرید"}</Button></Link>
       <h2>Cart</h2>

@@ -6,7 +6,7 @@ import Header from "../../Layouts/header"
 import { getDetails } from '../../Api/Servises/getProductDetail'
 import { useDispatch, useSelector } from 'react-redux'
 import { BASE_URL } from '../../Api/Constants'
-
+import { addToCart } from '../../redux/Features/orders-slice'
 const getData= async(id)=>{
   const res=await  getDetails(id)
   return res.data
@@ -29,10 +29,10 @@ const ProductDetail = () => {
   const minusProduct=()=>{
     setCounter(counter - 1)
   }
-
+  const dispatch=useDispatch()
   const addToCart=(product)=>{
-   console.log(product)
-   
+  //  console.log(product)
+   dispatch(addToCart(product))
   }
 
   return (

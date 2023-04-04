@@ -5,7 +5,7 @@ import { BASE_URL } from '../../Api/Constants';
 import { useSearchParams ,useNavigate} from 'react-router-dom';
 import { showProductDetail } from '../../redux/Features/products-slice';
  const Card = ({item}) => {
-console.log(item)
+// console.log(item)
   const {products} = useSelector(store => store);
   const [searchParams] = useSearchParams();
   const dispatch=useDispatch()

@@ -26,15 +26,15 @@ const ProductTable = ({item}) => {
   const [itemOffset, setItemOffset] = useState(0);
 
   const endOffset = itemOffset + 5;
-  console.log(`Loading items from ${itemOffset} to ${endOffset}`);
+  // console.log(`Loading items from ${itemOffset} to ${endOffset}`);
   const currentItems = products.data.slice(itemOffset, endOffset);
   const pageCount = Math.ceil(products.data.length / 5);
 
   const handlePageClick = (event) => {
     const newOffset = (event.selected * 5) % products.data.length;
-    console.log(
-      `User requested page number ${event.selected}, which is offset ${newOffset}`
-    );
+    // console.log(
+    //   `User requested page number ${event.selected}, which is offset ${newOffset}`
+    // );
     setItemOffset(newOffset);
   };
  

@@ -15,7 +15,7 @@ import { Category } from '../../Components/Category';
 
  const Home = () => {
   const {products} = useSelector(store => store);
-  console.log(products);
+  // console.log(products);
   const dispatch=useDispatch()
 
   useEffect(()=>{
