@@ -35,6 +35,7 @@ const CartTable = () => {
             <td className={styles.td}>{item.name}</td>
             <td className={styles.td}>{item.price}</td>
             <td className={styles.td}>{item.count}</td>
+            <td className={styles.td}><BsTrash className={styles.trash} /></td>
           </tr>)
          })}
        

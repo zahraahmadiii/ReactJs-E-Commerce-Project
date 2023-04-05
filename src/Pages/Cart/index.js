@@ -18,7 +18,7 @@ import { useSelector } from 'react-redux';
    
     <div className={styles.cart}>
       <CartTable orders={orders.orderProduct}/>
-
+      <p>جمع:</p>
       <Link to="/Cart/CheckOut"><Button btnColor={" rgb(7 68 199)"}>{"نهایی کردن سبد "}</Button></Link>
     </div>
     </>

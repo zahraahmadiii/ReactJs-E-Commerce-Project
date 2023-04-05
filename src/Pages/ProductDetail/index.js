@@ -32,7 +32,6 @@ const ProductDetail = () => {
   }
   const dispatch=useDispatch()
   const addToCartBtn=(product)=>{
-
   const OrderData={
     count:count,
     Qty:product.quantity,
@@ -41,16 +40,12 @@ const ProductDetail = () => {
     price:product.price,
     id:product.id
   }
-  
   dispatch(addToCart(OrderData)) 
   
   const productBasket = JSON.parse(localStorage.getItem('basket') || '[]');
-        productBasket.push(OrderData)
-        localStorage.setItem('basket', JSON.stringify(productBasket));
-        
-        // let filteredProduct= productBasket.filter((item)=> item.id !== OrderData.id)
-        //  console.log(filteredProduct)
-        // localStorage.setItem('basket', JSON.stringify(filteredProduct));
+        let filteredProduct= productBasket.filter((item)=> item.id !== OrderData.id)
+        filteredProduct.push(OrderData)
+        localStorage.setItem('basket', JSON.stringify(filteredProduct));
       
   }
 
