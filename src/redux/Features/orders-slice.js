@@ -38,6 +38,23 @@ closeOrdersModal:(state,action)=>{
  },
  addToCart:(state,action)=>{
   state.orderProduct=[...state.orderProduct,action.payload]
+  //   const filterProduct = state.orderProduct.filter((item)=>  item.id==action.payload.id)
+  // console.log(filterProduct)
+  
+
+  // const index = state.orderProduct.findIndex(item => item.id === action.payload.id)
+
+  // if (index >= 0) {
+  //     state.orderProduct[index] = {
+  //         ...state.orderProduct[index],
+  //         Qty: state.orderProduct[index].Qty + 1
+  //     }
+  // } else {
+  //     const newCartItem = { ...action.payload, Qty: 1 }
+  //     state.orderProduct.push(newCartItem)
+  // }
+  // state.cartTotalQuantity++
+  // state.cartTotalPrice = (Number(state.cartTotalPrice) + Number(action.payload.price)).toFixed(2)
 
  }
 },

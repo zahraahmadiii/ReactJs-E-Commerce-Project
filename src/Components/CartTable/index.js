@@ -12,6 +12,7 @@ import { useState } from 'react';
 const CartTable = () => {
     const orders = useSelector(store => store.ordersSlice);
     console.log(orders.orderProduct)
+    // const basket =  JSON.parse(localStorage.getItem("basket"));
   return (
     
     <div className={styles.table}>

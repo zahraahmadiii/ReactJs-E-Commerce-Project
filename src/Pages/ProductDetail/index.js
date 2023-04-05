@@ -41,7 +41,24 @@ const ProductDetail = () => {
     id:product.id
   }
   dispatch(addToCart(OrderData)) 
-  }
+
+  // localStorage.setItem("basket", JSON.stringify(OrderData));
+
+  // const basket =  JSON.parse(localStorage.getItem("basket"));
+  // console.log(basket)
+  // console.log(basket)
+  // const basket =  JSON.parse(localStorage.getItem("basket") || "[]");
+  //   console.log(basket)
+  // if(basket.map((product)=>product.name).includes(product.name) ){
+  //  const productIndex = basket.findIndex((item)=>item.name === product.name)
+  //   basket[productIndex].counter +=counter
+  //   window.localStorage.setItem("basket", JSON.stringify(basket));
+  // }else{
+  //   basket.push(OrderData)
+  //   window.localStorage.setItem("basket", JSON.stringify(basket));
+  // }
+}
+
 
   return (
     <>

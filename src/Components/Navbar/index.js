@@ -18,6 +18,7 @@ import {ImHome} from "react-icons/im"
     
       </div>
       <div className={styles.row3}>
+        <div className={styles.qty}>0</div>
       <BsFillCartFill className={styles.Icon}/>
        <Link to="/Cart" className={styles.link}>سبدخرید</Link>
       </div>

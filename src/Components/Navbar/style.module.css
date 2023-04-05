@@ -33,3 +33,15 @@
     gap: 6px;
     align-items: center; 
 }
+.qty{
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  background-color: white;
+  color: red;
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  top: 1.9rem;
+  right: 14rem;
+}
