@@ -21,32 +21,38 @@ const ProductDetail = () => {
    },[productId])
   //  ////////////////////////////////////////////////////
   // handle add product to cart
-  const [counter, setCounter] = useState(0)
-
+  const [count, setCount] = useState(0)
+  const orders = useSelector(store => store.ordersSlice);
+  console.log(orders.orderProduct)
   const addProduct=()=>{
-    setCounter(counter + 1)
+    setCount(count + 1)
   }
   const minusProduct=()=>{
-    setCounter(counter - 1)
+    setCount(count - 1)
   }
   const dispatch=useDispatch()
   const addToCartBtn=(product)=>{
-  //  console.log(product)
+
   const OrderData={
-    count:counter,
+    count:count,
     Qty:product.quantity,
     image:product.thumbnail,
     name:product.name,
     price:product.price,
     id:product.id
   }
+  
   dispatch(addToCart(OrderData)) 
-
+  
   const productBasket = JSON.parse(localStorage.getItem('basket') || '[]');
         productBasket.push(OrderData)
         localStorage.setItem('basket', JSON.stringify(productBasket));
-
-}
+        
+        // let filteredProduct= productBasket.filter((item)=> item.id !== OrderData.id)
+        //  console.log(filteredProduct)
+        // localStorage.setItem('basket', JSON.stringify(filteredProduct));
+      
+  }
 
 
   return (
@@ -67,7 +73,7 @@ const ProductDetail = () => {
 
             <div className={styles.number}>
               <div className={styles.add} onClick={addProduct}>+</div>
-              <div className={styles.num}>{counter}</div>
+              <div className={styles.num}>{count}</div>
               <div className={styles.minus} onClick={minusProduct}>-</div>
               </div>
             </div>
