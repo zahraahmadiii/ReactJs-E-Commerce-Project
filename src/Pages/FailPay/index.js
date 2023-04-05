@@ -7,8 +7,8 @@ import Header from '../../Layouts/header';
     <>
       <Header/>
       <div className={styles.fail}>
-    
-      <h2>FailPay</h2>
+      <img src="/img/Fail.png" className={styles.image}/>
+      <h6>پرداخت موفقیت آمیز نبود ,سفارش شما در انتظار پرداخت است</h6>
     </div>
     </>
   

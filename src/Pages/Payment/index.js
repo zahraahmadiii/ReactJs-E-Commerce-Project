@@ -6,8 +6,8 @@ import Button from '../../Components/button';
 const Payment = () => {
   return (
     <div>
-      <Link to="/Cart/CheckOut/Payment/SuccessPay"><Button>{"پرداخت"}</Button></Link>
-      <Link to="/Cart/CheckOut/Payment/FailPay"><Button>{"انصراف"}</Button></Link>
+      <Link to="/Cart/CheckOut/Payment/SuccessPay"><Button btnColor={" rgb(7 68 199)"}>{"پرداخت"}</Button></Link>
+      <Link to="/Cart/CheckOut/Payment/FailPay"><Button btnColor={" red"} >{"انصراف"}</Button></Link>
       
     </div>
   )
