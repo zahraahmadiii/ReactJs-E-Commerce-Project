@@ -23,7 +23,7 @@ const ordersSlice = createSlice({
     delivery:false,
     openModal:false,
     orderId:0,
-    orderProduct:[]   
+    orderProduct:[],  
 },
 reducers:{
 setDelivery:(state,action)=>{
@@ -37,8 +37,8 @@ closeOrdersModal:(state,action)=>{
   state.openModal=false;
  },
  addToCart:(state,action)=>{
-  state.orderProduct=action.payload
-  // console.log(action.payload)
+  state.orderProduct=[...state.orderProduct,action.payload]
+
  }
 },
   extraReducers:{

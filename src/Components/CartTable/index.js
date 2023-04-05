@@ -25,15 +25,15 @@ const CartTable = () => {
         </tr>
       </thead>
       <tbody>
-        {/* {items.map((item)=> {
+        {orders.orderProduct.map((item)=> {
           return(
             <tr key={item.id} className={styles.tr}>
-            <td className={styles.td}> <img src={`${BASE_URL}/files/${item.thumbnail}`} className={styles.img}/></td>
+            <td className={styles.td}> <img src={`${BASE_URL}/files/${item.image}`} className={styles.img}/></td>
             <td className={styles.td}>{item.name}</td>
-            <td className={styles.td}>{item.category}</td>
-         
+            <td className={styles.td}>{item.price}</td>
+            <td className={styles.td}>{item.count}</td>
           </tr>)
-         })} */}
+         })}
        
       </tbody>
     </Table>

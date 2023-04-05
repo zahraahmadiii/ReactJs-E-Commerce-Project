@@ -5,8 +5,8 @@
     justify-content: center;
     direction: rtl;
      width: 750px;
-     margin: auto;
      gap: 1rem;
+     
 }
 .border{
   background-color: rgb(255, 255, 255);

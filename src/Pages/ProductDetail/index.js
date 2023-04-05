@@ -13,9 +13,9 @@ const getData= async(id)=>{
 }
 const ProductDetail = () => {
   const {productId}=useParams()
-  console.log(productId)
+  // console.log(productId)
  const [product,setProduct]=useState(null)
-
+ console.log(product)
    useEffect(()=>{
     getData(productId).then(res => setProduct(res))
    },[productId])
@@ -30,9 +30,17 @@ const ProductDetail = () => {
     setCounter(counter - 1)
   }
   const dispatch=useDispatch()
-  const addToCart=(product)=>{
+  const addToCartBtn=(product)=>{
   //  console.log(product)
-   dispatch(addToCart(product))
+  const OrderData={
+    count:counter,
+    Qty:product.quantity,
+    image:product.thumbnail,
+    name:product.name,
+    price:product.price,
+    id:product.id
+  }
+  dispatch(addToCart(OrderData)) 
   }
 
   return (
@@ -49,7 +57,7 @@ const ProductDetail = () => {
               <p className={styles.price}>{product.price} تومان</p>
              </div>
              <div className={styles.btnNumber}>
-             <Button onClick={()=>addToCart(product)} btnColor={" rgb(7 68 199)"}>{"افزودن به سبد "}</Button>
+             <Button onClick={()=>addToCartBtn(product)} btnColor={" rgb(7 68 199)"}>{"افزودن به سبد "}</Button>
 
             <div className={styles.number}>
               <div className={styles.add} onClick={addProduct}>+</div>

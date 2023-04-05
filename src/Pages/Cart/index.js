@@ -4,18 +4,19 @@ import { Link } from 'react-router-dom';
 import Button from "../../Components/button"
 import Header from '../../Layouts/header';
 import CartTable from "../../Components/CartTable"
+import { useSelector } from 'react-redux';
  const Cart = () => {
+   const orders = useSelector(store => store.ordersSlice);
+    // console.log(orders.orderProduct)
+ 
   return (
     <>
       <Header/>
    
     <div className={styles.cart}>
-    
-       
-      <CartTable/>
+      <CartTable orders={orders.orderProduct}/>
 
-      <Link to="/Cart/CheckOut"><Button>{"نهایی کردن سبد خرید"}</Button></Link>
-      <h2>Cart</h2>
+      <Link to="/Cart/CheckOut"><Button btnColor={" rgb(7 68 199)"}>{"نهایی کردن سبد "}</Button></Link>
     </div>
     </>
   )
