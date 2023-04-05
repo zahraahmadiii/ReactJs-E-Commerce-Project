@@ -37,7 +37,7 @@ closeOrdersModal:(state,action)=>{
   state.openModal=false;
  },
  addToCart:(state,action)=>{
-  state.orderProduct=[...state.orderProduct,action.payload]
+  state.orderProduct=action.payload
   console.log(state.orderProduct)
 
   // const index = state.orderProduct.findIndex(item => item.id === action.payload.id)

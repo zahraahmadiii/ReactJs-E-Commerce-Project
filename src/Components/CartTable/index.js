@@ -13,8 +13,8 @@ const CartTable = () => {
     const orders = useSelector(store => store.ordersSlice);
     console.log(orders.orderProduct)
   
-    let localBasket = JSON.parse(localStorage.getItem('basket'))
-    console.log(localBasket) 
+    // let localBasket = JSON.parse(localStorage.getItem('basket'))
+    // console.log(localBasket) 
   return (
     
     <div className={styles.table}>
@@ -28,7 +28,7 @@ const CartTable = () => {
         </tr>
       </thead>
       <tbody>
-        {localBasket.map((item)=> {
+        {orders.orderProduct.map((item)=> {
           return(
             <tr key={item.id} className={styles.tr}>
             <td className={styles.td}> <img src={`${BASE_URL}/files/${item.image}`} className={styles.img}/></td>
