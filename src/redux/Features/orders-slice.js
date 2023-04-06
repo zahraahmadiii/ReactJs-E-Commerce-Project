@@ -46,6 +46,9 @@ closeOrdersModal:(state,action)=>{
  addToCart:(state,action)=>{
   state.orderProduct=action.payload
  },
+ emptyBasket:(state,action)=>{
+  state.orderProduct=action.payload
+ }
 },
   extraReducers:{
     [getOrder.pending]:(state)=>{
@@ -64,4 +67,4 @@ closeOrdersModal:(state,action)=>{
     });
 
     export default ordersSlice.reducer;
-export const{setDelivery,openOrdersModal,closeOrdersModal,addToCart}=ordersSlice.actions;
+export const{setDelivery,openOrdersModal,closeOrdersModal,addToCart,emptyBasket}=ordersSlice.actions;

@@ -3,8 +3,12 @@ import styles from "./style.module.css"
 import { Link } from 'react-router-dom';
 import Button from '../../Components/button';
 import { postOrders } from '../../Api/Servises/postOrders';
+import { useDispatch, useSelector } from 'react-redux';
+import { emptyBasket } from '../../redux/Features/orders-slice';
 
 const Payment = () => {
+  const orders = useSelector(store => store.ordersSlice);
+  const dispatch=useDispatch()
 const payOrder=()=>{
   let localCustomer = JSON.parse(localStorage.getItem('customerData'))
   console.log(localCustomer)
@@ -14,6 +18,8 @@ const payOrder=()=>{
     ...localCustomer,products:localBasket,delivered:false,prices:prices
   }
   postOrders(newOrder)
+  dispatch(emptyBasket([]))
+ 
 }
 
 const failOrder=()=>{
