@@ -39,6 +39,7 @@ closeOrdersModal:(state,action)=>{
  addToCart:(state,action)=>{
   state.orderProduct=action.payload
   console.log(state.orderProduct)
+  // let localBasket = JSON.parse(localStorage.getItem('basket'))
 
   // const index = state.orderProduct.findIndex(item => item.id === action.payload.id)
 

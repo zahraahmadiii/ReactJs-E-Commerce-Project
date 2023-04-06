@@ -9,7 +9,7 @@ import { useSelector } from 'react-redux';
    const orders = useSelector(store => store.ordersSlice);
     // console.log(orders.orderProduct)
 
-  //   const basket =  JSON.parse(localStorage.getItem("basket"));
+    // const basket =  JSON.parse(localStorage.getItem("basket"));
   // console.log(basket)
  
   return (
