@@ -4,7 +4,11 @@ import styles from './style.module.css'
 import {BsFillCartFill} from "react-icons/bs"
 import {FaUserAlt} from "react-icons/fa"
 import {ImHome} from "react-icons/im"
+import { useSelector } from 'react-redux'
  const Navbar = () => {
+
+  const orders = useSelector(store => store.ordersSlice);
+
   return (
     <div className={styles.links}>
       <div className={styles.row1}>
@@ -18,6 +22,7 @@ import {ImHome} from "react-icons/im"
     
       </div>
       <div className={styles.row3}>
+        <div className={styles.qty}>{orders.orderProduct.length}</div>
       <BsFillCartFill className={styles.Icon}/>
        <Link to="/Cart" className={styles.link}>سبدخرید</Link>
       </div>

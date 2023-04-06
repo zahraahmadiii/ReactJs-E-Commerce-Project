@@ -9,7 +9,7 @@ const getCategory=async(category)=>{
 }
 
 export const ProductsCategory = ({category}) => {
-console.log(category)
+// console.log(category)
 const [allcategory,setAllCategory]=useState([])
 
 useEffect(()=>{

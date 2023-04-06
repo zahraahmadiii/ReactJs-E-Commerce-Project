@@ -10,7 +10,7 @@ import { fetchCustomerData } from '../../Api/Servises/getCustomersOrder';
 const OrderModal = () => {
 
   const orders = useSelector(store => store.ordersSlice);
-  console.log(orders)
+  // console.log(orders)
 
   const dispatch=useDispatch()
   useEffect(()=>{

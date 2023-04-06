@@ -6,19 +6,49 @@ import Header from "../../Layouts/header"
 import { getDetails } from '../../Api/Servises/getProductDetail'
 import { useDispatch, useSelector } from 'react-redux'
 import { BASE_URL } from '../../Api/Constants'
-
+import { addToCart } from '../../redux/Features/orders-slice'
 const getData= async(id)=>{
   const res=await  getDetails(id)
   return res.data
 }
 const ProductDetail = () => {
   const {productId}=useParams()
-  console.log(productId)
+  // console.log(productId)
  const [product,setProduct]=useState(null)
-
+ console.log(product)
    useEffect(()=>{
     getData(productId).then(res => setProduct(res))
    },[productId])
+  //  ////////////////////////////////////////////////////
+  // handle add product to cart
+  const [count, setCount] = useState(0)
+  const orders = useSelector(store => store.ordersSlice);
+  console.log(orders.orderProduct)
+  const addProduct=()=>{
+    setCount(count + 1)
+  }
+  const minusProduct=()=>{
+    setCount(count - 1)
+  }
+  const dispatch=useDispatch()
+  const addToCartBtn=(product)=>{
+
+    const OrderData={
+      count:count,
+      Qty:product.quantity,
+      image:product.thumbnail,
+      name:product.name,
+      price:product.price,
+      id:product.id
+    }
+    let filteredProduct= orders.orderProduct.filter((item) =>  item.id !== OrderData.id)
+    filteredProduct.push(OrderData)
+     dispatch(addToCart(filteredProduct)) 
+     const productBasket = JSON.parse(localStorage.getItem('basket') || '[]');
+       localStorage.setItem('basket', JSON.stringify(filteredProduct)); 
+      
+  }
+
 
   return (
     <>
@@ -34,12 +64,12 @@ const ProductDetail = () => {
               <p className={styles.price}>{product.price} تومان</p>
              </div>
              <div className={styles.btnNumber}>
-             <Link to="/Products/ProductDetail"><Button btnColor={" rgb(7 68 199)"}>{"افزودن به سبد خرید"}</Button></Link>
+             <Button onClick={()=>addToCartBtn(product)} btnColor={" rgb(7 68 199)"}>{"افزودن به سبد "}</Button>
 
             <div className={styles.number}>
-              <div className={styles.add}>+</div>
-              <div className={styles.num}>1</div>
-              <div className={styles.minus}>-</div>
+              <div className={styles.add} onClick={addProduct}>+</div>
+              <div className={styles.num}>{count}</div>
+              <div className={styles.minus} onClick={minusProduct}>-</div>
               </div>
             </div>
             </div>

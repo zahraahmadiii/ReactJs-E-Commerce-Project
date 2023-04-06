@@ -25,17 +25,13 @@ const LoginPanel = () => {
 
  const navigate=useNavigate()
  useEffect(()=>{
-  if(Cookies.get('token')){
+  const token=localStorage.getItem('token')
+  if(token){
     navigate("/LoginPanel/AdminPanel")
   }
-  // else{
-  //   navigate("/LoginPanel")
-  // }
  },[])
 
   const submitForm= async(data)=>{
-   const res = await loginService(data);
-   console.log(res)
   try {
     const res = await loginService(data);
     Cookies.set('token', res.accessToken);
@@ -44,10 +40,9 @@ const LoginPanel = () => {
     navigate("/LoginPanel/AdminPanel")
     toast.success('خوش آمدید')
 
- } catch (error) {
-
+ } catch(error) {
     toast.error("نام کاربری و رمزعبور صحیح نیست");
-    console.log(error)
+    // console.log(error)
 }
   
 }
@@ -57,7 +52,7 @@ const LoginPanel = () => {
   return (
     < >
       <div className={styles.loginpage}>
-      {/* <ToastContainer/> */}
+      <ToastContainer/>
         <div className={styles.wraper}>
         <Slider/>
       <form className={styles.form} onSubmit={handleSubmit(submitForm)}>

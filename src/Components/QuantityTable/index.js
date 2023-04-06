@@ -11,30 +11,74 @@ const QuantityTable = ({item}) => {
 //handle change price and quantity in table///////////////////////////
     const [price, setPrice] = useState(false);
     const [quantity,setQuantity]= useState(false);
-    // const [edit,setedit]=useState(0);
+    // const [editprice,setEditprice]=useState();
+    // const [editIdprice,setEditIdprice]=useState();
+    // const [editQty,setQty]=useState();
+    // const [editIdQuantity,setEditIdQuantity]=useState();
+    const [test,setTest]=useState([]);
     const dispatch=useDispatch()
+    
     const clickToChangePrice=(id)=>{
-      console.log(id)
+      // console.log(id)
       dispatch(editPrice(id))
       setPrice(true)
     }
     const handleChangePrice=(event,id)=>{
-    console.log(event)
-    // setedit(event)
-    // event.target.innerText=edit
+    // console.log(event)
     dispatch(getNewPrice({price:event,id:id}))
     }
-    const onBlurInput=()=>{
-    setPrice(false)
-    setQuantity(false)
+    const onBlurInputPrice=(event,id)=>{
+      // console.log(event)
+    //  setEditprice(event)
+    //  setEditIdprice(id)
+     setPrice(false)
+     const editeditemTest=test.find((item)=> item.id==id)
+     if(!editeditemTest){
+      const obj={
+        id:id,
+        price:event,
+      }
+      setTest([...test,obj])
+     }else{
+      const temp=[...test]
+      const editIndex=temp.indexOf(editeditemTest)
+      editeditemTest.price=event
+       temp.splice(editIndex,1,editeditemTest)
+       setTest(temp)
+     }
     }
-    const clickToChangeQuantity=(id)=>{
+    const onBlurInputQuantity=(event,id)=>{
+      console.log(event)
+    //  setQty(event)
+    //  setEditIdQuantity(id)
+    //  setPrice(false)
+     setQuantity(false)
+     const editeditemTest=test.find((item)=> item.id==id)
+     if(!editeditemTest){
+      const obj={
+        id:id,
+        qty:event,
+      }
+      setTest([...test,obj])
+     }else{
+      const temp=[...test]
+      const editIndex=temp.indexOf(editeditemTest)
+      editeditemTest.qty=event
+       temp.splice(editIndex,1,editeditemTest)
+       setTest(temp)
+     }
+    }
+
+    const findInEdited=(id)=>{
+      return  test.find((product)=> product.id==id )
+    }
+  
+    const clickToChangeQuantity =(id)=>{
       // console.log(id)
       dispatch(editQuantity(id))
       setQuantity(true)
     }
     const handleChangeQuantity=(event,id)=>{
-    // console.log(event)
     dispatch(getNewQuantity({quantity:event,id:id}))
     } 
 // pagination ///////////////////////////////////////////////////////
@@ -73,13 +117,16 @@ const QuantityTable = ({item}) => {
 
            <td className={styles.td} key={item.id}> 
            { price && products.productId==item.id?
-           <input price={item.price} onChange={(event)=>handleChangePrice(event.target.value,item.id)} onBlur={()=>onBlurInput()} className={styles.Input} /> :
-            <span onClick={()=>clickToChangePrice(item.id)}>{item.price}</span>}
+           <input price={item.price} onChange={(event)=>handleChangePrice(event.target.value,item.id)} onBlur={(event)=>onBlurInputPrice(event.target.value,item.id)} className={styles.Input} /> :
+
+            <span onClick={()=>clickToChangePrice(item.id)}>{ findInEdited(item.id) && findInEdited(item.id).price ? findInEdited(item.id).price :item.price}</span>}
            </td>
+
             <td className={styles.td}>
             { quantity && products.productId==item.id?
-            <input  price={item.quantity} onChange={(event)=>handleChangeQuantity(event.target.value,item.id)} onBlur={()=>onBlurInput()} className={styles.Input}/> :
-            <span onClick={()=>clickToChangeQuantity(item.id)}>{item.quantity}</span>}
+            <input  price={item.quantity} onChange={(event)=>handleChangeQuantity(event.target.value,item.id)} onBlur={(event)=>onBlurInputQuantity(event.target.value,item.id)} className={styles.Input}/> :
+
+            <span onClick={()=>clickToChangeQuantity(item.id)}>{ findInEdited(item.id) && findInEdited(item.id).qty ? findInEdited(item.id).qty :item.quantity}</span>}
               </td>
           </tr >)
          })}
