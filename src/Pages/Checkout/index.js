@@ -6,7 +6,7 @@ import Header from '../../Layouts/header';
 import * as yup from "yup";
 import { useForm } from "react-hook-form";
 import { yupResolver } from '@hookform/resolvers/yup';
-import DatePicker from "react-multi-date-picker"
+import PickDate from "../../Components/datePicker"
 const CheckOut = () => {
 
   const schema = yup.object({
@@ -53,10 +53,11 @@ const CheckOut = () => {
           <p className={styles.para}>{errors.phone?.message}</p>  
 
           <label> تاریخ تحویل:</label>
-          <input type="text" name="expectAt"className={styles.input}
-           {...register("expectAt")}/>
+          <PickDate {...register("expectAt")}/>
           <p className={styles.para}>{errors.expectAt?.message}</p>
-
+ {/* <input type="text" name="expectAt"className={styles.input}
+           {...register("expectAt")}/> */}
+           
           <div className={styles.btn}>
           <Button type={"submit"} btnColor={" rgb(7 68 199)"}>{"پرداخت"}</Button>
           </div>
