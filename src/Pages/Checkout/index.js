@@ -25,9 +25,9 @@ const CheckOut = () => {
    const navigate=useNavigate()
 
    const submitData =(data)=>{
-    console.log(data)
+    // console.log(data)
     const customerData = JSON.parse(localStorage.getItem('customerData') || '[]');
-    localStorage.setItem('customerData', JSON.stringify([data])); 
+    localStorage.setItem('customerData', JSON.stringify(data)); 
       navigate("/Cart/CheckOut/Payment")  
 
   }

@@ -1,7 +1,7 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import {fetchOrders} from "../../../src/Api/Servises/orders"
 import { fetchCustomerData } from "../../Api/Servises/getCustomersOrder";
-
+import {postOrders} from "../../Api/Servises/postOrders"
 
 export const getOrder = createAsyncThunk("orders/fetchList", async (action) => {
   // console.log(action)
@@ -14,6 +14,13 @@ export const getOrder = createAsyncThunk("orders/fetchList", async (action) => {
       // console.log(response)
       return response.data;
     });
+
+    export const PostCustomerData = createAsyncThunk("OrdersData/fetchList", async (orderObj) => {
+      const response = await postOrders(orderObj);
+      // console.log(response)
+      return response.data;
+    });
+    
 
 const ordersSlice = createSlice({
   name:"orders",
