@@ -57,4 +57,4 @@ closeOrdersModal:(state,action)=>{
     });
 
     export default ordersSlice.reducer;
-export const{setDelivery,openOrdersModal,closeOrdersModal,addToCart,deleteOrder}=ordersSlice.actions;
+export const{setDelivery,openOrdersModal,closeOrdersModal,addToCart}=ordersSlice.actions;

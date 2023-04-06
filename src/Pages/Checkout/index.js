@@ -14,29 +14,31 @@ const CheckOut = () => {
     lastname:yup.string().required("نام خانوادگی را وارد کنید"),
     address:yup.string().required("آدرس الزامی است"),
     phone: yup.string().required("شماره تلفن الزامی است"),
-    expectAt:yup.string().required("زمان تحویل الزامی است"),
+    // expectAt:yup.string().required("زمان تحویل الزامی است"),
   })
 
   const {
     register,
     handleSubmit,
    formState:{errors} } = useForm({ resolver:yupResolver(schema),mode:"onChange" })
-   const navigate=useNavigate()
-   const submitForm= (data)=>{
-    console.log(data)
-      navigate("/Cart/CheckOut/Payment")
-    
 
-    
+   const navigate=useNavigate()
+
+   const submitData =(data)=>{
+    console.log(data)
+    const customerData = JSON.parse(localStorage.getItem('customerData') || '[]');
+    localStorage.setItem('customerData', JSON.stringify([data])); 
+      navigate("/Cart/CheckOut/Payment")  
+
   }
   return (
     <>
      <Header/>
      <div className={styles.PayPage}>
       
-     <form className={styles.form} onSubmit={handleSubmit(submitForm)}>
+     <form className={styles.form} onSubmit={handleSubmit(submitData)}>
 
-         <label>نام :  </label>
+         <label>نام : </label>
           <input type="text" name="username" className={styles.input} {...register("username")} />
           <p className={styles.para}>{errors.username?.message}</p>
 
@@ -51,16 +53,15 @@ const CheckOut = () => {
           <label> تلفن همراه :</label>
           <input type="text" name="phone" className={styles.input} {...register("phone")}/>
           <p className={styles.para}>{errors.phone?.message}</p>  
-
-          <label> تاریخ تحویل:</label>
-          <PickDate />
-          <p className={styles.para}>{errors.expectAt?.message}</p>
- {/* <input type="text" name="expectAt"className={styles.input}
-           {...register("expectAt")}/> */}
-           
+            
+            <label> تاریخ تحویل: </label>
+           <PickDate/>
+      
           <div className={styles.btn}>
-          <Button type={"submit"} btnColor={" rgb(7 68 199)"}>{"پرداخت"}</Button>
+         <Button type={"submit"} btnColor={" rgb(7 68 199)"}>{"پرداخت"} </Button>
+      
           </div>
+        
       </form>
      
       

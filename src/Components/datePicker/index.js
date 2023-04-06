@@ -7,7 +7,7 @@ export default function PickDate() {
   const [value, setValue] = useState(new Date())
 
     return (
-        <div  style={{direction: "rtl"}}     
+        <div  style={{direction:"rtl"}}     
         >
           <DatePicker
            style={{
