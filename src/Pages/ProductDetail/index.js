@@ -33,35 +33,6 @@ const ProductDetail = () => {
   const dispatch=useDispatch()
   const addToCartBtn=(product)=>{
 
-    // let filteredProduct= orders.orderProduct.filter((item) =>  item.id !== product.id)
-
-    // filteredProduct.map((item)=> {
-     
-    //   if(item.id==product.id){
-    //     item.count=item.count+product.count
-    //     const OrderObj={
-    //       count:item.count,
-    //       Qty:product.quantity,
-    //       image:product.thumbnail,
-    //       name:product.name,
-    //       price:product.price,
-    //       id:product.id
-    //     }
-    //     filteredProduct.push(OrderObj)
-    //     dispatch(addToCart(filteredProduct)) 
-    //   }else{
-    //     const OrderData={
-    //       count:count,
-    //       Qty:product.quantity,
-    //       image:product.thumbnail,
-    //       name:product.name,
-    //       price:product.price,
-    //       id:product.id
-    //     }
-    //     filteredProduct.push(OrderData)
-    //     dispatch(addToCart(filteredProduct)) 
-    //   }
-    //  })
     const OrderData={
       count:count,
       Qty:product.quantity,
@@ -72,9 +43,7 @@ const ProductDetail = () => {
     }
     let filteredProduct= orders.orderProduct.filter((item) =>  item.id !== OrderData.id)
     filteredProduct.push(OrderData)
-
    dispatch(addToCart(filteredProduct)) 
-
     const productBasket = JSON.parse(localStorage.getItem('basket') || '[]');
         localStorage.setItem('basket', JSON.stringify(filteredProduct));
 

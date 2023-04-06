@@ -9,9 +9,8 @@ import {useDispatch, useSelector} from 'react-redux'
 import { useState } from 'react';
 
 
-const CartTable = () => {
-    const orders = useSelector(store => store.ordersSlice);
-    console.log(orders.orderProduct)
+const CartTable = ({orders}) => {
+ 
   
     // let localBasket = JSON.parse(localStorage.getItem('basket'))
     // console.log(localBasket) 
@@ -28,7 +27,7 @@ const CartTable = () => {
         </tr>
       </thead>
       <tbody>
-        {orders.orderProduct.map((item)=> {
+        {orders.map((item)=> {
           return(
             <tr key={item.id} className={styles.tr}>
             <td className={styles.td}> <img src={`${BASE_URL}/files/${item.image}`} className={styles.img}/></td>

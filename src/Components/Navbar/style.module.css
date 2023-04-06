@@ -36,9 +36,10 @@
 .qty{
   width: 1.5rem;
   height: 1.5rem;
+  font-weight: bold;
   border-radius: 50%;
   background-color: white;
-  color: red;
+  color: rgb(255, 0, 68);
   display: flex;
   justify-content: center;
   position: absolute;
