@@ -7,11 +7,17 @@ import{BsTrash} from "react-icons/bs"
 import ReactPaginate from 'react-paginate';
 import {useDispatch, useSelector} from 'react-redux'
 import { useState } from 'react';
+import { addToCart, deleteOrder } from '../../redux/Features/orders-slice';
 
 
-const CartTable = ({orders}) => {
- 
-  
+const CartTable = ({allOrders}) => {
+
+  const orders = useSelector(store => store.ordersSlice);
+  const dispatch=useDispatch()
+  const handleDeleteOrder=(product)=>{
+   let filteredProduct= orders.orderProduct.filter((item) =>  item.id !== product.id)
+   dispatch(addToCart(filteredProduct))
+  }
     // let localBasket = JSON.parse(localStorage.getItem('basket'))
     // console.log(localBasket) 
   return (
@@ -27,14 +33,14 @@ const CartTable = ({orders}) => {
         </tr>
       </thead>
       <tbody>
-        {orders.map((item)=> {
+        {allOrders.map((item)=> {
           return(
             <tr key={item.id} className={styles.tr}>
             <td className={styles.td}> <img src={`${BASE_URL}/files/${item.image}`} className={styles.img}/></td>
             <td className={styles.td}>{item.name}</td>
             <td className={styles.td}>{item.price}</td>
             <td className={styles.td}>{item.count}</td>
-            <td className={styles.td}><BsTrash className={styles.trash} /></td>
+            <td className={styles.td}><BsTrash className={styles.trash} onClick={()=>handleDeleteOrder(item)}/></td>
           </tr>)
          })}
        

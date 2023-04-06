@@ -53,7 +53,7 @@ const CheckOut = () => {
           <p className={styles.para}>{errors.phone?.message}</p>  
 
           <label> تاریخ تحویل:</label>
-          <PickDate {...register("expectAt")}/>
+          <PickDate />
           <p className={styles.para}>{errors.expectAt?.message}</p>
  {/* <input type="text" name="expectAt"className={styles.input}
            {...register("expectAt")}/> */}

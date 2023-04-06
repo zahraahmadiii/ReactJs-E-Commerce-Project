@@ -43,16 +43,9 @@ const ProductDetail = () => {
     }
     let filteredProduct= orders.orderProduct.filter((item) =>  item.id !== OrderData.id)
     filteredProduct.push(OrderData)
-   dispatch(addToCart(filteredProduct)) 
-    const productBasket = JSON.parse(localStorage.getItem('basket') || '[]');
-        localStorage.setItem('basket', JSON.stringify(filteredProduct));
-
-
-  // const productBasket = JSON.parse(localStorage.getItem('basket') || '[]');
-  //       let filteredProduct= productBasket.filter((item)=> item.id !== OrderData.id)
-  //       filteredProduct.push(OrderData)
-  //       localStorage.setItem('basket', JSON.stringify(filteredProduct));
- 
+     dispatch(addToCart(filteredProduct)) 
+     const productBasket = JSON.parse(localStorage.getItem('basket') || '[]');
+       localStorage.setItem('basket', JSON.stringify(filteredProduct)); 
       
   }
 

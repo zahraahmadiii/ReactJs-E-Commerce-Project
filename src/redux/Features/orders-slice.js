@@ -38,26 +38,7 @@ closeOrdersModal:(state,action)=>{
  },
  addToCart:(state,action)=>{
   state.orderProduct=action.payload
-  console.log(state.orderProduct)
-
-  
-  // let localBasket = JSON.parse(localStorage.getItem('basket'))
-
-  // const index = state.orderProduct.findIndex(item => item.id === action.payload.id)
-
-  // if (index >= 0) {
-  //     state.orderProduct[index] = {
-  //         ...state.orderProduct[index],
-  //         Qty: state.orderProduct[index].Qty + 1
-  //     }
-  // } else {
-  //     const newCartItem = { ...action.payload, Qty: 1 }
-  //     state.orderProduct.push(newCartItem)
-  // }
-  // state.cartTotalQuantity++
-  // state.cartTotalPrice = (Number(state.cartTotalPrice) + Number(action.payload.price)).toFixed(2)
-
- }
+ },
 },
   extraReducers:{
     [getOrder.pending]:(state)=>{
@@ -76,4 +57,4 @@ closeOrdersModal:(state,action)=>{
     });
 
     export default ordersSlice.reducer;
-export const{setDelivery,openOrdersModal,closeOrdersModal,addToCart}=ordersSlice.actions;
+export const{setDelivery,openOrdersModal,closeOrdersModal,addToCart,deleteOrder}=ordersSlice.actions;
