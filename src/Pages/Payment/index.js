@@ -19,7 +19,6 @@ const payOrder=()=>{
   }
   postOrders(newOrder)
   dispatch(emptyBasket([]))
- 
 }
 
 const failOrder=()=>{

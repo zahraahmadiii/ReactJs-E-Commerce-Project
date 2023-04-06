@@ -2,6 +2,7 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import {fetchOrders} from "../../../src/Api/Servises/orders"
 import { fetchCustomerData } from "../../Api/Servises/getCustomersOrder";
 import {postOrders} from "../../Api/Servises/postOrders"
+import { updateDelivery } from "../../Api/Servises/updateDelivery";
 
 export const getOrder = createAsyncThunk("orders/fetchList", async (action) => {
   // console.log(action)
@@ -18,6 +19,11 @@ export const getOrder = createAsyncThunk("orders/fetchList", async (action) => {
     export const PostCustomerData = createAsyncThunk("OrdersData/fetchList", async (orderObj) => {
       const response = await postOrders(orderObj);
       // console.log(response)
+      return response.data;
+    });
+
+    export const deliverProduct= createAsyncThunk("orders/sendOrders", async(delivered) => {
+      const response = await updateDelivery(delivered);
       return response.data;
     });
     
@@ -48,7 +54,7 @@ closeOrdersModal:(state,action)=>{
  },
  emptyBasket:(state,action)=>{
   state.orderProduct=action.payload
- }
+ },
 },
   extraReducers:{
     [getOrder.pending]:(state)=>{
@@ -67,4 +73,4 @@ closeOrdersModal:(state,action)=>{
     });
 
     export default ordersSlice.reducer;
-export const{setDelivery,openOrdersModal,closeOrdersModal,addToCart,emptyBasket}=ordersSlice.actions;
+export const{setDelivery,openOrdersModal,closeOrdersModal,addToCart,emptyBasket,deliverOrder}=ordersSlice.actions;

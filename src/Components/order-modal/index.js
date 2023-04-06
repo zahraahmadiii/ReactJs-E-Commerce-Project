@@ -5,8 +5,9 @@ import Table from 'react-bootstrap/Table';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Button from '../button';
 import { useDispatch, useSelector} from 'react-redux'
-import { closeOrdersModal } from '../../redux/Features/orders-slice';
+import { closeOrdersModal, deliverOrder } from '../../redux/Features/orders-slice';
 import { fetchCustomerData } from '../../Api/Servises/getCustomersOrder';
+import { updateDelivery } from '../../Api/Servises/updateDelivery';
 const OrderModal = () => {
 
   const orders = useSelector(store => store.ordersSlice);
@@ -20,6 +21,14 @@ const OrderModal = () => {
  
   const handleCloseMOdal=()=>{
     dispatch(closeOrdersModal()) 
+  }
+  const handleDeliverOrder=(id)=>{
+   const newDeliver={
+    id:id,
+    delivered:true,
+   }
+    updateDelivery(newDeliver)
+    // dispatch(deliverOrder(true)) 
   }
   return (
    <>
@@ -57,7 +66,7 @@ const OrderModal = () => {
            
            </div>
 
-      <div className={styles.bottom}>
+         <div className={styles.bottom}>
        <Table size="sm" bordered className={styles.bordertable}>
         <thead>
          <tr className={styles.tr}>
@@ -81,18 +90,24 @@ const OrderModal = () => {
   
       </tbody>
      </Table>
-   </div>
+        </div>
+      <div  className={styles.bottom}>
+         {orders.delivery ?
+           <p>زمان تحویل :{item.expectAt} </p> :
+          <Button btnColor={" rgb(7 68 199)"} onClick={()=>handleDeliverOrder(item.id)}  >{"تحویل شد"}</Button>}
+      
+       </div>
     </>
           )
         }
        })}
 
-       <div  className={styles.bottom}>
+       {/* <div  className={styles.bottom}>
         {orders.delivery ?
-        <p>زمان تحویل :</p> :
-         <Button btnColor={" rgb(7 68 199)"}>{"تحویل شد"}</Button>}
+        <p>زمان تحویل : </p> :
+         <Button btnColor={" rgb(7 68 199)"} onClick={()=>handleDeliverOrder()}  >{"تحویل شد"}</Button>}
       
-       </div>
+       </div> */}
     </div>
    </div>
    </>
