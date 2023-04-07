@@ -1,11 +1,12 @@
 
 .loginpage{
-    background-image: linear-gradient(to bottom right,rgb(163, 192, 255) , #ffef5c);
+    /* background-image: linear-gradient(to bottom right,rgb(163, 192, 255) , #fffb92); */
     width: 100vw;
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    /* background-color: rgb(251, 251, 251); */
 }
 .wraper{
     display: flex;
@@ -19,7 +20,7 @@
     background-color: rgb(239, 239, 239);
     display: flex;
     flex-direction: column;
-    border: 3px solid #ffef5c;
+    border: 1px solid #ffef5c;
     direction: rtl;
     gap: 1rem;
     font-size: large;
@@ -28,7 +29,7 @@
     color: gray;
 }
 .input{
-    width: 98%;
+    width: 95%;
     height: 1.90rem;
     border: none;
     border-radius: 5px;
@@ -38,8 +39,6 @@
    display: flex;
    justify-content: center;
    gap: 1rem;
-   margin-top: 1.70rem;
-
 }
 .logo{
     width: 6rem;
