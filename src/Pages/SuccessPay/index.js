@@ -7,7 +7,6 @@ import styles from "./style.module.css"
     <>
       <Header/>
       <div  className={styles.success}>
-      {/* <Link to="/LoginPanel">مدیریت</Link> */}
       <img src="/img/success.png" className={styles.image}/>
       <h6>با تشکر از پرداخت شما,سفارش شما ثبت شده و جهت هماهنگی ارسال با شما تماس گرفته خواهد شد.</h6>
       </div>

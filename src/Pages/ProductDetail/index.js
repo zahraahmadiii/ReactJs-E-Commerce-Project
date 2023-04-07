@@ -13,7 +13,6 @@ const getData= async(id)=>{
 }
 const ProductDetail = () => {
   const {productId}=useParams()
-  // console.log(productId)
  const [product,setProduct]=useState(null)
  console.log(product)
    useEffect(()=>{
@@ -44,9 +43,7 @@ const ProductDetail = () => {
     let filteredProduct= orders.orderProduct.filter((item) =>  item.id !== OrderData.id)
     filteredProduct.push(OrderData)
      dispatch(addToCart(filteredProduct)) 
-     const productBasket = JSON.parse(localStorage.getItem('basket') || '[]');
-       localStorage.setItem('basket', JSON.stringify(filteredProduct)); 
-      
+  
   }
 
 

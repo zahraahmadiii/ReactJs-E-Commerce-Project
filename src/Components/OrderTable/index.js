@@ -9,7 +9,6 @@ import { openOrdersModal } from '../../redux/Features/orders-slice';
 
 
  const OrderTable= ({item}) => {
-  // console.log(item)
 
   ///pagination////////////////////////////////////////////////////////////
   const orders = useSelector(store => store.ordersSlice);
@@ -31,7 +30,6 @@ import { openOrdersModal } from '../../redux/Features/orders-slice';
     // open order modal///////////////////////////////////////////
     const dispatch=useDispatch()
     const handleOpenOrderModal=(id)=>{
-      // console.log(id)
      dispatch(openOrdersModal(id)) 
     }
   return (

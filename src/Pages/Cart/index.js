@@ -14,6 +14,7 @@ import { useSelector } from 'react-redux';
     let  setTotalCount=0
     orders.orderProduct.map((item)=> setTotalCount+=item.count*item.price)
     setToatalPrice(setTotalCount)
+    localStorage.setItem("totalPrice",setTotalCount)
   },[orders.orderProduct])
  
   return (

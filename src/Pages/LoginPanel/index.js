@@ -7,7 +7,6 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from "yup";
 import { loginService } from '../../Api/Servises/auth';
 import Cookies from "js-cookie";
-import { instance } from '../../Api/Constants';
 import { ToastContainer ,toast} from 'react-toastify';
 import Slider from '../../Components/slider';
 const LoginPanel = () => {
@@ -42,7 +41,6 @@ const LoginPanel = () => {
 
  } catch(error) {
     toast.error("نام کاربری و رمزعبور صحیح نیست");
-    // console.log(error)
 }
   
 }
