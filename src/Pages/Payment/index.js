@@ -20,6 +20,7 @@ const payOrder=()=>{
   }
   postOrders(newOrder)
   dispatch(emptyBasket([]))
+  localStorage.setItem("basket",[])
 }
 
 const failOrder=()=>{

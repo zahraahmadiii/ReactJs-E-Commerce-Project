@@ -8,6 +8,7 @@ import { useDispatch, useSelector} from 'react-redux'
 import { closeOrdersModal, deliverOrder } from '../../redux/Features/orders-slice';
 import { fetchCustomerData } from '../../Api/Servises/getCustomersOrder';
 import { updateDelivery } from '../../Api/Servises/updateDelivery';
+import { ToastContainer ,toast} from 'react-toastify';
 const OrderModal = () => {
 
   const orders = useSelector(store => store.ordersSlice);
@@ -22,18 +23,25 @@ const OrderModal = () => {
   const handleCloseMOdal=()=>{
     dispatch(closeOrdersModal()) 
   }
-  const handleDeliverOrder=(id)=>{
-   const newDeliver={
-    id:id,
-    delivered:true,
-   }
-    updateDelivery(newDeliver)
-    dispatch(closeOrdersModal()) 
-    // dispatch(deliverOrder(true)) 
+  const handleDeliverOrder= (id)=>{
+    try{
+      const newDeliver={
+        id:id,
+        delivered:true,
+       }
+        updateDelivery(newDeliver)
+        dispatch(closeOrdersModal()) 
+        // dispatch(deliverOrder(true)) 
+        toast.success('سفارش با موفقیت ارسال شد')
+    }catch(error){
+      toast.error("سفارش ارسال نشد");
+    }
+   
   }
   return (
    <>
    <div className={styles.wrapper_orderModal}>
+   <ToastContainer/>
     <div className={styles.modal} >
       <div className={styles.top}>
         <p className={styles.para}>سفارشات مشتری</p>
