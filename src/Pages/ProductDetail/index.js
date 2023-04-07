@@ -44,9 +44,10 @@ const ProductDetail = () => {
     let filteredProduct= orders.orderProduct.filter((item) =>  item.id !== OrderData.id)
     filteredProduct.push(OrderData)
      dispatch(addToCart(filteredProduct)) 
-     const productBasket = JSON.parse(localStorage.getItem('basket') || '[]');
-       localStorage.setItem('basket', JSON.stringify(filteredProduct)); 
-      
+     console.log(orders.orderProduct)
+    //  const productBasket = JSON.parse(localStorage.getItem('basket') || '[]');
+    //    localStorage.setItem('basket', JSON.stringify(filteredProduct)); 
+  
   }
 
 

@@ -14,7 +14,7 @@ const CheckOut = () => {
     lastname:yup.string().required("نام خانوادگی را وارد کنید"),
     address:yup.string().required("آدرس الزامی است"),
     phone: yup.string().required("شماره تلفن الزامی است"),
-    // expectAt:yup.string().required("زمان تحویل الزامی است"),
+  //  expectAt:yup.string().required("زمان تحویل الزامی است"), 
   })
 
   const {

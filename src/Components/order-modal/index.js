@@ -28,6 +28,7 @@ const OrderModal = () => {
     delivered:true,
    }
     updateDelivery(newDeliver)
+    dispatch(closeOrdersModal()) 
     // dispatch(deliverOrder(true)) 
   }
   return (

@@ -17,6 +17,7 @@ const CartTable = ({allOrders}) => {
   const handleDeleteOrder=(product)=>{
    let filteredProduct= orders.orderProduct.filter((item) =>  item.id !== product.id)
    dispatch(addToCart(filteredProduct))
+   localStorage.setItem('basket', JSON.stringify(filteredProduct));
   }
     // let localBasket = JSON.parse(localStorage.getItem('basket'))
     // console.log(localBasket) 
