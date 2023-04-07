@@ -5,20 +5,17 @@ import {postOrders} from "../../Api/Servises/postOrders"
 import { updateDelivery } from "../../Api/Servises/updateDelivery";
 
 export const getOrder = createAsyncThunk("orders/fetchList", async (action) => {
-  // console.log(action)
     const response = await fetchOrders(action.delivery);
     return response.data;
   });
 
   export const getCustomerData = createAsyncThunk("CustomerOrders/fetchList", async (id) => {
       const response = await fetchCustomerData(id);
-      // console.log(response)
       return response.data;
     });
 
     export const PostCustomerData = createAsyncThunk("OrdersData/fetchList", async (orderObj) => {
       const response = await postOrders(orderObj);
-      // console.log(response)
       return response.data;
     });
 

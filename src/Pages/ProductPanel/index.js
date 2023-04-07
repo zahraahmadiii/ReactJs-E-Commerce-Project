@@ -10,7 +10,7 @@ import DeleteProductModal from '../../Components/DeleteProduct-modal/index.js';
 import { ToastContainer } from 'react-toastify';
  const ProductPanel = () => {
   const {products} = useSelector(store => store);
-  // console.log(products)
+ 
    const dispatch=useDispatch()
     useEffect(()=>{
     dispatch(getProduct())

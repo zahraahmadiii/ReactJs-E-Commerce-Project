@@ -7,7 +7,7 @@ import Sidbar from '../../Layouts/sidebar';
 
 const Products = () => {
   const {productCategory}=useParams()
-  console.log(productCategory)
+  // console.log(productCategory)
 
   return (
     <>

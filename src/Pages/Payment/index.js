@@ -9,7 +9,7 @@ import { emptyBasket } from '../../redux/Features/orders-slice';
 const Payment = () => {
   const orders = useSelector(store => store.ordersSlice);
   const dispatch=useDispatch()
-const payOrder=()=>{
+const payOrder=()=>{ 
   let localCustomer = JSON.parse(localStorage.getItem('customerData'))
   console.log(localCustomer)
   let localBasket = JSON.parse(localStorage.getItem('basket'))

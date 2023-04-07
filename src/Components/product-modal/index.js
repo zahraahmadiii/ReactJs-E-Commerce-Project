@@ -112,7 +112,7 @@ import { updateProducts } from '../../Api/Servises/updateProduct';
           category:data.category,
           description:data.description
         } 
-        // console.log(editedProduct)
+      
          updateProducts(editedProduct) 
           dispatch(getProduct())
           dispatch(closeEditModal())

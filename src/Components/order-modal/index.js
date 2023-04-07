@@ -10,9 +10,7 @@ import { fetchCustomerData } from '../../Api/Servises/getCustomersOrder';
 import { updateDelivery } from '../../Api/Servises/updateDelivery';
 import { ToastContainer ,toast} from 'react-toastify';
 const OrderModal = () => {
-
   const orders = useSelector(store => store.ordersSlice);
-  // console.log(orders)
 
   const dispatch=useDispatch()
   useEffect(()=>{
@@ -31,7 +29,6 @@ const OrderModal = () => {
        }
         updateDelivery(newDeliver)
         dispatch(closeOrdersModal()) 
-        // dispatch(deliverOrder(true)) 
         toast.success('سفارش با موفقیت ارسال شد')
     }catch(error){
       toast.error("سفارش ارسال نشد");
@@ -106,17 +103,10 @@ const OrderModal = () => {
           <Button btnColor={" rgb(7 68 199)"} onClick={()=>handleDeliverOrder(item.id)}  >{"تحویل شد"}</Button>}
       
        </div>
-    </>
+     </>
           )
         }
        })}
-
-       {/* <div  className={styles.bottom}>
-        {orders.delivery ?
-        <p>زمان تحویل : </p> :
-         <Button btnColor={" rgb(7 68 199)"} onClick={()=>handleDeliverOrder()}  >{"تحویل شد"}</Button>}
-      
-       </div> */}
     </div>
    </div>
    </>

@@ -4,7 +4,7 @@ import Card from '../Card'
 import styles from "./style.module.css"
 
 const getProduct=async(category,page,limit)=>{
-    // console.log(category)
+ 
     const res= await getProductsCategory(category,page,limit)
     return res.data
 }
@@ -17,7 +17,6 @@ useEffect(()=>{
     getProduct(category,page,limit).then(res => setProducts(res))
    },[])
 
-//    console.log(products)
 
   return (
      <div className={styles.wraper_products}>

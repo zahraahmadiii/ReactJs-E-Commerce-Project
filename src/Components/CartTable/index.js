@@ -4,10 +4,8 @@ import Table from 'react-bootstrap/Table';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { BASE_URL } from '../../Api/Constants';
 import{BsTrash} from "react-icons/bs"
-import ReactPaginate from 'react-paginate';
 import {useDispatch, useSelector} from 'react-redux'
-import { useState } from 'react';
-import { addToCart, deleteOrder } from '../../redux/Features/orders-slice';
+import { addToCart } from '../../redux/Features/orders-slice';
 
 
 const CartTable = ({allOrders}) => {
@@ -19,8 +17,7 @@ const CartTable = ({allOrders}) => {
    dispatch(addToCart(filteredProduct))
    localStorage.setItem('basket', JSON.stringify(filteredProduct));
   }
-    // let localBasket = JSON.parse(localStorage.getItem('basket'))
-    // console.log(localBasket) 
+
   return (
     
     <div className={styles.table}>

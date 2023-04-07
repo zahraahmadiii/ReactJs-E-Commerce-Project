@@ -14,7 +14,6 @@ export const getProduct = createAsyncThunk("products/fetchList", async () => {
   });
 
   export const postProduct = createAsyncThunk("products/addProduct", async (newProduct) => {
-      // console.log(newProduct)
       const response = await postProducts(); 
       return response.data; 
 });
@@ -83,20 +82,15 @@ reducers:{
   },
   OpenEditModal:(state,action) => {
     state.openModalEdit = true
-    // state.productId=action.payload
     state.editedProduct=action.payload
-    console.log(action.payload)
     state.productId=action.payload
-    // console.log(action.payload)
   },
   closeEditModal:(state,action) => {
     state.openModalEdit = false
-    // state.productId=action.payload
     state.editedProduct=action.payload
   },
   editPrice:(state,action) =>{
     state.productId=action.payload
-    // console.log(action.payload)
   },
   getNewPrice:(state,action)=>{
     state.price=[...state.price,action.payload]
@@ -104,7 +98,6 @@ reducers:{
   },
   editQuantity:(state,action) =>{
     state.productId=action.payload
-    // console.log(action.payload)
   },
   getNewQuantity:(state,action)=>{
     state.quantity=[...state.quantity,action.payload]
