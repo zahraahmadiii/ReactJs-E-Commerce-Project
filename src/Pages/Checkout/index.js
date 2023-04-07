@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styles from "./style.module.css"
 import { Link, useNavigate } from 'react-router-dom';
 import Button from '../../Components/button';
@@ -16,6 +16,8 @@ const CheckOut = () => {
     phone: yup.string().required("شماره تلفن الزامی است"),
   //  expectAt:yup.string().required("زمان تحویل الزامی است"), 
   })
+
+  const[date,setDate]=useState(null)
 
   const {
     register,

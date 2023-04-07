@@ -14,8 +14,9 @@ const payOrder=()=>{
   console.log(localCustomer)
   let localBasket = JSON.parse(localStorage.getItem('basket'))
     let prices=localStorage.getItem("totalPrice")
+    let expectDate=localStorage.getItem("expectDate")
   const newOrder={
-    ...localCustomer,products:localBasket,delivered:false,prices:prices
+    ...localCustomer,products:localBasket,delivered:false,prices:prices,expectAt:expectDate
   }
   postOrders(newOrder)
   dispatch(emptyBasket([]))
