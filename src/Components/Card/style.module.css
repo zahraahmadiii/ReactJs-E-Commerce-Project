@@ -26,10 +26,11 @@
 }
 .wrapperData{
     background-color: aliceblue;
-    width: 13.5rem;
+    width: 13.9rem;
     height: 8rem;
     display: flex;
     flex-direction: column;
    justify-content: space-between;
- 
+   border-bottom-left-radius: 8px;
+   border-bottom-right-radius: 8px;
 }

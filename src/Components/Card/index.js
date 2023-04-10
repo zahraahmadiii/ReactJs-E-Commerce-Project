@@ -21,7 +21,7 @@ import { showProductDetail } from '../../redux/Features/products-slice';
          <img src={`${BASE_URL}/files/${item.thumbnail}`}  className={styles.cardImg}/>
          <div  className={styles.wrapperData}>
           <p className={styles.cardPara}>{item.name}</p>
-          <p className={styles.cardPara}>{item.price}</p>
+          <p className={styles.cardPara}>{item.price} تومان</p>
          </div>
        
         </div>

@@ -11,16 +11,22 @@ const getCategory=async(category)=>{
 export const ProductsCategory = ({category}) => {
 // console.log(category)
 const [allcategory,setAllCategory]=useState([])
-
+console.log(allcategory)
+// useEffect(()=>{
+//     getCategory(category).then(res =>  setAllCategory(res))
+//    },[])
 useEffect(()=>{
-    getCategory(category).then(res => setAllCategory(res))
+    getCategory(category).then(res => {
+        res.sort((a,b)=>  parseFloat(a.price) - parseFloat(b.price))
+        setAllCategory(res)
+    } )
    },[])
-
 
 
   return (
      <div className={styles.wraper_products}>
-      {allcategory.map((item)=> <Card key={item.id} item={item}/>)} 
+      { allcategory.map((item)=> <Card key={item.id} item={item}/>)} 
+      
      </div>
   )
 }
