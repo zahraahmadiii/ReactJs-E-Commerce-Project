@@ -14,24 +14,21 @@ const payOrder=()=>{
   console.log(localCustomer)
   let localBasket = JSON.parse(localStorage.getItem('basket'))
     let prices=localStorage.getItem("totalPrice")
-    let expectDate=localStorage.getItem("expectDate")
   const newOrder={
-    ...localCustomer,products:localBasket,delivered:false,prices:prices,expectAt:expectDate
+    ...localCustomer,products:localBasket,delivered:false,prices:prices,
   }
   postOrders(newOrder)
   dispatch(emptyBasket([]))
   localStorage.setItem("basket",[])
 }
 
-const failOrder=()=>{
 
-}
 
   return (
     <>
     <div className={styles.pay}>
       <Link to="/Cart/CheckOut/Payment/SuccessPay"><Button onClick={()=>payOrder()} btnColor={" rgb(7 68 199)"}>{"پرداخت"}</Button></Link>
-      <Link to="/Cart/CheckOut/Payment/FailPay"><Button onClick={()=>failOrder()} btnColor={" red"} >{"انصراف"}</Button></Link>
+      <Link to="/Cart/CheckOut/Payment/FailPay"><Button  btnColor={" red"} >{"انصراف"}</Button></Link>
       
     </div>
     </>

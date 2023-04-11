@@ -11,7 +11,6 @@ import Payment from '../Pages/Payment'
 import FailPay from '../Pages/FailPay'
 import SuccessPay from '../Pages/SuccessPay'
 import ProductDetail from '../Pages/ProductDetail'
-import Categories from '../Pages/Categories';
 import Products from '../Pages/Products';
 const Routs = () => {
   return (
@@ -28,7 +27,7 @@ const Routs = () => {
         <Route path='/Cart/CheckOut/Payment' element={<Payment/>}></Route>
         <Route path='/Cart/CheckOut/Payment/FailPay' element={<FailPay/>}></Route>
         <Route path='/Cart/CheckOut/Payment/SuccessPay' element={<SuccessPay/>}></Route>
-        {/* <Route path='/Categories' element={<Categories/>}></Route> */}
+        
         <Route path='/Products/'>
          <Route path=':productCategory' element={<Products/>}></Route>
         </Route>
