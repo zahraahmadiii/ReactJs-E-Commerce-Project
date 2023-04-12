@@ -12,11 +12,13 @@ import FailPay from '../Pages/FailPay'
 import SuccessPay from '../Pages/SuccessPay'
 import ProductDetail from '../Pages/ProductDetail'
 import Products from '../Pages/Products';
+import  NotFound  from '../Pages/NotFound'
 const Routs = () => {
   return (
     <>
     <Routes>
         <Route path='/' element={<Home/>}></Route>
+        <Route path='/NotFound' element={<NotFound/>}></Route>
         <Route path='/LoginPanel' element={<LoginPanel/>}></Route>
         <Route path='/LoginPanel/AdminPanel' element={<AdminPanel/>}></Route>
         <Route path='/LoginPanel/AdminPanel/ProductPanel' element={<ProductPanel/>}></Route>
