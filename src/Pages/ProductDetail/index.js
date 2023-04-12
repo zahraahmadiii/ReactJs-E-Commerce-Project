@@ -27,7 +27,10 @@ const ProductDetail = () => {
     setCount(count + 1)
   }
   const minusProduct=()=>{
-    setCount(count - 1)
+    if(count>0){
+      setCount(count - 1)
+    }
+    
   }
   const dispatch=useDispatch()
   const addToCartBtn=(product)=>{
@@ -43,7 +46,9 @@ const ProductDetail = () => {
     let filteredProduct= orders.orderProduct.filter((item) =>  item.id !== OrderData.id)
     filteredProduct.push(OrderData)
      dispatch(addToCart(filteredProduct)) 
-  
+     if(count==0){
+      dispatch(addToCart([])) 
+     }
   }
 
 

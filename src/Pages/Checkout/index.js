@@ -15,11 +15,9 @@ const CheckOut = () => {
     username:yup.string().required("نام خود را وارد کنید"),
     lastname:yup.string().required("نام خانوادگی را وارد کنید"),
     address:yup.string().required("آدرس الزامی است"),
-    phone: yup.string().required("شماره تلفن الزامی است"),
+    phone: yup.string().required("شماره تلفن الزامی است").max(11,"شماره درست نیست").min(11,"شماره درست نیست"),
    expectAt:yup.string().required("زمان تحویل الزامی است"), 
   })
-
-  const[date,setDate]=useState(null)
 
   const {
     register,
@@ -94,12 +92,8 @@ const CheckOut = () => {
       
           <div className={styles.btn}>
          <Button type={"submit"} btnColor={" rgb(7 68 199)"}>{"پرداخت"} </Button>
-      
           </div>
-        
       </form>
-     
-      
     </div>
     </>
    
