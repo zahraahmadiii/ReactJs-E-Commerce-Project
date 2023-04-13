@@ -1,0 +1,48 @@
+.links{
+    direction: rtl;
+    display: flex;
+    gap: 1.30rem;
+   justify-content: center; 
+}
+.link{
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    font-size:1rem ;
+}
+.link:hover{
+    color: #ffef5c;
+}
+
+.Icon{
+    color:white ;
+    font-size: 1.30rem;
+}
+.row1{
+    display: flex;
+    gap: 6px;
+    align-items: center;
+}
+.row2{
+    display: flex;
+    gap: 6px;
+    align-items: center; 
+}
+.row3{
+    display: flex;
+    gap: 6px;
+    align-items: center; 
+}
+.qty{
+  width: 1.5rem;
+  height: 1.5rem;
+  font-weight: bold;
+  border-radius: 50%;
+  background-color: white;
+  color: rgb(255, 0, 68);
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  top: 1.9rem;
+  right: 14rem;
+}

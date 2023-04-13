@@ -1,0 +1,17 @@
+.wraper_products{
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    overflow-x: scroll;
+    width: 100%;
+    background-color: aliceblue;
+    padding: 2rem;
+    
+}
+.wraper_products::-webkit-scrollbar {
+    border-radius: 7px;
+    background:aliceblue; 
+    border: 1.5px solid rgb(210, 210, 210); 
+    scrollbar-width: thin;
+    /* background: transparent;         */
+  }

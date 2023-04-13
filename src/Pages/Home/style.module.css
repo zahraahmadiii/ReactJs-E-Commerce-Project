@@ -1,0 +1,37 @@
+.products{
+    display: flex;
+    flex-direction: column;
+    gap: 18rem; 
+    text-decoration: none;
+    direction: rtl;
+    font-size: 2rem;
+    font-weight: bold;
+    color: rgb(7 68 199);
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 3rem 3rem;
+    cursor: pointer;
+}
+.ProductSwiper{
+    padding: 2rem 2.5rem;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+.wraperProducts{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+.wraperProduct{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.wraperCategory{
+    margin: 2rem;
+}
+.productsWrapper{
+    background-color: aliceblue;
+}

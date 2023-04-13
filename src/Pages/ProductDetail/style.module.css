@@ -1,0 +1,130 @@
+.ProductDetail {
+  width: 100%;
+  height: 85vh;
+  background-image: radial-gradient(circle, rgb(245, 245, 245), rgb(223, 223, 223), rgb(190, 210, 255));
+  display: flex;
+  gap: 8rem;
+  align-items: center;
+  justify-content: center;
+}
+.wraperthumbnail{
+    width: 20rem;
+    height: 14rem;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+}
+.wraperImages{
+    width: 20rem;
+    height: 8rem;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+}
+.allImages{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+.wraperAllData{
+    width: 33rem;
+   height: fit-content;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    flex-direction: column;
+    direction: rtl;
+    padding: 1rem; 
+    gap: 0.15rem;
+    border-radius: 5px;
+    box-shadow: 2px 2px 4px 4px blue,  4px 4px 6px 6px #ffef5c,2px 2px 6px 6px rgb(134, 134, 134);
+  
+}
+.thumbnailImage{
+    width: 76%;
+    height: 80%;
+   
+}
+.Image{
+    width: 5rem;
+    height: 6rem; 
+}
+.name{
+    color:  rgb(7 68 199);
+    font-size: 1.1rem;
+
+}
+.price{
+    color: red;
+  font-size: 1rem;
+}
+.brand{
+    font-size: 1.05rem;
+}
+.wraperBtn{
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    gap: 8rem;
+}
+.number{
+    width: 9rem;
+    height: 2rem;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+}
+.btnNumber{
+    display: flex;
+    gap: 4rem;
+    align-items: center;
+    justify-content: center;  
+}
+.minus{
+    background-color: red;
+    width: 3rem;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    color: aliceblue;
+    justify-content: center; 
+    font-size: 30px;
+    font-weight: bold;
+    border-top-right-radius:5px;
+    border-bottom-right-radius:5px;
+    cursor: pointer;
+}
+.minus:hover{
+    border: 1px solid rgb(7 68 199);
+}
+.add{
+    background-color: green;
+    width: 3rem;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;  
+    color: aliceblue;
+    font-size: 27px;
+    font-weight: bold;
+    border-top-left-radius:5px;
+    border-bottom-left-radius:5px;
+    cursor: pointer;
+}
+.add:hover{
+    border: 1px solid rgb(7 68 199);
+}
+.num{
+    background-color: rgb(255, 255, 255);
+    width: 3rem;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;  
+}

@@ -1,0 +1,119 @@
+.AdminHeader{
+    width: 100%;
+    height: 5rem;
+    background-color:rgb(7 68 199) ;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    direction: rtl;
+    align-items: center;
+}
+.nav{
+    display: flex;
+    gap: 2rem;
+    direction: rtl;
+    align-items: center;
+}
+.link{
+ color: white;
+ text-decoration: none;
+ font-size: 13.25px;
+}
+.link:hover{
+ color: rgb(7, 14, 199);
+}
+h4{
+color: white;
+padding-top: 0.9rem;
+padding-left: 2rem;
+font-size: 1.80rem;
+font-family: serif;
+font-weight: bold;
+
+}
+input{
+width: 28rem;
+ height: 2.2rem;
+border-radius: 3px;
+border: none;
+font-size: 14px;
+color: #333;
+outline: none;
+direction: rtl;
+padding-right: 2.30rem;
+  
+}
+.search{
+    position: relative;
+    padding-top: 0.6rem;
+}
+.searchIcon{
+    color: rgb(7 68 199);
+    font-size: 1.90rem;
+    background-color: #ffef5c;
+    position: absolute;
+    height: 2.20rem;
+    width: 2rem;
+    right: 0;
+}
+.orders{
+    width: 7rem;
+    height: 2rem;
+    border: 1px solid white;
+    text-align: center;
+    padding-top: 0.25rem;
+    border-radius: 7px;
+}
+.orders:hover{
+   background-color: #ffef5c;;
+    font-weight: bold;
+}
+
+.inventory{
+    width: 7rem;
+    height: 2rem;
+    border: 1px solid white;
+    text-align: center;
+    padding-top: 0.25rem;
+    border-radius: 7px;
+}
+.inventory:hover{
+    background-color: #ffef5c;
+    font-weight: bold;
+}
+
+.products{
+    width: 7rem;
+    height: 2rem;
+    border: 1px solid white;
+    text-align: center;
+   padding-top: 0.25rem;
+    border-radius: 7px;
+}
+.products:hover{
+    background-color: #ffef5c;
+    font-weight: bold;
+}
+
+.right{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+.back{
+    color: white;
+    text-decoration: none;
+}
+.back:hover{
+    color: #ffef5c;
+
+}
+.Icon{
+    color:white ;
+    font-size: 1.20rem;
+}
+.line{
+    width: 100%;
+    height: 0.25rem;
+    background-color: #ffef5c;
+}

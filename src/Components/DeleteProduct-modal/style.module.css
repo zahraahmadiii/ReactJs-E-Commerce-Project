@@ -1,0 +1,42 @@
+.wraper_modal{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    background-color: rgba(66,66,66,0.7);
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+}
+.modal{
+    width: 30vw;
+    height: 25%;  
+    display: flex;
+    flex-direction: column;
+    direction: rtl;
+    border-radius: 8px;
+    border: 3px solid #ffef5c;
+    padding: 1rem;
+    background-color: aliceblue;
+}
+.btns{
+    display: flex;
+    gap: 2rem;
+}
+.close{
+    font-size: 1.5rem;
+    color:  rgb(7 68 199);
+   
+}
+.top{
+    display: flex;
+    gap: 3rem;
+   
+}
+.para{
+    display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}

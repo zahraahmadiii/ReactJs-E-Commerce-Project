@@ -1,0 +1,9 @@
+.cart{
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   gap: 2rem;
+   background-image: radial-gradient(circle, rgb(255, 255, 255), rgb(223, 223, 223), rgb(190, 210, 255));
+   height: 85vh;
+}

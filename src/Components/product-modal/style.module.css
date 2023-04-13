@@ -1,0 +1,86 @@
+.wraper_modal{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    background-color: rgba(66,66,66,0.7);
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+}
+.modal{
+    width: 38vw;
+    height: 90%;  
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    direction: rtl;
+    border-radius: 8px;
+    border: 3px solid #ffef5c;
+    padding: 0.15rem;
+    background-color: aliceblue;
+    padding-right: 1rem;
+   overflow: scroll;
+}
+.Label{
+    color: rgb(7 68 199);
+    /* font-size: 1rem; */
+    font-weight: bold;
+}
+p{
+    color: rgb(80, 80, 80);
+    font-size: 1rem;
+    font-weight: bold;
+}
+.file{
+   width: 14rem; 
+   background-color: rgb(255, 255, 255);
+   padding: 3px;
+   border-radius: 5px;
+   color: gray;
+
+}
+.top{
+    display: flex;
+   gap: 20rem;
+    padding-top: 1rem;
+}
+.close{
+    font-size: 1.5rem;
+    color: rgb(7 68 199);
+}
+.select{
+    width: 95%; 
+    background-color: rgb(255, 255, 255);
+    color: rgb(7 68 199);
+    padding: 3px;
+    border-radius: 5px;
+    border: none;
+}
+.savebtn{
+    display: flex;
+    justify-content: center;
+  
+}
+.para{
+    font-size: 0.6rem;
+    color: red;
+}
+.row{
+    display: flex;
+    gap: 1rem;
+}
+.items{
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+.textarea{
+    width: 95%;
+    background-color: rgb(255, 255, 255);
+    padding: 3px;
+    border-radius: 5px;
+    color: gray;
+    border: none;
+}

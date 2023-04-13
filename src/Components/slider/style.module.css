@@ -1,0 +1,9 @@
+.loginslider {
+    display: block;
+    width: 30rem;
+    height: 60vh;
+    border: 1px solid #ffef5c;
+  }
+  :root{
+    --swiper-theme-color: transparent;
+}
