@@ -7,6 +7,7 @@ import { getDetails } from '../../Api/Servises/getProductDetail'
 import { useDispatch, useSelector } from 'react-redux'
 import { BASE_URL } from '../../Api/Constants'
 import { addToCart } from '../../redux/Features/orders-slice'
+import { ToastContainer ,toast} from 'react-toastify';
 const getData= async(id)=>{
   const res=await  getDetails(id)
   return res.data
@@ -22,9 +23,14 @@ const ProductDetail = () => {
   // handle add product to cart
   const [count, setCount] = useState(0)
   const orders = useSelector(store => store.ordersSlice);
-  console.log(orders.orderProduct)
+  // console.log(orders.orderProduct)
   const addProduct=()=>{
+  if(count<=product.quantity){
     setCount(count + 1)
+  }
+  else{
+    toast.error("موجودی نداریم");
+  }  
   }
   const minusProduct=()=>{
     if(count>0){
@@ -34,7 +40,6 @@ const ProductDetail = () => {
   }
   const dispatch=useDispatch()
   const addToCartBtn=(product)=>{
-
     const OrderData={
       count:count,
       Qty:product.quantity,
@@ -55,6 +60,7 @@ const ProductDetail = () => {
   return (
     <>
      <Header/>
+     <ToastContainer/>
      {product &&
      <div className={styles.ProductDetail} >
            <div className={styles.wraperBtn}>
